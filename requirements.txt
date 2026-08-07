@@ -1,0 +1,35 @@
+# StructRAG — Python dependencies
+# Pin exact versions to ensure reproducibility across machines.
+# Install with:  pip install -r requirements.txt
+
+# ── PDF parsing ────────────────────────────────────────────────────────────
+pymupdf==1.28.0          # PyMuPDF: per-span font size, bold flags, image blocks
+pdfplumber==0.11.10      # Table extraction from real PDF tables (used in Phase 3)
+
+# ── Data / utilities ───────────────────────────────────────────────────────
+# (stdlib only for Phases 1-2: dataclasses, json, re, pathlib — no extras needed)
+
+# ── Vector store (Phase 5) ─────────────────────────────────────────────────
+chromadb==0.6.3
+
+# ── Embeddings (Phase 5) ───────────────────────────────────────────────────
+sentence-transformers==3.0.1
+
+# ── LLM integration — OpenAI (Phase 6+) ───────────────────────────────────
+openai==1.82.1
+
+# ── LLM integration — Groq ────────────────────────────────────────────────
+# Set GROQ_API_KEY env var before use.
+# Default model: openai/gpt-oss-120b  (override with GROQ_MODEL env var)
+groq==0.13.1
+
+# ── Hybrid retrieval ───────────────────────────────────────────────────────
+rank-bm25==0.2.2          # BM25 index for keyword/symbolic query matching
+
+# ── Evaluation (Phase 8) ───────────────────────────────────────────────────
+ragas==0.2.15
+
+# ── Notebook / reporting ───────────────────────────────────────────────────
+jupyter==1.1.1
+pandas==2.2.3
+matplotlib==3.10.3

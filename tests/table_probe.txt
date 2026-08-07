@@ -1,0 +1,1186 @@
+======================================================================
+pdfplumber table probe — EC2 NF EN 1992-1-1:2004
+======================================================================
+
+============================================================
+PAGE 27 — Table 2.1N — partial safety factors (gamma_c=1.5, gamma_s=1.15)
+============================================================
+
+[RAW TEXT (3307 chars)]
+Page23
+EN 1992-1-1:2004
+2.4 Vérification par la méthode des coefficients partiels
+2.4.1 Généralités
+(1) Les règles relatives à la méthode des coefficients partiels sont données dans l'EN 1990 Section 6.
+2.4.2 Valeurs de calcul
+2.4.2.1 Coefficient partiel relatif aux effets du retrait
+(1) Lorsque la prise en compte des effets du retrait est requise pour l'état-limite ultime, il convient d'utiliser un
+coefficient partiel c .
+SH
+NOTE La valeur de c à utiliser dans un pays donné peut être fournie par son Annexe Nationale. La valeur recomman-
+SH
+dée est c = 1,0.
+SH
+2.4.2.2 Coefficients partiels relatifs à la précontrainte
+(1) La précontrainte est destinée, dans la plupart des situations, à avoir des effets favorables ; il convient donc
+d'utiliser c pour la vérification à l'état-limite ultime. La valeur de calcul de la précontrainte peut être basée sur
+P,fav
+la valeur moyenne de la force de précontrainte (voir EN 1990 Section 4).
+NOTE La valeur de c à utiliser dans un pays donné peut être fournie par son Annexe Nationale. La valeur recom-
+P,fav
+mandée pour les situations de projet durable et transitoire est c = 1,0. Cette valeur peut également être utilisée pour la
+P,fav
+vérification à la fatigue.
+(2) Dans la vérification de l'état-limite de stabilité, lorsqu'on est en présence d'une précontrainte extérieure et
+qu'une augmentation de la valeur de la précontrainte peut être défavorable, il convient d'utiliser c .
+P,unfav
+NOTE La valeur de c à utiliser dans un pays donné pour la vérification à l'état-limite de stabilité peut être fournie
+P,unfav
+par son Annexe Nationale. La valeur recommandée pour l'analyse globale est c = 1,3.
+P,unfav
+(3) Il convient également d'utiliser c dans la vérification des effets locaux.
+P,unfav
+NOTE La valeur de c à utiliser dans un pays donné pour la vérification des effets locaux peut être fournie par son
+P,unfav
+Annexe Nationale. La valeur recommandée est c = 1,2. Les effets locaux dus aux ancrages des armatures de pré-
+P,unfav
+contrainte par p
+
+[TABLES FOUND: 1]
+
+  Table 1 (3 rows):
+    Situations de projet | c (béton)
+C | c (acier de béton armé)
+S | c (acier de précontrainte)
+S
+    Durable
+Transitoire | 1,5 | 1,15 | 1,15
+    Accidentelle | 1,2 | 1,0 | 1,0
+
+[WORD COUNT: 545]
+  x= 529.6  y=  34.2  text=Page23
+  x= 485.2  y=  46.2  text=EN
+  x= 501.8  y=  46.2  text=1992-1-1:2004
+  x=  70.7  y=  75.2  text=2.4
+  x= 100.5  y=  75.2  text=Vérification
+  x= 163.4  y=  75.2  text=par
+  x= 183.5  y=  75.2  text=la
+  x= 195.8  y=  75.2  text=méthode
+  x= 244.6  y=  75.2  text=des
+  x= 266.6  y=  75.2  text=coefficients
+  x= 330.6  y=  75.2  text=partiels
+  x=  70.7  y=  97.3  text=2.4.1
+  x= 107.6  y=  97.3  text=Généralités
+  x=  70.7  y= 115.3  text=(1)
+  x=  99.1  y= 115.3  text=Les
+  x= 118.0  y= 115.3  text=règles
+  x= 148.0  y= 115.3  text=relatives
+  x= 188.0  y= 115.3  text=à
+  x= 196.4  y= 115.3  text=la
+  x= 206.9  y= 115.3  text=méthode
+  x= 248.5  y= 115.3  text=des
+  x= 267.5  y= 115.3  text=coefficients
+  x= 320.3  y= 115.3  text=partiels
+  x= 355.3  y= 115.3  text=sont
+  x= 377.0  y= 115.3  text=données
+  x= 418.0  y= 115.3  text=dans
+  x= 442.5  y= 115.3  text=l'EN
+  x= 463.3  y= 115.3  text=1990
+  x= 488.3  y= 115.3  text=Section
+  x= 524.4  y= 115.3  text=6.
+
+============================================================
+PAGE 28 — Page after Table 2.1N
+============================================================
+
+[RAW TEXT (3706 chars)]
+Page24
+EN 1992-1-1:2004
+(2) En ce qui concerne les coefficients partiels relatifs aux matériaux pour les vérifications aux états-limites de
+service, il convient de prendre les valeurs données aux articles spécifiques du présent Eurocode.
+NOTE Les valeurs de c et c à utiliser dans un pays donné pour la vérification à l'état-limite de service peuvent être
+C S
+fournies par son Annexe Nationale. La valeur recommandée pour les situations non couvertes par des articles spécifiques
+du présent Eurocode est c = c = 1,0.
+C S
+(3) Des valeurs plus faibles de c et c peuvent être utilisées sous réserve d'être justifiées par des dispositions
+C S
+réduisant l'incertitude sur la résistance calculée.
+NOTE Des informations sont données dans l'Annexe Informative A.
+2.4.2.5 Coefficients partiels relatifs aux matériaux pour les fondations
+(1) Il convient de déterminer les valeurs de calcul des propriétés de résistance du sol conformément à l'EN 1997.
+(2) Pour la détermination de la résistance de calcul des pieux coulés en place sans tubage définitif, il convient
+de multiplier par un facteur k le coefficient partiel c relatif au béton, donné en 2.4.2.4 (1).
+f C
+NOTE La valeur de k à utiliser dans un pays donné peut être fournie par son Annexe Nationale. La valeur recommandée
+f
+est k = 1,1.
+f
+2.4.3 Combinaisons d'actions
+(1) Les formats généraux de combinaison d'actions pour les états-limites ultimes et de service sont donnés
+dans l'EN 1990, Section 6.
+NOTE 1 Des expressions détaillées de combinaisons d'actions sont données dans les Annexes normatives de l'EN 1990
+(l'Annexe A1 pour les bâtiments, l'Annexe A2 pour les ponts, etc.), avec des valeurs recommandées pour les coefficients
+partiels et des valeurs représentatives des actions données dans les notes.
+NOTE 2 Une combinaison d'actions pour la vérification à la fatigue est donnée en 6.8.3.
+(2) Pour chaque action permanente (poids propre dans une structure, par exemple), il convient d'appliquer à
+toute la structure soit la valeur de calcu
+
+[TABLES FOUND: 0]
+
+[WORD COUNT: 578]
+  x=  28.2  y=  34.2  text=Page24
+  x=  28.2  y=  46.2  text=EN
+  x=  44.9  y=  46.2  text=1992-1-1:2004
+  x=  28.2  y=  75.3  text=(2)
+  x=  56.6  y=  75.3  text=En
+  x=  71.4  y=  75.3  text=ce
+  x=  84.7  y=  75.3  text=qui
+  x= 100.7  y=  75.3  text=concerne
+  x= 144.5  y=  75.3  text=les
+  x= 160.0  y=  75.3  text=coefficients
+  x= 212.7  y=  75.3  text=partiels
+  x= 247.6  y=  75.3  text=relatifs
+  x= 279.7  y=  75.3  text=aux
+  x= 298.4  y=  75.3  text=matériaux
+  x= 345.0  y=  75.3  text=pour
+  x= 367.6  y=  75.3  text=les
+  x= 383.0  y=  75.3  text=vérifications
+  x= 438.5  y=  75.3  text=aux
+  x= 457.3  y=  75.3  text=états-limites
+  x= 513.3  y=  75.3  text=de
+  x=  28.2  y=  87.3  text=service,
+  x=  65.4  y=  87.3  text=il
+  x=  72.7  y=  87.3  text=convient
+  x= 112.7  y=  87.3  text=de
+  x= 126.6  y=  87.3  text=prendre
+  x= 163.8  y=  87.3  text=les
+  x= 179.4  y=  87.3  text=valeurs
+  x= 214.4  y=  87.3  text=données
+  x= 255.4  y=  87.3  text=aux
+  x= 274.4  y=  87.3  text=articles
+
+============================================================
+PAGE 30 — Table 3.1 — concrete strength/deformation characteristics
+============================================================
+
+[RAW TEXT (3015 chars)]
+Page26
+EN 1992-1-1:2004
+Section 3 MATÉRIAUX
+3.1 Béton
+3.1.1 Généralités
+(1)P Les articles qui suivent donnent les principes et les règles applicables au béton de résistance normale et
+au béton à haute résistance.
+(2) Les règles relatives au béton de granulats légers sont données à la Section 11.
+3.1.2 Résistance
+(1)P La résistance en compression du béton est désignée par des classes de résistance liées à la résistance
+caractéristique (fractile 5 %) mesurée sur cylindre f ou sur cube f , conformément à l'EN 206-1.
+ck ck,cube
+(2)P Les classes de résistance du présent code sont basées sur la résistance caractéristique mesurée sur cylin-
+dre, f , déterminée à 28 jours, compatible avec une valeur maximale C .
+ck max
+NOTE La valeur de C à utiliser dans un pays donné peut être fournie par son Annexe Nationale. La valeur recom-
+max
+mandée est C90/105.
+(3) Les résistances caractéristiques f et les caractéristiques mécaniques correspondantes, nécessaires pour
+ck
+le calcul, sont données dans le Tableau 3.1.
+(4) Dans certains cas (précontrainte, par exemple), il peut être indiqué d'établir la résistance en compression
+du béton avant ou après 28 jours, à partir d'éprouvettes conservées dans des conditions différentes de celles pres-
+crites dans l'EN 12390.
+Si la résistance en compression du béton est déterminée à un âge t > 28 jours, il convient de réduire les valeurs
+des coefficients a et a définis en 3.1.6 (1)P et 3.1.6 (2)P par un facteur k.
+cc ct t
+NOTE La valeur de k à utiliser dans un pays donné peut être fournie par son Annexe Nationale. La valeur recommandée
+t
+est k = 0,85.
+t
+(5) Il peut être nécessaire de spécifier la résistance en compression du béton, f (t), à l’instant t, pour un certain
+ck
+nombre de phases (décoffrage, transfert de précontrainte par exemple), où :
+f (t) = f (t) – 8 (MPa) pour 3 < t < 28 jours
+ck cm
+f (t) = f pour t ≥ 28 jours.
+ck ck
+Il convient de fonder des valeurs plus précises sur des essais, notamment pour t ≤ 3 jours.
+(6) La résistance en compr
+
+[TABLES FOUND: 0]
+
+[WORD COUNT: 573]
+  x=  28.2  y=  34.2  text=Page26
+  x=  28.2  y=  46.2  text=EN
+  x=  44.9  y=  46.2  text=1992-1-1:2004
+  x=  28.2  y=  75.0  text=Section
+  x=  74.9  y=  75.0  text=3
+  x=  99.0  y=  75.0  text=MATÉRIAUX
+  x=  28.2  y= 109.2  text=3.1
+  x=  58.0  y= 109.2  text=Béton
+  x=  28.2  y= 131.4  text=3.1.1
+  x=  65.0  y= 131.4  text=Généralités
+  x=  28.2  y= 150.3  text=(1)P
+  x=  56.6  y= 150.3  text=Les
+  x=  75.8  y= 150.3  text=articles
+  x= 110.6  y= 150.3  text=qui
+  x= 127.1  y= 150.3  text=suivent
+  x= 162.0  y= 150.3  text=donnent
+  x= 201.2  y= 150.3  text=les
+  x= 217.2  y= 150.3  text=principes
+  x= 260.4  y= 150.3  text=et
+  x= 271.9  y= 150.3  text=les
+  x= 287.9  y= 150.3  text=règles
+  x= 318.2  y= 150.3  text=applicables
+  x= 371.5  y= 150.3  text=au
+  x= 385.7  y= 150.3  text=béton
+  x= 413.8  y= 150.3  text=de
+  x= 428.1  y= 150.3  text=résistance
+  x= 476.8  y= 150.3  text=normale
+  x= 516.0  y= 150.3  text=et
+  x=  28.2  y= 162.3  text=au
+  x=  42.1  y= 162.3  text=béton
+
+============================================================
+PAGE 31 — Table 3.1 continued?
+============================================================
+
+[RAW TEXT (3242 chars)]
+Page27
+EN 1992-1-1:2004
+Lorsque le béton ne satisfait pas la prescription de résistance en compression à 28 jours, l'utilisation des
+Expressions (3.1) et (3.2) est inappropriée.
+Il convient de ne pas utiliser le présent alinéa afin de justifier a posteriori une résistance non conforme à celle de
+référence, par un accroissement ultérieur de sa valeur.
+Dans le cas où une cure thermique est appliquée à l'élément, on se reportera à 10.3.1.1 (3).
+(7)P La résistance en traction se rapporte à la contrainte maximale atteinte sous chargement en traction
+uni-axiale centrée. Pour la résistance à la traction en flexion, il convient de se reporter à 3.1.8 (1).
+(8) Lorsque la résistance en traction est déterminée comme la résistance en traction par fendage f , il est
+ct,sp
+possible de prendre, pour la résistance en traction directe f , une valeur approchée égale à :
+ct
+f = 0,9f ... (3.3)
+ct ct,sp
+(9) L'évolution de la résistance en traction avec le temps dépend fortement des conditions de cure et de
+séchage ainsi que des dimensions des éléments structuraux considérés. En première approximation, on peut
+admettre que la résistance en traction f (t) vaut :
+ctm
+f (t) = (b (t))α ⋅ f ... (3.4)
+ctm cc ctm
+où b (t) est donné par l'expression (3.2) et
+cc
+a = 1 pour t < 28
+a = 2/3 pour t ≥ 28. Les valeurs de f sont données dans le Tableau 3.1.
+ctm
+NOTE Dans le cas où l'évolution de la résistance en traction avec le temps a de l'importance, on recommande de
+procéder à des essais en tenant compte des conditions d'exposition et des dimensions de l'élément.
+Tableau 3.1 : Caractéristiques de résistance et de défotrmation du béton
+euqitylana
+noisserpxE
+notéb
+ud
+ecnatsisér
+ed
+sessalC
+seriatnemmoC
+09
+08
+07
+06
+55
+05
+54
+04
+53
+03
+52
+02
+61
+21
+kcf )aPM(
+501
+59
+58
+57
+76
+06
+55
+05
+54
+73
+03
+52
+02
+51
+ebuc,kcf )aPM(
+)aPM( 8 + kcf = mcf
+89
+88
+87
+86
+36
+85
+35
+84
+34
+83
+33
+82
+42
+02
+)a m P c M f
+(
+0 ) 6 )0 /0
+1 5 /m C c f ≤ ( ) + 3 /2 1 ( ( k n c I f · × 2 0 1 3 ,2 ,0 = = m m tc tc f f
+0,5
+8,4
+6,4
+4,4
+2,4
+1,4
+8,3
+
+
+[TABLES FOUND: 1]
+
+  Table 1 (16 rows):
+    euqitylana
+seriatnemmoC
+noisserpxE |  |  | )aPM(
+8
++
+kcf
+=
+mcf | 06/05C ))01/mcf(
+≤
+)3/2( + 06/05C
+1(nI
+kcf
+× ·
+03,0 21,2 >
+= =
+mtcf mtcf | mtcf
+× %
+7,0 5
+elitcarf
+=
+50,0,ktcf | mtcf
+%
+×
+3,1 59
+= elitcarf
+59,0,ktcf | 3,0]01/)mcf([22
+)aPM
+ne
+mcf(
+=
+mcE | 8,2
+≤
+2.3 13,0
+erugif mcf
+7,0
+rioV =
+)‰(
+1c
+e | 4]001/)mcf
+aPM
+2.3 –
+89([72
+erugif 05
+≥
+rioV kcf ruop + 8,2
+=
+)‰(1uc
+e | 35,0)05
+aPM –
+3.3 kcf(580,0
+erugiF 05
+≥
+kcf +
+rioV ruop 0,2
+=
+)‰(2c
+e | 4]001/)kcf
+aPM
+3.3 –
+09([53
+erugiF 05
+≥
+kcf +
+rioV ruop 6,2
+=
+)‰(2uc
+e | 4]001/)kcf
+aPM
+–
+05 09([4,32
+≥
+kcf
+ruop
++
+4,1
+=
+n | ]04/)05
+aPM –
+4.3 kcf([55,0
+erugiF 05
+≥
+kcf +
+rioV 57,1
+ruop
+=
+)‰(3c
+e | 4]001/)kcf
+aPM
+4.3 –
+09([53
+erugiF 05
+≥
+kcf +
+rioV ruop 6,2
+=
+)‰(3uc
+e
+    notéb
+ud
+ecnatsisér
+ed
+sessalC | 09 | 501 | 89 | 0,5 | 5,3 | 6,6 | 44 | 8,2 | 8,2 | 6,2 | 6,2 | 4,1 | 3,2 | 6,2
+     | 08 | 59 | 88 | 8,4 | 4,3 | 3,6 | 24 | 8,2 | 8,2 | 5
+,2 | 6,2 | 4,1 | 2,2 | 6,2
+     | 07 | 58 | 87 | 6,4 | 2,3 | 0,6 | 14 | 7,2 | 8,2 | 4,2 | 7,2 | 54,1 | 0,2 | 7,2
+     | 06 | 57 | 86 | 4,4 | 1,3 | 7,5 | 93 | 6,2 | 0,3 | 3,2 | 9,2 | 6,1 | 9,1 | 9,2
+     | 55 | 76 | 36 | 2,4 | 0,3 | 5,5 | 83 | 5,2 | 2,3 | 2,2 | 1,3 | 57,1 | 8,1 | 1,3
+     | 05 | 06 | 85 | 1,4 | 9,2 | 3,5 | 73 | 54,2 | 5,3 | 0,2 | 5,3 | 0,2 | 57,1 | 5,3
+     | 54 | 55 | 35 | 8,3 | 7,2 | 9,4 | 63 | 4,2 |  |  |  |  |  | 
+     | 04 | 05 | 84 | 5,3 | 5,2 | 6,4 | 53 | 3,2 |  |  |  |  |  | 
+     | 53 | 54 | 34 | 2,3 | 2,2 | 2,4 | 43 | 52,2 |  |  |  |  |  | 
+     | 03 | 73 | 83 | 9,2 | 0,2 | 8,3 | 33 | 2,2 |  |  |  |  |  | 
+     | 52 | 03 | 33 | 6,2 | 8,1 | 3,3 | 13 | 1,2 |  |  |  |  |  | 
+     | 02 | 52 | 82 | 2,2 | 5,1 | 9,2 | 03 | 0,2 |  |  |  |  |  | 
+     | 61 | 02 | 42 | 9,1 | 3,1 | 5,2 | 92 | 9,1 |  |  |  |  |  | 
+     | 21 | 51 | 02 | 6,1 | 1,1 | 0,2 | 72 | 8,1 |  |  |  |  |  | 
+     | )aPM(
+kcf | ebuc,kcf )aPM( | )aPM(
+mcf | )aPM(
+mtcf | 50,0,ktcf )aPM( | 59,0,ktcf )aPM( | )
+mcE aPG( | 1c )‰(
+e | 1uc )‰(
+e | 2c )‰(
+e | 2uc )‰(
+e | n | 3c )‰(
+e | 3uc )‰(
+e
+
+[WORD COUNT: 833]
+  x= 529.6  y=  34.2  text=Page27
+  x= 485.2  y=  46.2  text=EN
+  x= 501.8  y=  46.2  text=1992-1-1:2004
+  x=  70.7  y=  75.3  text=Lorsque
+  x= 111.8  y=  75.3  text=le
+  x= 124.5  y=  75.3  text=béton
+  x= 154.5  y=  75.3  text=ne
+  x= 170.5  y=  75.3  text=satisfait
+  x= 209.4  y=  75.3  text=pas
+  x= 230.4  y=  75.3  text=la
+  x= 243.2  y=  75.3  text=prescription
+  x= 299.8  y=  75.3  text=de
+  x= 315.8  y=  75.3  text=résistance
+  x= 366.4  y=  75.3  text=en
+  x= 382.4  y=  75.3  text=compression
+  x= 444.0  y=  75.3  text=à
+  x= 454.5  y=  75.3  text=28
+  x= 470.6  y=  75.3  text=jours,
+  x= 500.0  y=  75.3  text=l'utilisation
+  x= 550.8  y=  75.3  text=des
+  x=  70.7  y=  87.3  text=Expressions
+  x= 128.0  y=  87.3  text=(3.1)
+  x= 151.3  y=  87.3  text=et
+  x= 162.4  y=  87.3  text=(3.2)
+  x= 185.7  y=  87.3  text=est
+  x= 201.9  y=  87.3  text=inappropriée.
+  x=  70.7  y= 104.4  text=Il
+  x=  78.5  y= 104.4  text=convient
+  x= 118.5  y= 104.4  text=de
+  x= 132.4  y= 104.4  text=ne
+
+============================================================
+PAGE 36 — Table 3.2 — stress-strain parameters (epsilon_cu2)
+============================================================
+
+[RAW TEXT (1770 chars)]
+Page32
+EN 1992-1-1:2004
+(2) D'autres relations contrainte-déformation simplifiées peuvent être appliquées, sous réserve qu'elles repré-
+sentent correctement le comportement du béton considéré.
+Figure 3.2 : Représentation schématique de la relation contrainte-déformation
+pour l'analyse structurale (l'utilisation de 0,4f pour la définition de E est une approximation)
+cm cm
+3.1.6 Résistance de calcul en compression et résistance de calcul en traction
+(1)P La résistance de calcul en compression est définie comme
+f = a f /c ... (3.15)
+cd cc ck C
+où :
+c est le coefficient partiel relatif au béton, voir 2.4.2.4, et
+C
+a est un coefficient tenant compte des effets à long terme sur la résistance en compression et des effets
+cc
+défavorables résultant de la manière dont la charge est appliquée.
+NOTE La valeur de a à utiliser dans un pays donné, qu'il convient de prendre entre 0,8 et 1,0, peut être fournie par son
+cc
+Annexe Nationale. La valeur recommandée est a = 1.
+cc
+(2)P La résistance de calcul en traction f est définie comme
+ctd
+f
+ctd
+= a
+ct
+f
+ctk,0,05
+/ c
+C
+... (3.16)
+où :
+c est le coefficient partiel relatif au béton, voir 2.4.2.4,
+C
+a est un coefficient tenant compte des effets à long terme sur la résistance en traction et des effets défavo-
+ct
+rables résultant de la manière dont la charge est appliquée.
+NOTE La valeur de a à utiliser dans un pays donné peut être fournie par son Annexe Nationale. La valeur recomman-
+ct
+dée est a = 1,0.
+ct
+3.1.7 Relations contrainte-déformation pour le calcul des sections
+(1) Le calcul des sections peut être effectué en utilisant la relation contrainte-déformation suivante, voir
+Figure3.3 (déformations en compression représentées positives) :
+n
+⎛ e ⎞
+r = f 1–⎜1–---- c ---⎟ pour 0≤e ≤e ... (3.17)
+c cd ⎝ e c2⎠ c c2
+
+[TABLES FOUND: 0]
+
+[WORD COUNT: 307]
+  x=  28.2  y=  34.2  text=Page32
+  x=  28.2  y=  46.2  text=EN
+  x=  44.9  y=  46.2  text=1992-1-1:2004
+  x=  28.2  y=  75.3  text=(2)
+  x=  56.6  y=  75.3  text=D'autres
+  x=  96.2  y=  75.3  text=relations
+  x= 136.7  y=  75.3  text=contrainte-déformation
+  x= 239.5  y=  75.3  text=simplifiées
+  x= 289.1  y=  75.3  text=peuvent
+  x= 327.4  y=  75.3  text=être
+  x= 347.5  y=  75.3  text=appliquées,
+  x= 401.4  y=  75.3  text=sous
+  x= 425.3  y=  75.3  text=réserve
+  x= 461.4  y=  75.3  text=qu'elles
+  x= 497.8  y=  75.3  text=repré-
+  x=  28.2  y=  87.3  text=sentent
+  x=  63.7  y=  87.3  text=correctement
+  x= 124.8  y=  87.3  text=le
+  x= 135.4  y=  87.3  text=comportement
+  x= 202.1  y=  87.3  text=du
+  x= 216.0  y=  87.3  text=béton
+  x= 243.8  y=  87.3  text=considéré.
+  x=  91.6  y= 326.5  text=Figure
+  x= 125.0  y= 326.5  text=3.2
+  x= 141.6  y= 326.5  text=:
+  x= 147.7  y= 326.5  text=Représentation
+  x= 223.2  y= 326.5  text=schématique
+  x= 287.1  y= 326.5  text=de
+  x= 301.5  y= 326.5  text=la
+  x= 312.7  y= 326.5  text=relation
+
+============================================================
+PAGE 37 — Table 3.2 continued?
+============================================================
+
+[RAW TEXT (771 chars)]
+Page33
+EN 1992-1-1:2004
+r = f pour e ≤e ≤e ... (3.18)
+c cd c2 c cu2
+où :
+n est l'exposant, tel qu'indiqué dans le Tableau 3.1
+e est la déformation atteinte pour la contrainte maximale, telle qu'indiquée dans le Tableau 3.1
+c2
+e est la déformation ultime, telle qu'indiquée dans le Tableau 3.1.
+cu2
+Figure 3.3 : Diagramme parabole-rectangle pour le béton comprimé
+(2) D'autres relations contrainte-déformation simplifiées sont admises, à condition qu'elles soient équivalentes,
+voire plus conservatrices, que celle définie en (1) — diagramme bilinéaire de la Figure 3.4, par exemple (contrainte
+de compression et raccourcissement représentés en valeur absolue), avec les valeurs de e et e telles qu'indi-
+c3 cu3
+quées dans le Tableau 3.1.
+Figure 3.4 : Diagramme bilinéaire
+
+[TABLES FOUND: 0]
+
+[WORD COUNT: 124]
+  x= 529.6  y=  34.2  text=Page33
+  x= 485.2  y=  46.2  text=EN
+  x= 501.8  y=  46.2  text=1992-1-1:2004
+  x= 216.6  y=  77.3  text=r
+  x= 231.5  y=  77.3  text==
+  x= 242.2  y=  77.2  text=f
+  x= 278.8  y=  77.2  text=pour
+  x= 323.7  y=  77.3  text=e
+  x= 338.9  y=  77.3  text=≤e
+  x= 357.6  y=  77.3  text=≤e
+  x= 529.6  y=  77.2  text=...
+  x= 540.7  y=  77.2  text=(3.18)
+  x= 222.5  y=  82.1  text=c
+  x= 245.3  y=  82.1  text=cd
+  x= 328.0  y=  82.1  text=c2
+  x= 351.1  y=  82.1  text=c
+  x= 369.8  y=  82.1  text=cu2
+  x=  70.7  y=  99.3  text=où
+  x=  84.6  y=  99.3  text=:
+  x=  70.7  y= 117.3  text=n
+  x=  99.1  y= 117.3  text=est
+  x= 115.2  y= 117.3  text=l'exposant,
+  x= 165.5  y= 117.3  text=tel
+  x= 178.8  y= 117.3  text=qu'indiqué
+  x= 226.9  y= 117.3  text=dans
+  x= 251.3  y= 117.3  text=le
+  x= 261.9  y= 117.3  text=Tableau
+  x= 300.7  y= 117.3  text=3.1
+  x=  70.7  y= 135.3  text=e
+  x=  99.1  y= 135.3  text=est
+
+============================================================
+PAGE 48 — Table 4.1 — exposure classes (XC, XD, XF, XA)
+============================================================
+
+[RAW TEXT (2198 chars)]
+Page44
+EN 1992-1-1:2004
+Section 4 DURABILITÉ ET ENROBAGE DES ARMATURES
+4.1 Généralités
+(1)P Une structure durable doit satisfaire aux exigences d'aptitude au service, de résistance et de stabilité
+pendant toute la durée d'utilisation de projet, sans perte significative de fonctionnalité ni maintenance imprévue
+excessive (pour les exigences générales voir également l'EN1990).
+(2)P La protection requise de la structure doit être établie en considérant l'utilisation prévue, la durée d'utilisation
+de projet (voir l'EN 1990), le programme de maintenance envisagé ainsi que les actions attendues.
+(3)P L'importance éventuelle des actions directes et indirectes, des conditions d'environnement (4.2) et des
+effets qui en résultent doit être prise en considération.
+NOTE Les exemples incluent les déformations dues au fluage et au retrait (voir 2.3.2).
+(4) La protection du ferraillage contre la corrosion dépend de la compacité, de la qualité et de l'épaisseur de
+l'enrobage d'une part (voir 4.4), de la fissuration d'autre part (voir 7.3). La compacité et la qualité de l'enrobage
+sont obtenues par la maîtrise de la valeur maximale du rapport eau/ciment et de la teneur minimale en ciment
+(voirl'EN 206-1) ; elles peuvent être associées à une classe de résistance minimale du béton.
+NOTE Des informations complémentaires sont données dans l'Annexe E.
+(5) Lorsque l'inspection et le remplacement des fixations métalliques sont possibles, celles-ci peuvent être uti-
+lisées dans des situations exposées, moyennant un revêtement de protection. Dans le cas contraire, il convient
+d'utiliser des fixations en matériau résistant à la corrosion.
+(6) Dans certaines situations particulières (structures provisoires ou structures à caractère monumental
+soumises à des actions extrêmes ou inhabituelles etc.), il convient de prendre en considération des exigences
+supplémentaires, en plus de celles données dans la présente Section.
+4.2 Conditions d'environnement
+(1)P Les conditions d'exposition sont les con
+
+[TABLES FOUND: 0]
+
+[WORD COUNT: 316]
+  x=  28.2  y=  34.2  text=Page44
+  x=  28.2  y=  46.2  text=EN
+  x=  44.9  y=  46.2  text=1992-1-1:2004
+  x=  28.2  y=  75.0  text=Section
+  x=  74.8  y=  75.0  text=4
+  x=  99.0  y=  75.0  text=DURABILITÉ
+  x= 175.0  y=  75.0  text=ET
+  x= 193.7  y=  75.0  text=ENROBAGE
+  x= 266.3  y=  75.0  text=DES
+  x= 294.3  y=  75.0  text=ARMATURES
+  x=  28.2  y= 117.2  text=4.1
+  x=  58.0  y= 117.2  text=Généralités
+  x=  28.2  y= 139.3  text=(1)P
+  x=  56.6  y= 139.3  text=Une
+  x=  79.2  y= 139.3  text=structure
+  x= 122.5  y= 139.3  text=durable
+  x= 160.2  y= 139.3  text=doit
+  x= 180.8  y= 139.3  text=satisfaire
+  x= 225.2  y= 139.3  text=aux
+  x= 245.7  y= 139.3  text=exigences
+  x= 295.0  y= 139.3  text=d'aptitude
+  x= 342.4  y= 139.3  text=au
+  x= 357.9  y= 139.3  text=service,
+  x= 396.8  y= 139.3  text=de
+  x= 412.3  y= 139.3  text=résistance
+  x= 462.2  y= 139.3  text=et
+  x= 474.9  y= 139.3  text=de
+  x= 490.4  y= 139.3  text=stabilité
+  x=  28.2  y= 151.3  text=pendant
+  x=  67.6  y= 151.3  text=toute
+
+============================================================
+PAGE 49 — Table 4.1 continued / Table 4.2?
+============================================================
+
+[RAW TEXT (3498 chars)]
+Page45
+EN 1992-1-1:2004
+Tableau 4.1 : Classes d'exposition en fonction des conditions d'environnement,
+conformément à l'EN 206-1
+Désignation Exemples informatifs illustrant le choix
+Description de l'environnement :
+de la classe des classes d'exposition
+1 Aucun risque de corrosion ni d'attaque
+X0 Béton non armé et sans pièces métalliques noyées: Béton à l'intérieur de bâtiments où le taux d'humidité de l'air ambiant est très
+toutes expositions sauf en cas de gel/dégel, faible
+d'abrasion et d'attaque chimique
+Béton armé ou avec des pièces métalliques noyées:
+très sec
+2 Corrosion induite par carbonatation
+XC1 Sec ou humide en permanence Béton à l'intérieur de bâtiments où le taux d'humidité de l'air ambiant est faible
+Béton submergé en permanence dans de l'eau
+XC2 Humide, rarement sec Surfaces de béton soumises au contact à long terme de l'eau
+Un grand nombre de fondations
+XC3 Humidité modérée Béton à l'intérieur de bâtiments où le taux d'humidité de l'air ambiant
+est moyen ou élevé
+Béton extérieur abrité de la pluie
+XC4 Alternativement humide et sec Surfaces de béton soumises au contact de l'eau, mais n'entrant pas
+dans la classe d'exposition XC2
+3 Corrosion induite par les chlorures
+XD1 Humidité modérée Surfaces de béton exposées à des chlorures transportés par voie aérienne
+XD2 Humide, rarement sec Piscines
+Éléments en béton exposés à des eaux industrielles contenant des chlorures
+XD3 Alternativement humide et sec Éléments de ponts exposés à des projections contenant des chlorures
+Chaussées
+Dalles de parcs de stationnement de véhicules
+4 Corrosion induite par les chlorures présents dans l'eau de mer
+XS1 Exposé à l'air véhiculant du sel marin mais pas Structures sur ou à proximité d'une côte
+en contact direct avec l'eau de mer
+XS2 Immergé en permanence Éléments de structures marines
+XS3 Zones de marnage, zones soumises Éléments de structures marines
+à des projections ou à des embruns
+5 Attaque gel/dégel
+XF1 Saturation modérée en eau, sans agent Surfaces verticales de
+
+[TABLES FOUND: 1]
+
+  Table 1 (25 rows):
+    Désignation
+de la classe | Description de l'environnement : | Exemples informatifs illustrant le choix
+des classes d'exposition
+    1 Aucun risque de corrosion ni d'attaque |  | 
+    X0 | Béton non armé et sans pièces métalliques noyées:
+toutes expositions sauf en cas de gel/dégel,
+d'abrasion et d'attaque chimique
+Béton armé ou avec des pièces métalliques noyées:
+très sec | Béton à l'intérieur de bâtiments où le taux d'humidité de l'air ambiant est très
+faible
+    2 Corrosion induite par carbonatation |  | 
+    XC1 | Sec ou humide en permanence | Béton à l'intérieur de bâtiments où le taux d'humidité de l'air ambiant est faible
+Béton submergé en permanence dans de l'eau
+    XC2 | Humide, rarement sec | Surfaces de béton soumises au contact à long terme de l'eau
+Un grand nombre de fondations
+    XC3 | Humidité modérée | Béton à l'intérieur de bâtiments où le taux d'humidité de l'air ambiant
+est moyen ou élevé
+Béton extérieur abrité de la pluie
+    XC4 | Alternativement humide et sec | Surfaces de béton soumises au contact de l'eau, mais n'entrant pas
+dans la classe d'exposition XC2
+    3 Corrosion induite par les chlorures |  | 
+    XD1 | Humidité modérée | Surfaces de béton exposées à des chlorures transportés par voie aérienne
+    XD2 | Humide, rarement sec | Piscines
+Éléments en béton exposés à des eaux industrielles contenant des chlorures
+    XD3 | Alternativement humide et sec | Éléments de ponts exposés à des projections contenant des chlorures
+Chaussées
+Dalles de parcs de stationnement de véhicules
+    4 Corrosion induite par les chlorures présents dans l'eau de mer |  | 
+    XS1 | Exposé à l'air véhiculant du sel marin mais pas
+en contact direct avec l'eau de mer | Structures sur ou à proximité d'une côte
+    XS2 | Immergé en permanence | Éléments de structures marines
+    XS3 | Zones de marnage, zones soumises
+à des projections ou à des embruns | Éléments de structures marines
+    5 Attaque gel/dégel |  | 
+    XF1 | Saturation modérée en eau, sans agent
+de déverglaçage | Surfaces verticales de béton exposées à la pluie et au gel
+    XF2 | Saturation modérée en eau, avec agents
+de déverglaçage | Surfaces verticales de béton des ouvrages routiers exposés au gel et à l'air
+véhiculant des agents de déverglaçage
+    XF3 | Forte saturation en eau, sans agents
+de déverglaçage | Surfaces horizontales de béton exposées à la pluie et au gel
+    XF4 | Forte saturation en eau, avec agents
+de déverglaçage ou eau de mer | Routes et tabliers de pont exposés aux agents de déverglaçage.
+Surfaces de béton verticales directement exposées aux projections d'agents
+de déverglaçage et au gel.
+Zones des structures marines soumises aux projections et exposées au gel
+    6 Attaques chimiques |  | 
+    XA1 | Environnement à faible agressivité chimique
+selon l'EN 206-1, Tableau 2 | Sols naturels et eau dans le sol
+    XA2 | Environnement d'agressivité chimique modérée
+selon l'EN 206-1, Tableau 2 | Sols naturels et eau dans le sol
+    XA3 | Environnement à forte agressivité chimique
+selon l'EN 206-1, Tableau 2 | Sols naturels et eau dans le sol
+
+[WORD COUNT: 554]
+  x= 529.6  y=  34.2  text=Page45
+  x= 485.2  y=  46.2  text=EN
+  x= 501.8  y=  46.2  text=1992-1-1:2004
+  x= 129.8  y=  77.4  text=Tableau
+  x= 170.4  y=  77.4  text=4.1
+  x= 187.0  y=  77.4  text=:
+  x= 193.1  y=  77.4  text=Classes
+  x= 233.6  y=  77.4  text=d'exposition
+  x= 294.9  y=  77.4  text=en
+  x= 309.4  y=  77.4  text=fonction
+  x= 351.5  y=  77.4  text=des
+  x= 371.5  y=  77.4  text=conditions
+  x= 424.8  y=  77.4  text=d'environnement,
+  x= 254.8  y=  89.4  text=conformément
+  x= 327.0  y=  89.4  text=à
+  x= 335.4  y=  89.4  text=l'EN
+  x= 357.2  y=  89.4  text=206-1
+  x=  75.8  y= 109.6  text=Désignation
+  x= 366.8  y= 109.6  text=Exemples
+  x= 403.9  y= 109.6  text=informatifs
+  x= 444.6  y= 109.6  text=illustrant
+  x= 478.4  y= 109.6  text=le
+  x= 486.7  y= 109.6  text=choix
+  x= 156.9  y= 114.4  text=Description
+  x= 200.2  y= 114.4  text=de
+  x= 211.0  y= 114.4  text=l'environnement
+  x= 270.7  y= 114.4  text=:
+  x=  76.3  y= 119.1  text=de
+  x=  87.1  y= 119.1  text=la
+  x=  95.4  y= 119.1  text=classe
+
+============================================================
+PAGE 50 — Table 4.3N — structural classification / Table 4.4N — cover values
+============================================================
+
+[RAW TEXT (1947 chars)]
+Page46
+EN 1992-1-1:2004
+(3) En plus des conditions du Tableau 4.1, il convient de considérer certaines formes particulières d'actions
+agressives ou d'actions indirectes :
+— attaque chimique due par exemple à :
+- utilisation du bâtiment ou de l'ouvrage (stockage de liquides, etc.)
+- acides ou sulfates en solution (EN 206-1, ISO 9690)
+- chlorures contenus dans le béton (EN 206-1)
+- réactions alcali-granulats (EN 206-1, Normes Nationales)
+— attaque physique due par exemple à :
+- variation de température
+- abrasion (voir 4.4.1.2 (13))
+- pénétration d'eau (EN 206-1).
+4.3 Exigences de durabilité
+(1)P Pour atteindre la durée d'utilisation de projet requise pour la structure, des dispositions appropriées doivent
+être prises afin de protéger chaque élément structural des actions d'environnement concernées.
+(2)P Les exigences de durabilité doivent être prises en compte dans :
+— la conception de la structure,
+— le choix des matériaux,
+— les dispositions constructives,
+— l'exécution,
+— la maîtrise de la qualité,
+— les inspections,
+— les vérifications,
+— les dispositions particulières (utilisation d'acier inoxydable, revêtements, protection cathodique).
+4.4 Méthodes de vérification
+4.4.1 Enrobage
+4.4.1.1 Généralités
+(1)P L'enrobage est la distance entre la surface de l'armature (épingles, étriers et cadres compris, ainsi que
+armatures de peau, le cas échéant) la plus proche de la surface du béton et cette dernière.
+(2)P L'enrobage nominal doit être spécifié sur les plans. Il est défini comme l'enrobage minimal c (voir 4.4.1.2)
+min
+plus une marge de calcul pour tolérances d'exécution Δc (voir 4.4.1.3) :
+dev
+c = c + Δc ... (4.1)
+nom min dev
+4.4.1.2 Enrobage minimal, c
+min
+(1)P Un enrobage minimal c doit être assuré afin de garantir :
+min
+— la bonne transmission des forces d'adhérence (voir également sections 7 et 8)
+— la protection de l'acier contre la corrosion (durabilité)
+— une résistance au feu convenable (voir EN 1992-1-2).
+
+[TABLES FOUND: 0]
+
+[WORD COUNT: 306]
+  x=  28.2  y=  34.2  text=Page46
+  x=  28.2  y=  46.2  text=EN
+  x=  44.9  y=  46.2  text=1992-1-1:2004
+  x=  28.2  y=  75.3  text=(3)
+  x=  56.6  y=  75.3  text=En
+  x=  72.2  y=  75.3  text=plus
+  x=  94.1  y=  75.3  text=des
+  x= 113.7  y=  75.3  text=conditions
+  x= 162.2  y=  75.3  text=du
+  x= 176.8  y=  75.3  text=Tableau
+  x= 216.3  y=  75.3  text=4.1,
+  x= 236.4  y=  75.3  text=il
+  x= 244.4  y=  75.3  text=convient
+  x= 285.1  y=  75.3  text=de
+  x= 299.6  y=  75.3  text=considérer
+  x= 349.8  y=  75.3  text=certaines
+  x= 393.8  y=  75.3  text=formes
+  x= 427.8  y=  75.3  text=particulières
+  x= 485.2  y=  75.3  text=d'actions
+  x=  28.2  y=  87.3  text=agressives
+  x=  78.7  y=  87.3  text=ou
+  x=  92.5  y=  87.3  text=d'actions
+  x= 134.5  y=  87.3  text=indirectes
+  x= 180.0  y=  87.3  text=:
+  x=  28.2  y= 105.3  text=—
+  x=  42.4  y= 105.3  text=attaque
+  x=  78.5  y= 105.3  text=chimique
+  x= 121.3  y= 105.3  text=due
+  x= 140.7  y= 105.3  text=par
+  x= 157.9  y= 105.3  text=exemple
+
+============================================================
+PAGE 51 — Table 4.4N cover values continued
+============================================================
+
+[RAW TEXT (3021 chars)]
+Page47
+EN 1992-1-1:2004
+(2)P La valeur à utiliser est la plus grande valeur de c satisfaisant aux exigences à la fois en ce qui concerne
+min
+l'adhérence et les conditions d'environnement.
+c = max {c ; c + Δc – Δc – Δc ; 10 mm} ... (4.2)
+min min,b min,dur dur,γ dur,st dur,add
+avec :
+c enrobage minimal vis-à-vis des exigences d'adhérence, voir 4.4.1.2 (3)
+min,b
+c enrobage minimal vis-à-vis des conditions d'environnement, voir 4.4.1.2 (5)
+min,dur
+Δc marge de sécurité, voir 4.4.1.2(6)
+dur,γ
+Δc réduction de l'enrobage minimal dans le cas d'acier inoxydable, voir 4.4.1.2 (7)
+dur,st
+Δc réduction de l'enrobage minimal dans le cas de protection supplémentaire, voir 4.4.1.2 (8).
+dur,add
+(3) Pour assurer à la fois une transmission sans risque des forces d'adhérence et un béton suffisamment
+compact, il convient que l'enrobage minimal ne soit pas inférieur à c donné dans le Tableau 4.2.
+min,b
+Tableau 4.2 : Enrobage minimal c requis vis-à-vis de l'adhérence
+min,b
+Exigences vis-à-vis de l’adhérence
+Disposition des armatures Enrobage minimal c *)
+min,b
+Armature individuelle Diamètre de la barre
+Paquet Diamètre équivalent (φ) (voir 8.9.1)
+n
+*) Si la dimension nominale du plus gros granulat est supérieure à 32 mm, il
+convient de majorer c de 5 mm.
+min,b
+NOTE En ce qui concerne l'enrobage des armatures de précontrainte pré-tendues et l'enrobage des gaines de
+précontrainte de section circulaire ou plates, pour armatures adhérentes, les valeurs de c à utiliser dans un pays donné
+min,b
+peuvent être fournies par son Annexe Nationale. Les valeurs recommandées pour les gaines de précontrainte par
+post-tension sont les suivantes :
+— gaines de section circulaire : diamètre
+— gaines plates : la plus petite dimension ou la moitié de la plus grande dimension, si celle-ci est supérieure
+Il n'y a pas d'exigence supérieure à 80 mm pour les gaines de section circulaires ou les gaines plates.
+Les valeurs recommandées pour les armatures de précontrainte pré-tendues sont les suivantes :
+(cid:129) 1,5 ×
+
+[TABLES FOUND: 1]
+
+  Table 1 (5 rows):
+    Exigences vis-à-vis de l’adhérence | 
+    Disposition des armatures | Enrobage minimal c *)
+min,b
+    Armature individuelle | Diamètre de la barre
+    Paquet | Diamètre équivalent (φ) (voir 8.9.1)
+n
+    *) Si la dimension nominale du plus gros granulat est supérieure à 32 mm, il
+convient de majorer c de 5 mm.
+min,b | 
+
+[WORD COUNT: 486]
+  x= 529.6  y=  34.2  text=Page47
+  x= 485.2  y=  46.2  text=EN
+  x= 501.8  y=  46.2  text=1992-1-1:2004
+  x=  70.7  y=  75.3  text=(2)P
+  x=  99.1  y=  75.3  text=La
+  x= 112.8  y=  75.3  text=valeur
+  x= 142.6  y=  75.3  text=à
+  x= 150.8  y=  75.3  text=utiliser
+  x= 182.3  y=  75.3  text=est
+  x= 198.3  y=  75.3  text=la
+  x= 208.6  y=  75.3  text=plus
+  x= 229.6  y=  75.3  text=grande
+  x= 263.3  y=  75.3  text=valeur
+  x= 293.1  y=  75.3  text=de
+  x= 306.8  y=  75.3  text=c
+  x= 327.2  y=  75.3  text=satisfaisant
+  x= 379.9  y=  75.3  text=aux
+  x= 398.6  y=  75.3  text=exigences
+  x= 446.2  y=  75.3  text=à
+  x= 454.3  y=  75.3  text=la
+  x= 464.8  y=  75.3  text=fois
+  x= 482.9  y=  75.3  text=en
+  x= 496.6  y=  75.3  text=ce
+  x= 509.8  y=  75.3  text=qui
+  x= 525.7  y=  75.3  text=concerne
+  x= 311.8  y=  79.4  text=min
+  x=  70.7  y=  87.3  text=l'adhérence
+  x= 124.9  y=  87.3  text=et
+  x= 135.9  y=  87.3  text=les
+  x= 151.6  y=  87.3  text=conditions
+
+============================================================
+PAGE 52 — Table 4.4N continued?
+============================================================
+
+[RAW TEXT (2355 chars)]
+Page48
+EN 1992-1-1:2004
+Tableau 4.3N : Classification structurale recommandée
+Classe structurale
+Classe d’exposition selon Tableau 4.1
+Critère
+XD3 / XS2 /
+X0 XC1 XC2 / XC3 XC4 XD1 XD2 / XS1
+XS3
+Durée d'utilisation majoration majoration majoration majoration majoration majoration majoration
+de projet de 100 ans de 2 classes de 2 classes de 2 classes de 2 classes de 2 classes de 2 classes de 2 classes
+≥ C30/37 ≥ C30/37 ≥ C35/45 ≥ C40/50 ≥ C40/50 ≥ C40/50 ≥ C45/55
+Classe de résistance 1) 2) minoration minoration minoration minoration minoration minoration minoration
+de 1 classe de 1 classe de 1 classe de 1 classe de 1 classe de 1 classe de 1 classe
+Élément assimilable
+à une dalle (position des
+minoration minoration minoration minoration minoration minoration minoration
+armatures non affectée
+de 1 classe de 1 classe de 1 classe de 1 classe de 1 classe de 1 classe de 1 classe
+par le processus
+de construction)
+Maîtrise particulière
+minoration minoration minoration minoration minoration minoration minoration
+de la qualité
+de 1 classe de 1 classe de 1 classe de 1 classe de 1 classe de 1 classe de 1 classe
+de production du béton
+Notes relatives au Tableau 4.3N
+1. On considère que la classe de résistance et le rapport e/c sont liés. Il est possible de considérer une composition
+particulière (type de ciment, rapport e/c, fines) afin d'obtenir une faible perméabilité.
+2. La limite peut être réduite d'une classe de résistance si l'air entraîné est supérieur à 4 %.
+Tableau 4.4N : Valeurs de l'enrobage minimal c requis vis-à-vis de la durabilité
+min,dur
+dans le cas des armatures de béton armé conformes à l'EN 10080
+Exigence environnementale pour c (mm)
+min,dur
+Classe Classe d’exposition selon Tableau 4.1
+Structurale X0 XC1 XC2 / XC3 XC4 XD1 / XS1 XD2 / XS2 XD3 / XS3
+S1 10 10 10 15 20 25 30
+S2 10 10 15 20 25 30 35
+S3 10 10 20 25 30 35 40
+S4 10 15 25 30 35 40 45
+S5 15 20 30 35 40 45 50
+S6 20 25 35 40 45 50 55
+Tableau 4.5N : Valeurs de l'enrobage minimal c requis vis-à-vis de la dura
+
+[TABLES FOUND: 3]
+
+  Table 1 (7 rows):
+    Classe structurale |  |  |  |  |  |  | 
+    Critère | Classe d’exposition selon Tableau 4.1 |  |  |  |  |  | 
+     | X0 | XC1 | XC2 / XC3 | XC4 | XD1 | XD2 / XS1 | XD3 / XS2 /
+XS3
+    Durée d'utilisation
+de projet de 100 ans | majoration
+de 2 classes | majoration
+de 2 classes | majoration
+de 2 classes | majoration
+de 2 classes | majoration
+de 2 classes | majoration
+de 2 classes | majoration
+de 2 classes
+    Classe de résistance 1) 2) | ≥ C30/37
+minoration
+de 1 classe | ≥ C30/37
+minoration
+de 1 classe | ≥ C35/45
+minoration
+de 1 classe | ≥ C40/50
+minoration
+de 1 classe | ≥ C40/50
+minoration
+de 1 classe | ≥ C40/50
+minoration
+de 1 classe | ≥ C45/55
+minoration
+de 1 classe
+    Élément assimilable
+à une dalle (position des
+armatures non affectée
+par le processus
+de construction) | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe
+    Maîtrise particulière
+de la qualité
+de production du béton | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe | minoration
+de 1 classe
+
+  Table 2 (9 rows):
+    Exigence environnementale pour c (mm)
+min,dur |  |  |  |  |  |  | 
+    Classe
+Structurale | Classe d’exposition selon Tableau 4.1 |  |  |  |  |  | 
+     | X0 | XC1 | XC2 / XC3 | XC4 | XD1 / XS1 | XD2 / XS2 | XD3 / XS3
+    S1 | 10 | 10 | 10 | 15 | 20 | 25 | 30
+    S2 | 10 | 10 | 15 | 20 | 25 | 30 | 35
+    S3 | 10 | 10 | 20 | 25 | 30 | 35 | 40
+    S4 | 10 | 15 | 25 | 30 | 35 | 40 | 45
+    S5 | 15 | 20 | 30 | 35 | 40 | 45 | 50
+    S6 | 20 | 25 | 35 | 40 | 45 | 50 | 55
+
+  Table 3 (9 rows):
+    Exigence environnementale pour c (mm)
+min,dur |  |  |  |  |  |  | 
+    Classe
+Structurale | Classe d’exposition selon Tableau 4.1 |  |  |  |  |  | 
+     | X0 | XC1 | XC2 / XC3 | XC4 | XD1 / XS1 | XD2 / XS2 | XD3 / XS3
+    S1 | 10 | 15 | 20 | 25 | 30 | 35 | 40
+    S2 | 10 | 15 | 25 | 30 | 35 | 40 | 45
+    S3 | 10 | 20 | 30 | 35 | 40 | 45 | 50
+    S4 | 10 | 25 | 35 | 40 | 45 | 50 | 55
+    S5 | 15 | 30 | 40 | 45 | 50 | 55 | 60
+    S6 | 20 | 35 | 45 | 50 | 55 | 60 | 65
+
+[WORD COUNT: 449]
+  x=  28.2  y=  34.2  text=Page48
+  x=  28.2  y=  46.2  text=EN
+  x=  44.9  y=  46.2  text=1992-1-1:2004
+  x= 146.0  y=  77.4  text=Tableau
+  x= 186.5  y=  77.4  text=4.3N
+  x= 210.4  y=  77.4  text=:
+  x= 216.5  y=  77.4  text=Classification
+  x= 284.4  y=  77.4  text=structurale
+  x= 338.8  y=  77.4  text=recommandée
+  x= 241.6  y=  99.6  text=Classe
+  x= 269.5  y=  99.6  text=structurale
+  x= 253.9  y= 117.6  text=Classe
+  x= 281.9  y= 117.6  text=d’exposition
+  x= 331.3  y= 117.6  text=selon
+  x= 354.4  y= 117.6  text=Tableau
+  x= 386.8  y= 117.6  text=4.1
+  x=  65.6  y= 131.6  text=Critère
+  x= 473.9  y= 135.6  text=XD3
+  x= 491.7  y= 135.6  text=/
+  x= 496.1  y= 135.6  text=XS2
+  x= 513.5  y= 135.6  text=/
+  x= 152.2  y= 140.6  text=X0
+  x= 206.1  y= 140.6  text=XC1
+  x= 251.0  y= 140.6  text=XC2
+  x= 268.8  y= 140.6  text=/
+  x= 273.2  y= 140.6  text=XC3
+  x= 318.2  y= 140.6  text=XC4
+  x= 374.2  y= 140.6  text=XD1
+  x= 419.3  y= 140.6  text=XD2
+  x= 437.1  y= 140.6  text=/

@@ -1,0 +1,37 @@
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# ChromaDB local database (local only — too large for git)
+structrag/data/chroma_db/
+
+# Raw documents (licensing restrictions)
+structrag/data/raw_standards/
+structrag/data/raw_textbooks/
+*.pdf
+
+# Large parsed/chunk data files (reproducible from the PDF via run_pipeline.py)
+structrag/data/parsed/
+structrag/data/chunks/
+
+# Logs and temp files
+*.log
+*.txt~
+eval_stdout.txt
+eval_stderr.txt
+eval2_stdout.txt
+eval2_stderr.txt
+extractor_out.txt
+extractor_err.txt
+inject_stdout.txt
+inject_stderr.txt
+probe_stdout.txt
+probe_stderr.txt
+run_ext_stdout.txt
+run_ext_stderr.txt
+inspect_stdout.txt
+inspect_stderr.txt

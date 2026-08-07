@@ -1,0 +1,44 @@
+{
+  "sources": [
+    {
+      "source_id": "ec2_2004_nf",
+      "title": "Eurocode 2 : Calcul des structures en béton — Partie 1-1 : Règles générales et règles pour les bâtiments",
+      "type": "standard",
+      "edition": "NF EN 1992-1-1:2004 (octobre 2005)",
+      "language": "fr",
+      "national_annex": "NF (France / AFNOR)",
+      "license_status": "institutional_access",
+      "acquisition_method": "ESPRIT library",
+      "file_path": "FA039724-NF EN 1992-1-1 (octobre 2005) Eurocode 2.pdf",
+      "total_pages": 211,
+      "pdf_type": "born_digital",
+      "ocr_required": false,
+      "heading_detection": "font_size_plus_bold",
+      "numbering_style": "numeric_dotted",
+      "has_real_tables": true,
+      "encoding_note": "French text, UTF-8 content but some spans may appear as Latin-1 — parser applies ftfy fix",
+      "parse_status": "pending",
+      "notes": "French AFNOR translation of EN 1992-1-1:2004. Producer: iText 1.4.1. Section headings at sz=12 bold, clauses at sz=11 bold, sub-clauses at sz=10 bold. Body paragraphs tagged (1)P, (2)P etc."
+    },
+    {
+      "source_id": "aci318_19",
+      "title": "Building Code Requirements for Structural Concrete",
+      "type": "standard",
+      "edition": "ACI 318-19",
+      "language": "en",
+      "national_annex": null,
+      "license_status": "pending_confirmation",
+      "acquisition_method": "TBD — ACI or ESPRIT library",
+      "file_path": null,
+      "total_pages": null,
+      "pdf_type": "unknown",
+      "ocr_required": null,
+      "heading_detection": "TBD",
+      "numbering_style": "numeric_dotted",
+      "has_real_tables": null,
+      "encoding_note": null,
+      "parse_status": "not_started",
+      "notes": "To be acquired. ACI 318 uses a similar numbered-clause structure to EC2 but section numbering starts at Chapter level (e.g. Chapter 26). Parser heuristics will differ slightly."
+    }
+  ]
+}
