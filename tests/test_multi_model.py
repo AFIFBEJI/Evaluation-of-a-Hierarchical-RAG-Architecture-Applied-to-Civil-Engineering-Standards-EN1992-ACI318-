@@ -39,7 +39,7 @@ TEST_QUESTIONS = [
 MODELS_TO_TEST = [
     ("openai/gpt-oss-120b",        "groq",   "Groq GPT-OSS 120B — 131K ctx"),
     ("llama-3.3-70b-versatile",    "groq",   "Groq Llama 3.3 70B — 131K ctx"),
-    ("gemini-2.5-flash",           "gemini", "Gemini 2.5 Flash — 1M ctx"),
+    ("gemini-3.6-flash",           "gemini", "Gemini 3.6 Flash — 1M ctx"),
     ("meta/llama-3.1-70b-instruct","nvidia", "NVIDIA Llama 3.1 70B — 128K ctx"),
     ("openai/gpt-oss-20b",         "groq",   "Groq GPT-OSS 20B — 131K ctx (fastest)"),
 ]

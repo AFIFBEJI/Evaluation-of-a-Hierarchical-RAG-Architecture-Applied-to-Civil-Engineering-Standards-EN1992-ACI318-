@@ -1,2 +1,0 @@
-SentenceTransformer OK — SentenceTransformer
-CrossEncoder OK — CrossEncoder

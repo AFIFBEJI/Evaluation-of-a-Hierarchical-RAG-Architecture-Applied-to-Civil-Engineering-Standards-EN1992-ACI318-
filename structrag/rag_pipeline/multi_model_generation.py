@@ -108,39 +108,60 @@ def _generate_gemini(
     max_tokens: int,
     temperature: float,
 ) -> GenerationResult:
-    try:
-        import google.generativeai as genai
-    except ImportError:
-        raise ImportError("pip install google-generativeai")
-
+    # Try new google.genai SDK first, fall back to deprecated google.generativeai
     api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
         raise EnvironmentError("GEMINI_API_KEY not set")
 
-    genai.configure(api_key=api_key)
-
     user_message, source_labels = build_prompt(question, chunks)
-
-    # Gemini uses a different prompt structure
     combined_prompt = f"{SYSTEM_PROMPT}\n\n{user_message}"
 
-    generation_config = genai.GenerationConfig(
-        max_output_tokens=max_tokens,
-        temperature=temperature,
-    )
-
-    gem_model = genai.GenerativeModel(
-        model_name=model,
-        generation_config=generation_config,
-    )
-
     try:
+        # New SDK: google-genai
+        from google import genai
+        from google.genai import types as genai_types
+
+        client = genai.Client(api_key=api_key)
+        config = genai_types.GenerateContentConfig(
+            max_output_tokens=max_tokens,
+            temperature=temperature,
+        )
+        response = client.models.generate_content(
+            model=model,
+            contents=combined_prompt,
+            config=config,
+        )
+        answer = response.text.strip()
+
+    except ImportError:
+        # Fallback: old google.generativeai SDK
+        try:
+            import google.generativeai as genai_old
+        except ImportError:
+            raise ImportError("pip install google-genai")
+
+        genai_old.configure(api_key=api_key)
+        generation_config = genai_old.GenerationConfig(
+            max_output_tokens=max_tokens,
+            temperature=temperature,
+        )
+        gem_model = genai_old.GenerativeModel(
+            model_name=model,
+            generation_config=generation_config,
+        )
         response = gem_model.generate_content(combined_prompt)
         answer = response.text.strip()
+
     except Exception as e:
         if "429" in str(e) or "quota" in str(e).lower():
             return GenerationResult(
                 answer="[Gemini quota reached — retry later or switch model]",
+                sources=source_labels, context_used=[c["text"] for c in chunks],
+                model=model, chunk_type="hierarchical",
+            )
+        if "404" in str(e) or "no longer available" in str(e).lower():
+            return GenerationResult(
+                answer=f"[Gemini model '{model}' not available — try gemini-3.6-flash or gemini-3.5-flash-lite]",
                 sources=source_labels, context_used=[c["text"] for c in chunks],
                 model=model, chunk_type="hierarchical",
             )
@@ -232,7 +253,8 @@ def _detect_provider(model: str) -> str:
 # Available models ranked for this project
 RANKED_MODELS = [
     # (model_id, provider, context_tokens, notes)
-    ("gemini-2.5-flash",               "gemini", 1_000_000, "Best context, free tier"),
+    ("gemini-3.6-flash",               "gemini", 1_000_000, "Best context, free tier, GA"),
+    ("gemini-3.5-flash-lite",          "gemini", 1_000_000, "Free tier, lighter model"),
     ("openai/gpt-oss-120b",            "groq",     131_072, "Default, 500 t/s, free tier"),
     ("llama-3.3-70b-versatile",        "groq",     131_072, "Strong open model, free tier"),
     ("meta/llama-3.1-70b-instruct",    "nvidia",   128_000, "NVIDIA trial credits"),

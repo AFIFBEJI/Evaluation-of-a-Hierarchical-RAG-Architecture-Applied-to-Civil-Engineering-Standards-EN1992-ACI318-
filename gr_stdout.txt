@@ -1,4 +1,0 @@
-[Reranker] Warning: reranking failed (Could not load cross-encoder 'cross-encoder/ms-marco-MiniLM-L-6-v2': huggingface-hub>=0.23.2,<1.0 is required for a normal functioning of this module, but found huggingface-hub==1.27.0.
-Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main
-Install with: pip install sentence-transformers), using original order
-Done -> tests/guardrail_reranker_result.txt

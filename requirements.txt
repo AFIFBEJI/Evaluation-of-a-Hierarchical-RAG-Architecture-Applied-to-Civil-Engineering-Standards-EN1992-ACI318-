@@ -23,8 +23,8 @@ rank-bm25==0.2.2
 # ── LLM backends ───────────────────────────────────────────────────────────
 # Groq  (set GROQ_API_KEY, default model: openai/gpt-oss-120b)
 groq==0.13.1
-# Gemini (set GEMINI_API_KEY, default model: gemini-2.5-flash)
-google-generativeai>=0.7.0
+# Gemini (set GEMINI_API_KEY, default model: gemini-3.6-flash)
+google-genai>=0.8.0           # new SDK (replaces deprecated google-generativeai)
 # NVIDIA build + OpenAI (set NVIDIA_API_KEY / OPENAI_API_KEY)
 openai>=1.0.0
 

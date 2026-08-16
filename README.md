@@ -208,30 +208,49 @@ No set of questions with verified clause-level ground-truth answers exists. This
 
 | Item | Status |
 |---|---|
-| EC2 PDF parsed into structured nodes | ✅ Done |
-| Critical numeric tables extracted | ✅ Done |
-| Hierarchical chunker | ✅ Done |
-| Flat baseline chunker | ✅ Done |
-| ChromaDB indexing with metadata | ✅ Done |
+| EC2 PDF parsed into structured nodes (2,132) | ✅ Done |
+| Critical numeric tables extracted (5 tables) | ✅ Done |
+| Hierarchical chunker (467 chunks) | ✅ Done |
+| Flat baseline chunker (315 chunks) | ✅ Done |
+| Parent-child chunking (313 parents, 1818 children) | ✅ Done |
+| ChromaDB indexing with full metadata | ✅ Done |
 | Hybrid BM25 + vector retrieval | ✅ Done |
+| Cross-encoder reranking (ms-marco-MiniLM-L-6-v2) | ✅ Done |
 | Groq RAG pipeline with domain classifier | ✅ Done |
-| OpenAI RAG pipeline | ✅ Done |
+| Gemini RAG pipeline (gemini-3.6-flash) | ✅ Done |
+| NVIDIA RAG pipeline | ✅ Done |
+| Multi-model comparison (5 models tested) | ✅ Done |
+| Hallucination guardrail (6/6 tests pass) | ✅ Done |
 | 14-question evaluation harness | ✅ Done |
-| Eval improvement: 3/14 → 7/14 | ✅ Done |
+| Eval improvement: 3/14 → 9/14 | ✅ Done |
+| RAGAS runner (8-question dataset, framework ready) | ✅ Done |
 | Source manifest + .gitignore + GitHub push | ✅ Done |
-| Parent-child (small-to-big) chunking | ❌ Not done |
-| Cross-encoder reranking | ❌ Not done |
-| Structured table query routing | ❌ Not done |
-| RAGAS evaluation metrics | ❌ Not done |
-| Hallucination clause-citation guardrail | ❌ Not done |
 | ACI 318 ingestion | ❌ Not done |
 | Textbook parser | ❌ Not done |
 | Cross-document linker | ❌ Not done |
-| QA benchmark (ground truth) | ❌ Not done |
+| QA benchmark (ground truth, 50+ questions) | ❌ Not done |
+| RAGAS scores (faithfulness, recall, precision) | ❌ Not done (needs datasets pkg fix) |
 
 ---
 
-## Tech stack
+## Model Rankings (tested on 3 EC2 questions)
+
+| Rank | Model | Provider | Context | Total time | Notes |
+|------|-------|----------|---------|-----------|-------|
+| 🥇 1 | `gemini-3.6-flash` | Gemini | 1M tokens | 17.4s | Fastest, free tier, largest context |
+| 🥈 2 | `llama-3.3-70b-versatile` | Groq | 131K | 29.7s | Strong open model, free tier |
+| 🥉 3 | `openai/gpt-oss-120b` | Groq | 131K | 63.3s | Good quality, free tier |
+| 4 | `openai/gpt-oss-20b` | Groq | 131K | 64.6s | Fastest Groq, weaker reasoning |
+| 5 | `meta/llama-3.1-70b-instruct` | NVIDIA | 128K | 89.0s | Trial credits needed |
+
+**Recommended:** `gemini-3.6-flash` for production (1M context, fastest, free).
+**Fallback:** `llama-3.3-70b-versatile` on Groq (free, no Google dependency).
+
+To switch model: set `GROQ_MODEL`, `GEMINI_MODEL`, or `NVIDIA_MODEL` in `.env`.
+
+---
+
+
 
 | Layer | Tool |
 |---|---|
