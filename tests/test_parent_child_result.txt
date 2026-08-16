@@ -1,0 +1,42 @@
+Loaded 2132 nodes
+
+Parent chunks: 308
+Child  chunks: 1759
+
+Parent token stats: min=31 avg=473 max=1739
+Child  token stats: min=20 avg=125 max=1731
+Child types: {'paragraph': 1326, 'note': 266, 'table': 167}
+
+Orphan children (no valid parent): 0
+  PASS — all children point to a valid parent
+
+Parents with no child_ids: 0 (should be 0)
+
+--- Spot check: clause 2.4.2.4 (partial safety factors) ---
+  Parent chunks for 2.4.2.4: 1
+  ec2_2004_nf_subclause_2.4.2.4_parent  tokens=518
+  preview: [Eurocode 2 > 2 BASES DE CALCUL > 2.4 Vérification par la méthode des coefficients partiels > 2.4.2 Valeurs de calcul > 2.4.2.4 Coefficients partiels relatifs aux matériaux]
+2.4.2.4  Coefficients partiels relatifs aux matériaux
+
+(1)  Il convient d'utiliser les coefficients partiels relatifs aux maté
+
+  Child chunks for 2.4.2.4: 9
+  ec2_2004_nf_paragraph_73_child  type=paragraph  tag=(1)  tokens=95
+  text: [Eurocode 2 > 2 BASES DE CALCUL > 2.4 Vérification par la méthode des coefficients partiels > 2.4.2 Valeurs de calcul > 2.4.2.4 Coefficients partiels 
+
+  ec2_2004_nf_note_19_child  type=note  tag=  tokens=63
+  text: [Eurocode 2 > 2 BASES DE CALCUL > 2.4 Vérification par la méthode des coefficients partiels > 2.4.2 Valeurs de calcul > 2.4.2.4 Coefficients partiels 
+
+  ec2_2004_nf_paragraph_74_child  type=paragraph  tag=  tokens=282
+  text: [Eurocode 2 > 2 BASES DE CALCUL > 2.4 Vérification par la méthode des coefficients partiels > 2.4.2 Valeurs de calcul > 2.4.2.4 Coefficients partiels 
+
+--- Spot check: Table 4.4N (cover values — should have row-level children) ---
+  Total table_row children: 0
+--- Test resolve_parents with simulated retrieval ---
+Saved child chunks  -> ec2_child_chunks.json
+Saved parent chunks -> ec2_parent_chunks.json
+
+resolve_parents(3 children) -> 1 unique parents
+  ec2_2004_nf_subclause_1.1.1_parent  clause=1.1.1  score=0.05  tokens=451
+
+All tests passed.

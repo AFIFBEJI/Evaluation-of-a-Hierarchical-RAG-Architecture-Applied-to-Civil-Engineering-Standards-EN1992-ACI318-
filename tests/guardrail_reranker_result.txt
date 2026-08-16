@@ -1,0 +1,52 @@
+=== Hallucination Guardrail Tests ===
+
+  [PASS] real clauses
+         cited=['4.4.1.1', '4.4.1.2']  valid=['4.4.1.1', '4.4.1.2']  hallucinated=[]
+         All 2 cited clause(s) verified in corpus.
+
+  [PASS] hallucinated clause
+         cited=['99.99.99']  valid=[]  hallucinated=['99.99.99']
+         WARNING: 1 hallucinated clause(s): 99.99.99
+
+  [PASS] real clause with table ref
+         cited=['2.1N', '2.4.2.4']  valid=['2.1N', '2.4.2.4']  hallucinated=[]
+         All 2 cited clause(s) verified in corpus.
+
+  [PASS] real subclauses
+         cited=['6.2.2', '6.2.3']  valid=['6.2.2', '6.2.3']  hallucinated=[]
+         All 2 cited clause(s) verified in corpus.
+
+  [PASS] no citations
+         cited=[]  valid=[]  hallucinated=[]
+         No clause citations found — no hallucinations possible.
+
+  [PASS] mixed real+fake
+         cited=['4.4.1.2', '7.9.4.12']  valid=['4.4.1.2']  hallucinated=['7.9.4.12']
+         WARNING: 1 hallucinated clause(s): 7.9.4.12
+
+Hallucination guard: 6/6 passed
+
+=== Reranker Tests ===
+
+Query: minimum concrete cover requirement exposure class XC2
+Candidates before reranking: 10
+Top-5 before reranking (original order):
+  [1] clause=1.1.1  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.1 Domaine d'application > 1.1.1 Domaine d'applic
+  [2] clause=1.1.2  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.1 Domaine d'application > 1.1.2 Domaine d'applic
+  [3] clause=1.1.2  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.1 Domaine d'application > 1.1.2 Domaine d'applic
+  [4] clause=1.2  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.2 Références normatives]
+1.2  Références normati
+  [5] clause=1.2.1  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.2 Références normatives > 1.2.1 Normes de référe
+
+Top-5 after reranking:
+  [1] clause=1.1.1  rerank_score=0.0000  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.1 Domaine d'application > 1.1.1 Domaine d'applic
+  [2] clause=1.1.2  rerank_score=0.0000  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.1 Domaine d'application > 1.1.2 Domaine d'applic
+  [3] clause=1.1.2  rerank_score=0.0000  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.1 Domaine d'application > 1.1.2 Domaine d'applic
+  [4] clause=1.2  rerank_score=0.0000  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.2 Références normatives]
+1.2  Références normati
+  [5] clause=1.2.1  rerank_score=0.0000  text=[Eurocode 2 > 1 GÉNÉRALITÉS > 1.2 Références normatives > 1.2.1 Normes de référe
+
+Order changed by reranker: False
+PASS: Reranker is working
+
+All tests done.

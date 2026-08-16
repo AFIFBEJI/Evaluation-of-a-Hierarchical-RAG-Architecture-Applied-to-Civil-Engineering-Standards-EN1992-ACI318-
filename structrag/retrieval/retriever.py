@@ -49,6 +49,7 @@ from structrag.retrieval.chroma_client import (
     get_collection,
     COLLECTION_HIERARCHICAL,
     COLLECTION_FLAT,
+    COLLECTION_CHILD,
 )
 
 # Default number of results to return
@@ -197,6 +198,46 @@ def retrieve_hierarchical(
         where = {"$and": filters}
 
     return _query_fixed(COLLECTION_HIERARCHICAL, query, n_results, where)
+
+
+def retrieve_child(
+    query: str,
+    n_results: int = DEFAULT_N_RESULTS,
+    source_id: Optional[str] = None,
+    clause_number: Optional[str] = None,
+    child_type: Optional[str] = None,
+) -> list[dict]:
+    """
+    Retrieve from the child collection (small, precise chunks).
+    Used with resolve_parents() to implement the small-to-big pattern.
+    """
+    filters = []
+    if source_id:
+        filters.append({"source_id": {"$eq": source_id}})
+    if clause_number:
+        filters.append({"clause_number": {"$eq": clause_number}})
+    if child_type:
+        filters.append({"child_type": {"$eq": child_type}})
+
+    where = None
+    if len(filters) == 1:
+        where = filters[0]
+    elif len(filters) > 1:
+        where = {"$and": filters}
+
+    results = _query_fixed(COLLECTION_CHILD, query, n_results, where)
+
+    # Promote parent_chunk_id to top level for easy access
+    for r in results:
+        r["parent_chunk_id"] = r["metadata"].get("parent_chunk_id", "")
+        r["child_type"]      = r["metadata"].get("child_type", "")
+        r["paragraph_tag"]   = r["metadata"].get("paragraph_tag", "")
+        r["clause_number"]   = r["metadata"].get("clause_number", "")
+        r["ancestor_path"]   = r["metadata"].get("ancestor_path", "")
+        r["level"]           = int(r["metadata"].get("level", -1))
+        r["page_number"]     = int(r["metadata"].get("page_number", 0))
+
+    return results
 
 
 def retrieve_flat(

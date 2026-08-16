@@ -1,33 +1,36 @@
 # StructRAG — Python dependencies
-# Pin exact versions to ensure reproducibility across machines.
-# Install with:  pip install -r requirements.txt
+# Install: pip install -r requirements.txt
 
 # ── PDF parsing ────────────────────────────────────────────────────────────
-pymupdf==1.28.0          # PyMuPDF: per-span font size, bold flags, image blocks
-pdfplumber==0.11.10      # Table extraction from real PDF tables (used in Phase 3)
+pymupdf==1.28.0
+pdfplumber==0.11.10
 
-# ── Data / utilities ───────────────────────────────────────────────────────
-# (stdlib only for Phases 1-2: dataclasses, json, re, pathlib — no extras needed)
+# ── Utilities ──────────────────────────────────────────────────────────────
+python-dotenv>=1.0.0
 
-# ── Vector store (Phase 5) ─────────────────────────────────────────────────
+# ── Vector store ───────────────────────────────────────────────────────────
 chromadb==0.6.3
 
-# ── Embeddings (Phase 5) ───────────────────────────────────────────────────
+# ── Embeddings + cross-encoder reranking ──────────────────────────────────
 sentence-transformers==3.0.1
+huggingface-hub==0.24.7
+transformers==4.44.2
+tokenizers==0.19.1
 
-# ── LLM integration — OpenAI (Phase 6+) ───────────────────────────────────
-openai==1.82.1
+# ── BM25 hybrid retrieval ──────────────────────────────────────────────────
+rank-bm25==0.2.2
 
-# ── LLM integration — Groq ────────────────────────────────────────────────
-# Set GROQ_API_KEY env var before use.
-# Default model: openai/gpt-oss-120b  (override with GROQ_MODEL env var)
+# ── LLM backends ───────────────────────────────────────────────────────────
+# Groq  (set GROQ_API_KEY, default model: openai/gpt-oss-120b)
 groq==0.13.1
+# Gemini (set GEMINI_API_KEY, default model: gemini-2.5-flash)
+google-generativeai>=0.7.0
+# NVIDIA build + OpenAI (set NVIDIA_API_KEY / OPENAI_API_KEY)
+openai>=1.0.0
 
-# ── Hybrid retrieval ───────────────────────────────────────────────────────
-rank-bm25==0.2.2          # BM25 index for keyword/symbolic query matching
-
-# ── Evaluation (Phase 8) ───────────────────────────────────────────────────
-ragas==0.2.15
+# ── Evaluation ─────────────────────────────────────────────────────────────
+ragas
+datasets
 
 # ── Notebook / reporting ───────────────────────────────────────────────────
 jupyter==1.1.1

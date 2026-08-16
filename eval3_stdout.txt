@@ -1,0 +1,13 @@
+======================================================================
+  StructRAG Evaluation v3
+  Model    : openai/gpt-oss-120b
+  Provider : auto
+  Retrieve : 20 candidates -> rerank -> top 5
+  Mode     : parent-child
+  Questions: 14
+======================================================================
+
+======================================================================
+  Q01. What's the minimum concrete cover requirement for reinforcement, and what does it depend on?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)

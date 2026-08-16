@@ -42,6 +42,7 @@ from structrag.retrieval.chroma_client import (
     get_collection,
     COLLECTION_HIERARCHICAL,
     COLLECTION_FLAT,
+    COLLECTION_CHILD,
 )
 
 BATCH_SIZE = 100
@@ -118,7 +119,27 @@ def _index_chunks(
 # Public API
 # ---------------------------------------------------------------------------
 
-def index_hierarchical(chunks_path: str) -> None:
+def _meta_child(chunk: dict) -> dict:
+    """Flatten child chunk metadata for ChromaDB."""
+    return {
+        "source_id":       chunk.get("source_id", ""),
+        "chunk_type":      "child",
+        "parent_chunk_id": chunk.get("parent_chunk_id", ""),
+        "clause_number":   chunk.get("clause_number", ""),
+        "level":           int(chunk.get("level", -1)),
+        "ancestor_path":   chunk.get("ancestor_path", ""),
+        "page_number":     int(chunk.get("page_number", 0)),
+        "token_count":     int(chunk.get("token_count", 0)),
+        "child_type":      chunk.get("child_type", ""),
+        "paragraph_tag":   chunk.get("paragraph_tag", ""),
+    }
+
+
+def index_child_chunks(chunks_path: str) -> None:
+    """Load child chunks JSON and upsert into ChromaDB ec2_child collection."""
+    with open(chunks_path, encoding="utf-8") as f:
+        chunks = json.load(f)
+    _index_chunks(chunks, COLLECTION_CHILD, _meta_child, "child")
     """Load hierarchical chunks JSON and upsert into ChromaDB."""
     with open(chunks_path, encoding="utf-8") as f:
         chunks = json.load(f)

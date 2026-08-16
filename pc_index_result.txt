@@ -1,0 +1,33 @@
+Loading nodes...
+Loaded 2132 nodes
+
+Building parent-child chunks from node tree...
+  node tree → 308 parents, 1759 children
+
+Adding table nodes as parent-child chunks...
+  after tables → 313 parents, 1818 children
+
+Parent tokens: min=31 avg=475 max=1739
+Child  tokens: min=20 avg=127 max=1731
+Child types  : {'paragraph': 1326, 'note': 266, 'table': 167, 'table_row': 59}
+
+Saved child  chunks → ec2_child_chunks.json
+Saved parent chunks → ec2_parent_chunks.json
+
+Clearing existing 'ec2_child' collection if present...
+Indexing 1818 child chunks into ChromaDB...
+Collection 'ec2_child' now has 1818 documents
+
+--- Spot check: Table 4.4N row children ---
+Table 4.4N row children: 8
+  ec2_2004_nf_table_4_4N_child_row0  tokens=186
+  text: [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Méthodes de vérification > 4.4.1 Enrobage > 4.4.1.2 Enrobage minimal > [Tableau 4.4N]]
+Tableau 4.4N : Valeurs de l'enroba
+  ec2_2004_nf_table_4_4N_child_row1  tokens=192
+  text: [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Méthodes de vérification > 4.4.1 Enrobage > 4.4.1.2 Enrobage minimal > [Tableau 4.4N]]
+Tableau 4.4N : Valeurs de l'enroba
+  ec2_2004_nf_table_4_4N_child_row2  tokens=181
+  text: [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Méthodes de vérification > 4.4.1 Enrobage > 4.4.1.2 Enrobage minimal > [Tableau 4.4N]]
+Tableau 4.4N : Valeurs de l'enroba
+
+Done.

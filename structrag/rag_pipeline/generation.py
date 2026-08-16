@@ -103,7 +103,11 @@ def _build_context_block(chunks: list[dict]) -> tuple[str, list[str]]:
     source_labels: list[str] = []
 
     for i, chunk in enumerate(chunks, 1):
-        if chunk.get("chunk_type") == "hierarchical" or chunk.get("metadata", {}).get("chunk_type") == "hierarchical":
+        chunk_type = (chunk.get("chunk_type") or
+                      chunk.get("metadata", {}).get("chunk_type", ""))
+        is_hierarchical = chunk_type in ("hierarchical", "parent", "child")
+
+        if is_hierarchical:
             clause = chunk.get("clause_number") or chunk.get("metadata", {}).get("clause_number", "")
             path   = chunk.get("ancestor_path") or chunk.get("metadata", {}).get("ancestor_path", "")
             header = f"[Context {i}] Clause {clause} — {path}" if clause else f"[Context {i}] {path}"
@@ -112,7 +116,7 @@ def _build_context_block(chunks: list[dict]) -> tuple[str, list[str]]:
         else:
             start = chunk.get("start_page", "?")
             end   = chunk.get("end_page", "?")
-            header = f"[Context {i}] Pages {start}–{end}"
+            header = f"[Context {i}] Pages {start}-{end}"
             source_labels.append(f"pp.{start}-{end}")
 
         context_parts.append(f"{header}\n{chunk['text']}")

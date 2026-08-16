@@ -45,6 +45,7 @@ CHROMA_DB_PATH = str(BASE / "structrag" / "data" / "chroma_db")
 # ---------------------------------------------------------------------------
 COLLECTION_HIERARCHICAL = "ec2_hierarchical"
 COLLECTION_FLAT         = "ec2_flat"
+COLLECTION_CHILD        = "ec2_child"       # parent-child: child chunks for retrieval
 
 # ---------------------------------------------------------------------------
 # Embedding model

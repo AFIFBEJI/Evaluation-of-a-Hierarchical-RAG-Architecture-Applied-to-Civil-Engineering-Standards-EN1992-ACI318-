@@ -1,0 +1,533 @@
+======================================================================
+  StructRAG Evaluation v3
+  Model    : openai/gpt-oss-120b
+  Provider : auto
+  Retrieve : 20 candidates -> rerank -> top 5
+  Mode     : parent-child
+  Questions: 14
+======================================================================
+
+======================================================================
+  Q01. What's the minimum concrete cover requirement for reinforcement, and what does it depend on?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=27.88s  rerank=12.77s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-10.1328  clause=12.9.3
+       Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT A
+       [Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT ARMÉ > 12.9 Dispositions constructives relatives aux éléments et règles particulières > 12...
+  [2] rerank=-10.5402  clause=4.1
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Gé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Généralités] (4)  La protection du ferraillage contre la corrosion dépend de la compacité, ...
+  [3] rerank=-10.6814  clause=8.7.5.1
+       Eurocode 2 > 8 DISPOSITIONS CONSTRUCTIVES RELATIVES AUX ARMA
+       [Eurocode 2 > 8 DISPOSITIONS CONSTRUCTIVES RELATIVES AUX ARMATURES DE BÉTON ARMÉ ET DE PRÉCONTRAINTE — GÉNÉRALITÉS > 8.7 Recouvrements et coupleurs > ...
+  [4] rerank=-10.8082  clause=9.5.3
+       Eurocode 2 > 9 DISPOSITIONS CONSTRUCTIVES RELATIVES AUX ÉLÉM
+       [Eurocode 2 > 9 DISPOSITIONS CONSTRUCTIVES RELATIVES AUX ÉLÉMENTS ET RÈGLES PARTICULIÈRES > 9.5 Poteaux > 9.5.3 Armatures transversales] 9.5.3  Armatu...
+  [5] rerank=-10.8895  clause=5.10.2.2
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et struct
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et structures précontraints > 5.10.2 Force de précontrainte durant la mise en tension > 5.10.2.2 L...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 2.3s
+  Sources cited : ['12.9.3', '4.1', '8.7.5.1', '9.5.3', '5.10.2.2']
+
+  MODEL ANSWER:
+  The code specifies that the **minimum concrete cover** for reinforcement shall be taken as the **smallest of the following three distances**:
+  
+  1. **20 × the minimum diameter of the longitudinal bars**,  
+  2. **the smallest overall dimension of the column**, and  
+  3. **400 mm**.  
+  
+  (Per Eurocode 2, Clause 9.5.3 NOTE – “La valeur recommandée est la plus petite des trois distances suivantes : 20 fois le diamètre minimal des barres longitudinales, la plus petite dimension du poteau, 400 mm.”)
+
+  HALLUCINATION CHECK: All 1 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q02. What partial safety factor should I use for concrete under persistent and transient design situations?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.39s  rerank=13.39s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-10.3840  clause=4.1
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Gé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Généralités] 4.1  Généralités  (1)P  Une structure durable doit satisfaire aux exigences d'...
+  [2] rerank=-10.3840  clause=4.1
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Gé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Généralités] 4.1  Généralités  (1)P  Une structure durable doit satisfaire aux exigences d'...
+  [3] rerank=-10.5792  clause=5.9
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.9 Instabilité latéral
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.9 Instabilité latérale des poutres élancées] 5.9  Instabilité latérale des poutres élancées  (1)P  L'instabili...
+  [4] rerank=-10.6879  clause=5.2
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.2 Imperfections géomé
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.2 Imperfections géométriques] (2)P  Les imperfections doivent être prises en compte aux états-limites ultimes,...
+  [5] rerank=-10.9015  clause=2.4.2.4
+       Eurocode 2 > 2 BASES DE CALCUL > 2.4 Vérification par la mét
+       [Eurocode 2 > 2 BASES DE CALCUL > 2.4 Vérification par la méthode des coefficients partiels > 2.4.2 Valeurs de calcul > 2.4.2.4 Coefficients partiels ...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 1.7s
+  Sources cited : ['4.1', '4.1', '5.9', '5.2', '2.4.2.4']
+
+  MODEL ANSWER:
+  The partial safety factor for concrete ( γ c ) is given in Eurocode 2 Clause 2.4.2.4 (2.4.2.4 Coefficients partiels relatifs aux matériaux). For **persistent (durable) design situations** the factor is **γ c = 1.5**, and for **transient design situations** the factor is **γ c = 1.15** (Table 2.1N, Clause 2.4.2.4).
+
+  HALLUCINATION CHECK: All 2 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q03. What partial safety factor applies to reinforcing steel under persistent and transient design situations?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.28s  rerank=15.04s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-9.6768  clause=4.1
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Gé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Généralités] 4.1  Généralités  (1)P  Une structure durable doit satisfaire aux exigences d'...
+  [2] rerank=-9.6768  clause=4.1
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Gé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Généralités] 4.1  Généralités  (1)P  Une structure durable doit satisfaire aux exigences d'...
+  [3] rerank=-10.0153  clause=4.1
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Gé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Généralités] (5)  Lorsque l'inspection et le remplacement des fixations métalliques sont po...
+  [4] rerank=-10.7162  clause=5.9
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.9 Instabilité latéral
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.9 Instabilité latérale des poutres élancées] 5.9  Instabilité latérale des poutres élancées  (1)P  L'instabili...
+  [5] rerank=-10.7594  clause=3.3.1
+       Eurocode 2 > 3 MATÉRIAUX > 3.3 Acier de précontrainte > 3.3.
+       [Eurocode 2 > 3 MATÉRIAUX > 3.3 Acier de précontrainte > 3.3.1 Généralités] 3.3.1  Généralités  (1)P  Le présent article s'applique aux fils, barres e...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 2.1s
+  Sources cited : ['4.1', '4.1', '4.1', '5.9', '3.3.1']
+
+  MODEL ANSWER:
+  The provided context does not contain enough information to answer this question. Please consult the relevant clause on partial safety factors for reinforcement (e.g., Eurocode 2 Clause 6.2.2) directly.
+
+  HALLUCINATION CHECK: All 1 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q04. What's the maximum water-cement ratio for exposure class XC1?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.71s  rerank=9.91s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-6.9213  clause=7.3.2
+       Eurocode 2 > 7 ÉTATS-LIMITES DE SERVICE > 7.3 Maîtrise de la
+       [Eurocode 2 > 7 ÉTATS-LIMITES DE SERVICE > 7.3 Maîtrise de la fissuration > 7.3.2 Sections minimales d'armatures] Pour les classes d'exposition X0 et ...
+  [2] rerank=-7.7418  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       Tableau 4.4N : Valeurs de l'enrobage minimal c_min,dur (mm) requis vis-à-vis de la durabilité pour les armatures de béton armé  | Exigence environneme...
+  [3] rerank=-8.5988  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       Tableau 4.3N : Classification structurale recommandée  | Classe structurale |  |  |  |  |  |  |  | |---|---|---|---|---|---|---|---| | Critère | Class...
+  [4] rerank=-8.5988  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       Tableau 4.3N : Classification structurale recommandée  | Classe structurale |  |  |  |  |  |  |  | |---|---|---|---|---|---|---|---| | Critère | Class...
+  [5] rerank=-9.1038  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       Tableau 4.1 : Classes d'exposition en fonction des conditions d'environnement, conformément à l'EN 206-1  | Désignation de la classe | Description de ...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 1.6s
+  Sources cited : ['7.3.2', '4.4.1.2', '4.4.1.2', '4.4.1.2', '4.2']
+
+  MODEL ANSWER:
+  The provided context does not contain enough information to answer this question. Please consult the Eurocode 2 clauses that prescribe the maximum water‑cement ratio for the various exposure classes (e.g., the clause on durability requirements and mix design) directly.
+
+  HALLUCINATION CHECK: No clause citations found — no hallucinations possible.
+
+
+======================================================================
+  Q05. What's the minimum concrete strength class required for exposure class XD3?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.28s  rerank=11.05s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-6.3216  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       Tableau 4.3N : Classification structurale recommandée  | Classe structurale |  |  |  |  |  |  |  | |---|---|---|---|---|---|---|---| | Critère | Class...
+  [2] rerank=-6.3216  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       Tableau 4.3N : Classification structurale recommandée  | Classe structurale |  |  |  |  |  |  |  | |---|---|---|---|---|---|---|---| | Critère | Class...
+  [3] rerank=-7.8683  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       Tableau 4.1 : Classes d'exposition en fonction des conditions d'environnement, conformément à l'EN 206-1  | Désignation de la classe | Description de ...
+  [4] rerank=-8.1111  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       Tableau 4.4N : Valeurs de l'enrobage minimal c_min,dur (mm) requis vis-à-vis de la durabilité pour les armatures de béton armé  | Exigence environneme...
+  [5] rerank=-8.9111  clause=12.9.3
+       Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT A
+       [Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT ARMÉ > 12.9 Dispositions constructives relatives aux éléments et règles particulières > 12...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 13.9s
+  Sources cited : ['4.4.1.2', '4.4.1.2', '4.2', '4.4.1.2', '12.9.3']
+
+  MODEL ANSWER:
+  The minimum concrete strength class specified for exposure class XD3 is **C45/55** (with a further reduction of one class for the structural class, as indicated in the table).  
+  
+  *Source: Eurocode 2, Clause 4.4.1.2 – Table 4.3N, “Classe de résistance … XD3 … ≥ C45/55 minoration de 1 classe.”*
+
+  HALLUCINATION CHECK: All 2 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q06. What ultimate concrete compressive strain is assumed in the parabola-rectangle stress-strain model?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.23s  rerank=10.56s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-9.5904  clause=5.10.2.2
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et struct
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et structures précontraints > 5.10.2 Force de précontrainte durant la mise en tension > 5.10.2.2 L...
+  [2] rerank=-9.7081  clause=5.3.2.1
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.3 Modélisation de la 
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.3 Modélisation de la structure > 5.3.2 Données géométriques > 5.3.2.1 Largeur participante des tables de compr...
+  [3] rerank=-9.9230  clause=5.3.1
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.3 Modélisation de la 
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.3 Modélisation de la structure > 5.3.1 Modèles structuraux pour l'analyse globale] 5.3.1  Modèles structuraux ...
+  [4] rerank=-9.9287  clause=5.3.2.1
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.3 Modélisation de la 
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.3 Modélisation de la structure > 5.3.2 Données géométriques > 5.3.2.1 Largeur participante des tables de compr...
+  [5] rerank=-10.0696  clause=3.1.7
+       Eurocode 2 > 3 MATÉRIAUX > 3.1 Béton > 3.1.7 Relations contr
+       [Eurocode 2 > 3 MATÉRIAUX > 3.1 Béton > 3.1.7 Relations contrainte-déformation pour le calcul des sections] 3.1.7  Relations contrainte-déformation po...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 8.9s
+  Sources cited : ['5.10.2.2', '5.3.2.1', '5.3.1', '5.3.2.1', '3.1.7']
+
+  MODEL ANSWER:
+  The provided context does not contain enough information to answer this question. Please consult **Eurocode 2 Clause 3.1.7** (Relations contrainte‑déformation pour le calcul des sections) and the referenced **Table 3.1** for the value of the ultimate concrete compressive strain assumed in the parabola‑rectangle stress‑strain model.
+
+  HALLUCINATION CHECK: All 2 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q07. What are exposure classes, and what categories exist (carbonation, chloride, freeze/thaw, etc.)?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.39s  rerank=7.18s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-6.0525  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       Tableau 4.1 : Classes d'exposition en fonction des conditions d'environnement, conformément à l'EN 206-1  | Désignation de la classe | Description de ...
+  [2] rerank=-6.0525  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       Tableau 4.1 : Classes d'exposition en fonction des conditions d'environnement, conformément à l'EN 206-1  | Désignation de la classe | Description de ...
+  [3] rerank=-6.5639  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Conditions d'environnement > [Tableau 4.1]] Tableau 4.1 : Classes d'exposition en fonction ...
+  [4] rerank=-6.7648  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Conditions d'environnement > [Tableau 4.1]] Tableau 4.1 : Classes d'exposition en fonction ...
+  [5] rerank=-6.9467  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Conditions d'environnement > [Tableau 4.1]] Tableau 4.1 : Classes d'exposition en fonction ...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 14.8s
+  Sources cited : ['4.2', '4.2', '4.2', '4.2', '4.2']
+
+  MODEL ANSWER:
+  **Exposure classes** are the classifications defined in **Eurocode 2 Clause 4.2** (Table 4.1) that relate the durability requirements of reinforced concrete to the *environmental conditions* to which the structure will be exposed, in accordance with EN 206‑1.  
+  
+  The categories (exposure mechanisms) and their corresponding classes are:
+  
+  | Exposure mechanism (category) | Eurocode 2 Clause 4.2 – Table 4.1 classes |
+  |-------------------------------|-------------------------------------------|
+  | **No risk of corrosion or attack** | Class 1 (no risk) and **X0** (very dry, non‑exposed concrete) |
+  | **Carbonation‑induced corrosion** | **XC1**, **XC2**, **XC3**, **XC4** (per EC2 Clause 4.2) |
+  | **Chloride‑induced corrosion (from air or water)** | **XD1**, **XD2**, **XD3** (per EC2 Clause 4.2) |
+  | **Chloride‑induced corrosion from seawater** | **XS1**, **XS2**, **XS3** (per EC2 Clause 4.2) |
+  | **Freeze‑thaw attack** | **XF1**, **XF2**, **XF3**, **XF4** (per EC2 Clause 4.2) |
+  | **Chemical attack** | **XA1**, **XA2**, **XA3** (per EC2 Clause 4.2) |
+  
+  Thus, the exposure‑class system groups environments into the above six broad categories (plus the “no‑risk” and “very dry” classes) to guide concrete cover, material selection, and durability design.
+
+  HALLUCINATION CHECK: All 2 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q08. What's the difference between characteristic and design values of material strength?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.22s  rerank=10.95s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-10.0461  clause=5.8.7.2
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.8 Analyses des effets
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.8 Analyses des effets du second ordre en présence d'une charge axiale > 5.8.7 Méthode basée sur une rigidité n...
+  [2] rerank=-10.0666  clause=5.8.8.3
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.8 Analyses des effets
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.8 Analyses des effets du second ordre en présence d'une charge axiale > 5.8.8 Méthode basée sur une courbure n...
+  [3] rerank=-10.4169  clause=10.5.1
+       Eurocode 2 > 10 RÈGLES ADDITIONNELLES POUR LES ÉLÉMENTS ET L
+       [Eurocode 2 > 10 RÈGLES ADDITIONNELLES POUR LES ÉLÉMENTS ET LES STRUCTURES PRÉFABRIQUÉS EN BÉTON > 10.5 Analyse structurale > 10.5.1 Généralités] 10.5...
+  [4] rerank=-10.5693  clause=5.8.7.2
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.8 Analyses des effets
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.8 Analyses des effets du second ordre en présence d'une charge axiale > 5.8.7 Méthode basée sur une rigidité n...
+  [5] rerank=-10.5716  clause=12.9.3
+       Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT A
+       [Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT ARMÉ > 12.9 Dispositions constructives relatives aux éléments et règles particulières > 12...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 21.8s
+  Sources cited : ['5.8.7.2', '5.8.8.3', '10.5.1', '5.8.7.2', '12.9.3']
+
+  MODEL ANSWER:
+  The provided context does not contain enough information to answer this question. Please consult the sections of Eurocode 2 that define characteristic and design values of material strength (e.g., the clauses on material properties such as 5.8.6 – material elastic moduli and related definitions) directly.
+
+  HALLUCINATION CHECK: No clause citations found — no hallucinations possible.
+
+
+======================================================================
+  Q09. What is structural classification, and how does it relate to concrete cover requirements?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.22s  rerank=9.94s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-6.6592  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       Tableau 4.3N : Classification structurale recommandée  | Classe structurale |  |  |  |  |  |  |  | |---|---|---|---|---|---|---|---| | Critère | Class...
+  [2] rerank=-6.6592  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       Tableau 4.3N : Classification structurale recommandée  | Classe structurale |  |  |  |  |  |  |  | |---|---|---|---|---|---|---|---| | Critère | Class...
+  [3] rerank=-7.4373  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Méthodes de vérification > 4.4.1 Enrobage > 4.4.1.2 Enrobage minimal > [Tableau 4.3N]] Tabl...
+  [4] rerank=-7.9174  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Méthodes de vérification > 4.4.1 Enrobage > 4.4.1.2 Enrobage minimal > [Tableau 4.3N]] Tabl...
+  [5] rerank=-8.0023  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Méthodes de vérification > 4.4.1 Enrobage > 4.4.1.2 Enrobage minimal > [Tableau 4.3N]] Tabl...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 7.8s
+  Sources cited : ['4.4.1.2', '4.4.1.2', '4.4.1.2', '4.4.1.2', '4.4.1.2']
+
+  MODEL ANSWER:
+  **Structural classification** – In Eurocode 2 the “structural classification” is the recommended class of a concrete element that is derived from a set of durability‑related criteria. Clause 4.4.1.2 presents this in Table 4.3N, where the classification is adjusted according to:
+  
+  * the exposure class (X0, XC1, XC2/ XC3, XC4, XD1, XD2/ XS1, XD3/ XS2/ XS3) [Clause 4.4.1.2, Table 4.3N];
+  * a design service life of 100 years, which adds **two classes** [Clause 4.4.1.2, Table 4.3N];
+  * the concrete strength class (e.g., ≥ C30/37, ≥ C35/45, ≥ C40/50, ≥ C45/55), which **reduces the class by one** [Clause 4.4.1.2, Table 4.3N];
+  * whether the element can be regarded as a slab (position of reinforcement not affected by construction), which also **reduces the class by one** [Clause 4.4.1.2, Table 4.3N];
+  * special control of concrete production quality, again **reducing the class by one** [Clause 4.4.1.2, Table 4.3N].
+  
+  **Relation to concrete cover requirements** – The minimal concrete cover for reinforcement is prescribed in Eurocode 2 based on the **structural classification** obtained from the above criteria. Thus, once the element’s structural class is determined (after applying the indicated majorations and minorations), the corresponding cover values are taken from the cover tables that are linked to that class. The context therefore shows that the classification directly drives the selection of the required concrete cover. [Clause 4.4.1.2, Table 4.3N].
+
+  HALLUCINATION CHECK: All 2 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q10. For a beam in exposure class XC2, what cover is required, and what minimum concrete strength class typically goes with that exposure class?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.41s  rerank=8.32s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-8.0737  clause=4.4.1.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       Tableau 4.3N : Classification structurale recommandée  | Classe structurale |  |  |  |  |  |  |  | |---|---|---|---|---|---|---|---| | Critère | Class...
+  [2] rerank=-8.6122  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       Tableau 4.1 : Classes d'exposition en fonction des conditions d'environnement, conformément à l'EN 206-1  | Désignation de la classe | Description de ...
+  [3] rerank=-8.6122  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       Tableau 4.1 : Classes d'exposition en fonction des conditions d'environnement, conformément à l'EN 206-1  | Désignation de la classe | Description de ...
+  [4] rerank=-8.6465  clause=4.2
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Co
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.2 Conditions d'environnement > [Tableau 4.1]] Tableau 4.1 : Classes d'exposition en fonction ...
+  [5] rerank=-8.7324  clause=7.3.2
+       Eurocode 2 > 7 ÉTATS-LIMITES DE SERVICE > 7.3 Maîtrise de la
+       [Eurocode 2 > 7 ÉTATS-LIMITES DE SERVICE > 7.3 Maîtrise de la fissuration > 7.3.2 Sections minimales d'armatures] Pour les classes d'exposition X0 et ...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 17.3s
+  Sources cited : ['4.4.1.2', '4.2', '4.2', '4.2', '7.3.2']
+
+  MODEL ANSWER:
+  - **Minimum concrete strength class** – For exposure class **XC2** the recommended minimum concrete characteristic strength is **C35/45** (with a reduction of one class), as shown in Table 4.3N of **Eurocode 2, Clause 4.4.1.2** [Context 1].
+  
+  - **Required concrete cover** – The specific minimum cover distance for a beam in exposure class XC2 is not given in the excerpts provided. The cover requirements are set out in **Eurocode 2, Clause 4.4.1.2** (Enrobage minimal), but the exact values are not included in the supplied passages.  
+  
+  **Therefore, the concrete strength requirement can be stated (C35/45 per Clause 4.4.1.2, Table 4.3N), but the cover dimension must be obtained by consulting the full text of Clause 4.4.1.2 directly.**
+
+  HALLUCINATION CHECK: All 2 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q11. How do I calculate nominal cover from minimum cover, and what allowance should I add for deviation?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.21s  rerank=10.25s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-9.9524  clause=4.4.1.3
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Méthodes de vérification > 4.4.1 Enrobage > 4.4.1.3 Prise en compte des tolérances d'exécut...
+  [2] rerank=-10.3621  clause=4.4.1.1
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Méthodes de vérification > 4.4.1 Enrobage > 4.4.1.1 Généralités] (2)P  L'enrobage nominal d...
+  [3] rerank=-10.5179  clause=8.6
+       Eurocode 2 > 8 DISPOSITIONS CONSTRUCTIVES RELATIVES AUX ARMA
+       [Eurocode 2 > 8 DISPOSITIONS CONSTRUCTIVES RELATIVES AUX ARMATURES DE BÉTON ARMÉ ET DE PRÉCONTRAINTE — GÉNÉRALITÉS > 8.6 Ancrage au moyen de barres so...
+  [4] rerank=-10.5738  clause=9.5.3
+       Eurocode 2 > 9 DISPOSITIONS CONSTRUCTIVES RELATIVES AUX ÉLÉM
+       [Eurocode 2 > 9 DISPOSITIONS CONSTRUCTIVES RELATIVES AUX ÉLÉMENTS ET RÈGLES PARTICULIÈRES > 9.5 Poteaux > 9.5.3 Armatures transversales] 9.5.3  Armatu...
+  [5] rerank=-10.7108  clause=4.4.1.1
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Mé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.4 Méthodes de vérification > 4.4.1 Enrobage > 4.4.1.1 Généralités] 4.4.1.1  Généralités  (1)P...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 12.7s
+  Sources cited : ['4.4.1.3', '4.4.1.1', '8.6', '9.5.3', '4.4.1.1']
+
+  MODEL ANSWER:
+  **Calculation**
+  
+  The nominal cover is obtained by adding a margin for execution tolerances to the minimum (required) cover:
+  
+  \[
+  \text{Nominal cover } (c_{\text{nom}})= c_{\text{min}} \;+\; \Delta c
+  \]
+  
+  where  
+  
+  * \(c_{\text{min}}\) = minimum cover prescribed for durability (clause 4.4.1.2, referenced in 4.4.1.1)  
+  * \(\Delta c\) = absolute value of the adopted execution deviation (tolerance) (clause 4.4.1.3).
+  
+  **Allowance for deviation**
+  
+  Clause 4.4.1.3 states that the minimum cover must be **increased by the absolute value of the adopted execution deviation** to obtain the nominal cover. The recommended default value for the deviation is **10 mm** (unless a national annex provides another value).  
+  
+  The clause also allows a reduction of this tolerance in special situations:
+  
+  * If a quality‑assured production system with precise measurement is used, the tolerance may be reduced to **5 mm** (clause 4.4.1.3, note).  
+  * If very precise measuring equipment and rejection of non‑conforming elements (e.g., prefabricated elements) are guaranteed, the tolerance may be reduced to **0 mm** (clause 4.4.1.3, note).
+  
+  **References**
+  
+  * Definition of nominal cover = minimum cover + tolerance: EC2 clause 4.4.1.1 (2) and (5) (Context 2 & 5).  
+  * Requirement to increase the minimum cover by the absolute value of the adopted deviation: EC2 clause 4.4.1.3 (1) (Context 1).  
+  * Recommended default deviation = 10 mm and possible reductions to 5 mm or 0 mm: EC2 clause 4.4.1.3 (note) (Context 1).
+
+  HALLUCINATION CHECK: All 3 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q12. What's the formula for wind load on a tall structure?
+======================================================================
+  RETRIEVAL FIRED   : NO  (out-of-scope)
+  MODEL ANSWER:
+  This question is out of scope for this assistant.
+
+
+======================================================================
+  Q13. What behavior factor should I use for seismic design?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.44s  rerank=11.78s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-10.7511  clause=5.10.2.2
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et struct
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et structures précontraints > 5.10.2 Force de précontrainte durant la mise en tension > 5.10.2.2 L...
+  [2] rerank=-10.7725  clause=5.3.2.1
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.3 Modélisation de la 
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.3 Modélisation de la structure > 5.3.2 Données géométriques > 5.3.2.1 Largeur participante des tables de compr...
+  [3] rerank=-10.8085  clause=10.5.1
+       Eurocode 2 > 10 RÈGLES ADDITIONNELLES POUR LES ÉLÉMENTS ET L
+       [Eurocode 2 > 10 RÈGLES ADDITIONNELLES POUR LES ÉLÉMENTS ET LES STRUCTURES PRÉFABRIQUÉS EN BÉTON > 10.5 Analyse structurale > 10.5.1 Généralités] 10.5...
+  [4] rerank=-10.8085  clause=10.5.1
+       Eurocode 2 > 10 RÈGLES ADDITIONNELLES POUR LES ÉLÉMENTS ET L
+       [Eurocode 2 > 10 RÈGLES ADDITIONNELLES POUR LES ÉLÉMENTS ET LES STRUCTURES PRÉFABRIQUÉS EN BÉTON > 10.5 Analyse structurale > 10.5.1 Généralités] 10.5...
+  [5] rerank=-10.8546  clause=12.9.3
+       Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT A
+       [Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT ARMÉ > 12.9 Dispositions constructives relatives aux éléments et règles particulières > 12...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 11.8s
+  Sources cited : ['5.10.2.2', '5.3.2.1', '10.5.1', '10.5.1', '12.9.3']
+
+  MODEL ANSWER:
+  The provided context does not contain enough information to answer this question. Please consult **EN 1998‑1 (Eurocode 8), Clause 4.1.2 – Behaviour factor for seismic design** directly.
+
+  HALLUCINATION CHECK: All 1 cited clause(s) verified in corpus.
+
+
+======================================================================
+  Q14. What's the required cover for reinforcement in a nuclear containment structure?
+======================================================================
+  RETRIEVAL FIRED   : YES  (keyword=YES)
+  RETRIEVAL STATUS  : OK  (5 after rerank)
+  Timings           : retrieve=0.30s  rerank=11.68s
+
+  RETRIEVED CHUNKS (5):
+  [1] rerank=-10.6341  clause=5.10.1
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et struct
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et structures précontraints > 5.10.1 Généralités] 5.10.1  Généralités  (1)P  La précontrainte cons...
+  [2] rerank=-10.6725  clause=5.10.2.2
+       Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et struct
+       [Eurocode 2 > 5 ANALYSE STRUCTURALE > 5.10 Éléments et structures précontraints > 5.10.2 Force de précontrainte durant la mise en tension > 5.10.2.2 L...
+  [3] rerank=-10.7116  clause=12.9.3
+       Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT A
+       [Eurocode 2 > 12 STRUCTURES EN BÉTON NON ARMÉ OU FAIBLEMENT ARMÉ > 12.9 Dispositions constructives relatives aux éléments et règles particulières > 12...
+  [4] rerank=-10.7312  clause=4.1
+       Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Gé
+       [Eurocode 2 > 4 DURABILITÉ ET ENROBAGE DES ARMATURES > 4.1 Généralités] 4.1  Généralités  (1)P  Une structure durable doit satisfaire aux exigences d'...
+  [5] rerank=-10.8419  clause=10.5.1
+       Eurocode 2 > 10 RÈGLES ADDITIONNELLES POUR LES ÉLÉMENTS ET L
+       [Eurocode 2 > 10 RÈGLES ADDITIONNELLES POUR LES ÉLÉMENTS ET LES STRUCTURES PRÉFABRIQUÉS EN BÉTON > 10.5 Analyse structurale > 10.5.1 Généralités] 10.5...
+
+----------------------------------------------------------------------
+  Calling openai/gpt-oss-120b ...
+  Response time : 13.8s
+  Sources cited : ['5.10.1', '5.10.2.2', '12.9.3', '4.1', '10.5.1']
+
+  MODEL ANSWER:
+  The provided context does not contain enough information to answer this question. Please consult the relevant durability and cover provisions (e.g., Eurocode 2 clause 4.1 and the detailed cover requirements in clause 4.4, together with any applicable National Annex) directly.
+
+  HALLUCINATION CHECK: All 2 cited clause(s) verified in corpus.
+
+======================================================================
+  Evaluation complete. 14 questions processed.
+======================================================================
