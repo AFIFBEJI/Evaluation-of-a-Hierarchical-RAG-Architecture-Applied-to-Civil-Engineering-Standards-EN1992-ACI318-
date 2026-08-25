@@ -68,12 +68,22 @@ def _build_bm25_index():
 
     # Tokenise: lowercase, split on whitespace + punctuation
     import re
-    def tokenise(text: str) -> list[str]:
-        return re.findall(r'[^\s\|\,\;\.\:\!\?\(\)\[\]\{\}]+', text.lower())
+
+    # French stemmer for better morphological matching
+    # armatures/armature, expositions/exposition, contraintes/contrainte etc.
+    try:
+        from nltk.stem.snowball import FrenchStemmer
+        _stemmer = FrenchStemmer()
+        def tokenise(text: str) -> list[str]:
+            tokens = re.findall(r'[^\s\|\,\;\.\:\!\?\(\)\[\]\{\}]+', text.lower())
+            return [_stemmer.stem(t) for t in tokens]
+    except ImportError:
+        def tokenise(text: str) -> list[str]:
+            return re.findall(r'[^\s\|\,\;\.\:\!\?\(\)\[\]\{\}]+', text.lower())
 
     corpus = [tokenise(c.get("text", "")) for c in _bm25_chunks]
     _bm25_index = BM25Okapi(corpus)
-    print(f"[BM25] Index built: {len(_bm25_chunks)} documents")
+    print(f"[BM25] Index built: {len(_bm25_chunks)} documents (French stemming)")
 
 
 def _bm25_search(query: str, n: int) -> list[dict]:
@@ -81,7 +91,14 @@ def _bm25_search(query: str, n: int) -> list[dict]:
     _build_bm25_index()
 
     import re
-    tokens = re.findall(r'[^\s\|\,\;\.\:\!\?\(\)\[\]\{\}]+', query.lower())
+    # Use same stemmer as the index for consistent matching
+    try:
+        from nltk.stem.snowball import FrenchStemmer
+        _stemmer = FrenchStemmer()
+        raw_tokens = re.findall(r'[^\s\|\,\;\.\:\!\?\(\)\[\]\{\}]+', query.lower())
+        tokens = [_stemmer.stem(t) for t in raw_tokens]
+    except ImportError:
+        tokens = re.findall(r'[^\s\|\,\;\.\:\!\?\(\)\[\]\{\}]+', query.lower())
     scores = _bm25_index.get_scores(tokens)
 
     # Get top-n indices by score
@@ -180,15 +197,27 @@ def retrieve_hybrid(
     """
     Hybrid BM25 + vector retrieval with RRF re-ranking.
 
-    Retrieves n_results*2 candidates from each system, fuses them with
-    RRF, and returns the top n_results.
-
-    Falls back to pure vector retrieval if rank_bm25 is not installed.
+    Automatically expands queries containing exposure class (XC1-XA3) or
+    structural class (S1-S6) references to improve BM25 recall on cover
+    table lookups (Tableau 4.4N).
     """
+    import re as _re
+
+    # Query expansion for table lookups: detect class identifiers
+    exposure_classes = _re.findall(r'\b(X[CDSFA][0-9])\b', query, _re.IGNORECASE)
+    structural_classes = _re.findall(r'\b(S[1-6])\b', query, _re.IGNORECASE)
+    concrete_classes = _re.findall(r'\b(C\d{2}/\d{2})\b', query, _re.IGNORECASE)
+
+    if exposure_classes or structural_classes or concrete_classes:
+        extras = " ".join(exposure_classes + structural_classes + concrete_classes)
+        bm25_query = f"{query} {extras} enrobage cmin,dur Tableau 4.4N"
+    else:
+        bm25_query = query
+
     # Fetch more candidates before re-ranking
     k_fetch = max(n_results * 2, 10)
 
-    # Vector retrieval
+    # Vector retrieval (uses original query for semantic matching)
     vector_results = retrieve_hierarchical(
         query=query,
         n_results=k_fetch,
@@ -197,11 +226,10 @@ def retrieve_hybrid(
         clause_number=clause_number,
     )
 
-    # BM25 retrieval (fallback gracefully if not installed)
+    # BM25 retrieval (uses expanded query for keyword matching)
     try:
-        bm25_results = _bm25_search(query, k_fetch)
+        bm25_results = _bm25_search(bm25_query, k_fetch)
     except ImportError:
-        # rank_bm25 not installed — just return vector results
         return vector_results[:n_results]
     except Exception as e:
         print(f"[BM25] Warning: {e} — falling back to vector only")

@@ -1,0 +1,216 @@
+
+StructRAG Full RAGAS Evaluation
+Models    : ['llama70b']
+Questions : 49
+In-scope  : 44
+Out-scope : 5
+
+=================================================================
+  Evaluating: meta/llama-3.1-70b-instruct (nvidia)
+  Questions : 49
+=================================================================
+  Q01/49: Quelle est la formule de l'enrobage nominal ?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[ERROR] Config not found for ~t5. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+[ERROR] Config not found for ~=t5. You can manually add it to HARDCODED_CONFIG_FOR_MODELS in utils/auto_docstring.py
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1931.02it/s]
+Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+[BM25] Index built: 472 documents
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]Loading weights: 100%|##########| 105/105 [00:00<00:00, 1140.13it/s]
+[Reranker] Loaded model: cross-encoder/ms-marco-MiniLM-L-6-v2
+(150.59s)
+  Q02/49: Quelle est la valeur recommandée de la tolérance d'exécution Δcdev ?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(24.22s)
+  Q03/49: Quel est l'enrobage minimal pour la classe d'exposition XC1, classe st... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(86.84s)
+  Q04/49: Quel est l'enrobage minimal pour la classe d'exposition XC2, classe st... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(30.7s)
+  Q05/49: Quel est l'enrobage minimal pour la classe d'exposition XD3, classe st... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(36.19s)
+  Q06/49: Quelles sont les classes d'exposition liées à la carbonatation ?... Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1606.52it/s]
+(4.92s)
+  Q07/49: Quelles sont les classes d'exposition liées aux chlorures d'origine no... Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1775.76it/s]
+(3.44s)
+  Q08/49: Quelle classe de résistance minimale du béton le Tableau 4.3N recomman... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(53.97s)
+  Q09/49: Quelle classe de résistance minimale du béton le Tableau 4.3N recomman... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(132.15s)
+  Q10/49: Quelle est la classe structurale recommandée pour une durée d'utilisat... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(61.49s)
+  Q11/49: Combien de classes structurales sont définies dans l'Eurocode 2 ?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(40.04s)
+  Q12/49: Quelles sont les trois exigences que l'enrobage minimal doit satisfair... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(32.46s)
+  Q13/49: Quelle est la valeur du coefficient partiel γc pour le béton en situat... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(28.88s)
+  Q14/49: Quelle est la valeur du coefficient partiel γs pour l'acier de béton a... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(30.91s)
+  Q15/49: Quelle est la valeur du coefficient partiel γc en situation accidentel... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(42.81s)
+  Q16/49: Quelle est la déformation ultime de compression εcu2 pour les bétons j... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(29.7s)
+  Q17/49: Quelle est la résistance caractéristique en compression fck pour le bé... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(87.75s)
+  Q18/49: Quelle est la résistance moyenne en traction fctm pour le béton C25/30... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(32.48s)
+  Q19/49: Quel est le module d'élasticité sécant Ecm pour le béton C30/37 ?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(47.07s)
+  Q20/49: Quelle est la formule de la résistance de calcul en compression fcd ?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(29.72s)
+  Q21/49: Quelle est la différence entre un Principe et une Règle d'Application ... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(149.73s)
+  Q22/49: Quelles sont les méthodes d'analyse structurale reconnues par l'Euroco... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(58.76s)
+  Q23/49: Comment calcule-t-on la portée efficace d'une poutre selon l'Eurocode ... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(68.51s)
+  Q24/49: Quelle est la formule de la résistance au cisaillement VRd,c pour les ... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(27.03s)
+  Q25/49: Quelle est la valeur recommandée de CRd,c dans la formule de résistanc... Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1969.13it/s]
+(4.17s)
+  Q26/49: Quelle est la section minimale d'armature d'effort tranchant ρw,min ?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(44.06s)
+  Q27/49: Quelle est la largeur de fissure maximale pour la classe d'exposition ... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(61.2s)
+  Q28/49: Quelle est la contrainte de compression maximale admissible pour évite... Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 2151.92it/s]
+(3.79s)
+  Q29/49: Quel est le diamètre minimal du mandrin de pliage pour des barres de d... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(57.07s)
+  Q30/49: Quelle est la section minimale d'armature longitudinale pour une poutr... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(17.72s)
+  Q31/49: Quel est l'espacement maximal des armatures transversales dans une pou... Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 1383.51it/s]
+(3.77s)
+  Q32/49: Quelle est la distance minimale entre barres parallèles individuelles ... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(21.93s)
+  Q33/49: Quelle est la formule de la longueur d'ancrage de base pour une barre ... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(303.22s)
+  Q34/49: Quel est le taux maximum d'armature en zone comprimée d'une poutre ?... Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 2966.27it/s]
+(4.37s)
+  Q35/49: Pour une poutre en classe d'exposition XC2, classe structurale S4 — qu... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(40.47s)
+  Q36/49: Quel enrobage nominal doit-on spécifier sur les plans pour une dalle e... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(18.34s)
+  Q37/49: Quelle est la formule de la charge de vent selon l'Eurocode 1 ?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(12.69s)
+         Out-of-scope -> REFUSED
+  Q38/49: Quel facteur de comportement q utiliser pour un portique béton en zone... Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3034.91it/s]
+(4.28s)
+         Out-of-scope -> REFUSED
+  Q39/49: Quel rapport eau/ciment maximal pour la classe d'exposition XC1 ?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(23.47s)
+         Out-of-scope -> REFUSED
+  Q40/49: What is the formula for nominal concrete cover?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(20.92s)
+  Q41/49: What partial safety factor should I use for concrete in persistent des... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(27.0s)
+  Q42/49: What partial safety factor applies to reinforcing steel?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(22.22s)
+  Q43/49: What is the minimum cover for exposure class XC2, structural class S4?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(13.72s)
+  Q44/49: What minimum concrete strength class is required for exposure class XD... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(17.51s)
+  Q45/49: What are the exposure classes for carbonation-induced corrosion?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(27.34s)
+  Q46/49: How do I calculate nominal cover from minimum cover?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(15.98s)
+  Q47/49: What is the ultimate compressive strain εcu2 for concrete up to C50/60... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(20.99s)
+  Q48/49: What is the formula for wind load on a tall structure?... Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|##########| 103/103 [00:00<00:00, 3008.83it/s]
+(14.19s)
+         Out-of-scope -> REFUSED
+  Q49/49: What behavior factor should I use for seismic design?... Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
+(19.09s)
+         Out-of-scope -> REFUSED
+  Human-readable answers -> answers_llama70b.txt
+
+  Computing RAGAS scores (Gemini judge)...
+  Scoring Q1/44... 
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]faith=0.50 rel=0.50 prec=0.50 rec=0.50
+  Scoring Q2/44... 
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]faith=0.50 rel=0.50 prec=0.50 rec=0.50
+  Scoring Q3/44... 
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]
+    [Judge rate limit — waiting 15s]
+    [Judge rate limit — waiting 30s]

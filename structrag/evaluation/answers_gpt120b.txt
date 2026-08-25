@@ -1,0 +1,615 @@
+StructRAG — Answer Record
+Model   : openai/gpt-oss-120b
+Provider: groq
+Date    : 2026-08-20 20:38
+Questions: 49
+======================================================================
+
+Q01. [FR | cover | easy]
+Question     : Quelle est la formule de l'enrobage nominal ?
+Ground truth : L'enrobage nominal est cnom = cmin + Δcdev, où cmin est l'enrobage minimal et Δcdev est la tolérance d'exécution (clause 4.4.1.1).
+GT clauses   : 4.4.1.1
+Model answer : La formule de l’enrobage nominal est :
+
+\[
+c_{\text{nom}} \;=\; c_{\text{min}} \;+\; \Delta_{\text{exécution}}
+\]
+
+c’est‑à‑dire l’enrobage **minimal** (défini à la clause 4.4.1.2) **majoré** d’une marge de calcul qui tient compte des tolérances d’exécution (décrites à la clause 4.4.1.3) .  
+
+*Source : Eurocode 2, clause 4.4.1.1 (définition de l’enrobage nominal) et clause 4.4.1.3 (prise en compte des tolérances d’exécution).*
+Hallucination: CLEAN
+Time         : 372.32s
+----------------------------------------------------------------------
+
+Q02. [FR | cover | easy]
+Question     : Quelle est la valeur recommandée de la tolérance d'exécution Δcdev ?
+Ground truth : La valeur recommandée est 10 mm. Elle peut être réduite à 5 mm avec un système qualité ou à 0 mm pour les éléments préfabriqués (clause 4.4.1.3).
+GT clauses   : 4.4.1.3
+Model answer : La valeur recommandée pour la tolérance d’exécution Δc₍dev₎ est de **10 mm** (per EC2 clause 4.4.1.3, Context 1).
+Hallucination: CLEAN
+Time         : 25.84s
+----------------------------------------------------------------------
+
+Q03. [FR | cover | medium]
+Question     : Quel est l'enrobage minimal pour la classe d'exposition XC1, classe structurale S4 ?
+Ground truth : Pour XC1 et la classe structurale S4, l'enrobage minimal cmin,dur est de 15 mm (Tableau 4.4N, clause 4.4.1.2).
+GT clauses   : 4.4.1.2
+Model answer : Le tableau 4.4 N du paragraphe 4.4.1.2 indique que, pour la **classe d’exposition XC1** et la **classe structurale S4**, la valeur d’enrobage minimal requise pour la durabilité est :
+
+**c min,dur = 15 mm**  
+
+(voir Eurocode 2 clause 4.4.1.2, Tableau 4.4 N).
+Hallucination: CLEAN
+Time         : 24.34s
+----------------------------------------------------------------------
+
+Q04. [FR | cover | medium]
+Question     : Quel est l'enrobage minimal pour la classe d'exposition XC2, classe structurale S4 ?
+Ground truth : Pour XC2/XC3 et la classe structurale S4, l'enrobage minimal cmin,dur est de 25 mm (Tableau 4.4N, clause 4.4.1.2).
+GT clauses   : 4.4.1.2
+Model answer : L’enrobage minimal requis pour une armature de béton armé, lorsqu’on considère la classe d’exposition **XC2** (ou XC3) et la classe structurale **S4**, est de **25 mm**.
+
+* Ceci provient du tableau 4.4N du **clause 4.4.1.2** d’Eurocode 2, qui indique : « S4 | XC2 / XC3 → c min,dur = 25 mm » (voir Context 1, 2, 3, 4, 6).
+Hallucination: CLEAN
+Time         : 25.28s
+----------------------------------------------------------------------
+
+Q05. [FR | cover | medium]
+Question     : Quel est l'enrobage minimal pour la classe d'exposition XD3, classe structurale S4 ?
+Ground truth : Pour XD3/XS3 et la classe structurale S4, l'enrobage minimal cmin,dur est de 45 mm (Tableau 4.4N, clause 4.4.1.2).
+GT clauses   : 4.4.1.2
+Model answer : L’enrobage minimal requis pour une exposition **XD3** avec une **classe structurale S4** est de **45 mm**.
+
+*Ce résultat provient du tableau 4.4 N du **clause 4.4.1.2** d’Eurocode 2, qui indique : « S4 … XD3/XS3 = 45 mm »*【Context 1†L1-L9】【Context 2†L1-L9】.
+Hallucination: CLEAN
+Time         : 28.79s
+----------------------------------------------------------------------
+
+Q06. [FR | cover | easy]
+Question     : Quelles sont les classes d'exposition liées à la carbonatation ?
+Ground truth : XC1 (sec ou humide en permanence), XC2 (humide, rarement sec), XC3 (humidité modérée), XC4 (alternativement humide et sec). Tableau 4.1, clause 4.2.
+GT clauses   : 4.2
+Model answer : Les classes d’exposition qui correspondent à la corrosion induite par carbonatation sont :
+
+- **XC1**  
+- **XC2**  
+- **XC3**  
+- **XC4**  
+
+Ces classes sont listées sous la rubrique « 2 Corrosion induite par carbonatation » du Tableau 4.1 du **Clause 4.2** d’Eurocode 2 — Durabilité et enrobage des armatures [Context 1, Clause 4.2, Tableau 4.1].
+Hallucination: CLEAN
+Time         : 28.64s
+----------------------------------------------------------------------
+
+Q07. [FR | cover | easy]
+Question     : Quelles sont les classes d'exposition liées aux chlorures d'origine non marine ?
+Ground truth : XD1 (humidité modérée), XD2 (humide, rarement sec), XD3 (alternativement humide et sec). Tableau 4.1, clause 4.2.
+GT clauses   : 4.2
+Model answer : Les classes d’exposition qui concernent les chlorures d’origine **non marine** sont :
+
+- **XD1** – humidité modérée (chlorures transportés par voie aérienne)  
+- **XD2** – humide, rarement sec (eau industrielle contenant des chlorures)  
+- **XD3** – alternativement humide et sec (projections contenant des chlorures, par ex. ponts, parkings)
+
+Ces classes figurent dans le tableau 4.1 de la clause 4.2 « Conditions d’environnement » du Eurocode 2 — EN 1992‑1‑1 [Context 1, 2, 3].
+Hallucination: CLEAN
+Time         : 21.3s
+----------------------------------------------------------------------
+
+Q08. [FR | cover | medium]
+Question     : Quelle classe de résistance minimale du béton le Tableau 4.3N recommande-t-il pour la classe d'exposition XD3 ?
+Ground truth : Le Tableau 4.3N recommande une classe de résistance minimale ≥ C45/55 pour XD3/XS2/XS3 (avec possibilité de minoration d'une classe). Clause 4.4.1.2.
+GT clauses   : 4.4.1.2
+Model answer : Le Tableau 4.3N indique que, pour la classe d’exposition **XD3** (ou XS3), la classe de résistance minimale recommandée est **C45/55** – c’est la classe la plus sévère pour les chlorures cycliques (voir clause 4.4.1.2, Tableau 4.3N).
+Hallucination: CLEAN
+Time         : 31.52s
+----------------------------------------------------------------------
+
+Q09. [FR | cover | medium]
+Question     : Quelle classe de résistance minimale du béton le Tableau 4.3N recommande-t-il pour XC2 ?
+Ground truth : Le Tableau 4.3N recommande une classe de résistance minimale ≥ C35/45 pour XC2/XC3. Clause 4.4.1.2.
+GT clauses   : 4.4.1.2
+Model answer : Le Tableau 4.3 N indique que, pour la classe d’exposition **XC2** (et XC3), la **classe de résistance minimale recommandée est C30/37** (avec C35/45 recommandé).  
+*Source : Eurocode 2, clause 4.4.1.2 – Tableau 4.3 N.*
+Hallucination: CLEAN
+Time         : 38.5s
+----------------------------------------------------------------------
+
+Q10. [FR | cover | easy]
+Question     : Quelle est la classe structurale recommandée pour une durée d'utilisation de 50 ans ?
+Ground truth : La classe structurale recommandée pour une durée de 50 ans est S4 (clause 4.4.1.2, Tableau 4.3N).
+GT clauses   : 4.4.1.2
+Model answer : La classe structurale recommandée pour une durée d’utilisation de projet de 50 ans est la **classe S4** (per Clause 4.4.1.2 – Eurocode 2).
+Hallucination: CLEAN
+Time         : 41.8s
+----------------------------------------------------------------------
+
+Q11. [FR | cover | easy]
+Question     : Combien de classes structurales sont définies dans l'Eurocode 2 ?
+Ground truth : Six classes structurales sont définies : S1 à S6. Elles sont utilisées avec les classes d'exposition pour déterminer l'enrobage minimal. Clause 4.4.1.2, Tableau 4.3N.
+GT clauses   : 4.4.1.2
+Model answer : Il y a **six classes structurales** définies dans l’Eurocode 2 : S1, S2, S3, S4, S5 et S6 (voir le tableau 4.4 N qui répertorie les valeurs d’enrobage pour les classes S1 à S6) — per clause 4.4.1.2.
+Hallucination: CLEAN
+Time         : 38.49s
+----------------------------------------------------------------------
+
+Q12. [FR | cover | medium]
+Question     : Quelles sont les trois exigences que l'enrobage minimal doit satisfaire simultanément ?
+Ground truth : L'enrobage minimal doit satisfaire : (1) les exigences d'adhérence (cmin,b), (2) les conditions environnementales (cmin,dur), (3) un minimum de 10 mm. La valeur retenue est le maximum. Clause 4.4.1.2 équation (4.2).
+GT clauses   : 4.4.1.2
+Model answer : L’enrobage minimal doit, simultanément, garantir :
+
+1. **La bonne transmission des forces d’adhérence** entre le béton et l’acier,  
+2. **La protection de l’acier contre la corrosion** (durabilité),  
+3. **Une résistance au feu convenable** (voir EN 1992‑1‑2).
+
+Ces trois exigences sont énoncées dans la clause 4.4.1.2 du Eurocode 2 — « Enrobage minimal, c » (voir Context 3).
+Hallucination: CLEAN
+Time         : 22.54s
+----------------------------------------------------------------------
+
+Q13. [FR | materials | easy]
+Question     : Quelle est la valeur du coefficient partiel γc pour le béton en situation durable ?
+Ground truth : Le coefficient partiel pour le béton est γc = 1,5 en situation durable/transitoire. Tableau 2.1N, clause 2.4.2.4.
+GT clauses   : 2.4.2.4
+Model answer : Le coefficient partiel relatif au béton (γc) pour une situation de projet **durable** (ou transitoire) est **1,5** per Eurocode 2 clause 2.4.2.4 (Tableau 2.1N)【Context 1】.
+Hallucination: CLEAN
+Time         : 28.52s
+----------------------------------------------------------------------
+
+Q14. [FR | materials | easy]
+Question     : Quelle est la valeur du coefficient partiel γs pour l'acier de béton armé en situation durable ?
+Ground truth : Le coefficient partiel pour l'acier de béton armé est γs = 1,15 en situation durable/transitoire. Tableau 2.1N, clause 2.4.2.4.
+GT clauses   : 2.4.2.4
+Model answer : La valeur du coefficient partiel γs pour l’acier de béton armé dans une situation de projet **durable / transitoire** est **1,15** (voir Eurocode 2, clause 2.4.2.4, Tableau 2.1N).
+Hallucination: CLEAN
+Time         : 29.97s
+----------------------------------------------------------------------
+
+Q15. [FR | materials | medium]
+Question     : Quelle est la valeur du coefficient partiel γc en situation accidentelle ?
+Ground truth : En situation accidentelle, le coefficient partiel pour le béton est γc = 1,2. Tableau 2.1N, clause 2.4.2.4.
+GT clauses   : 2.4.2.4
+Model answer : En situation « accidentelle », le coefficient partiel relatif au béton γc vaut **1,2** (voir tableau 2.1N dans la clause 2.4.2.4 d’Eurocode 2). — per EC2 clause 2.4.2.4.
+Hallucination: CLEAN
+Time         : 30.64s
+----------------------------------------------------------------------
+
+Q16. [FR | materials | medium]
+Question     : Quelle est la déformation ultime de compression εcu2 pour les bétons jusqu'à C50/60 ?
+Ground truth : Pour les bétons jusqu'à C50/60, la déformation ultime εcu2 est de 3,5 ‰. Tableau 3.1, clause 3.1.2.
+GT clauses   : 3.1.2
+Model answer : La déformation ultime de compression εcu₂ pour les bétons jusqu’à C50/60 est **3,5 ‰**.
+
+- Valeur indiquée pour les bétons ≤ C50/60 dans la description de la diagramme parabole‑rectangle : εcu₂ = 3,5 ‰ (per EC2 clause 3.1.7).  
+- Tableau 3.1 (clause 3.1.2) donne également εcu₂ = 3,5 ‰ pour le béton C50/60.
+Hallucination: CLEAN
+Time         : 34.55s
+----------------------------------------------------------------------
+
+Q17. [FR | materials | easy]
+Question     : Quelle est la résistance caractéristique en compression fck pour le béton C30/37 ?
+Ground truth : Pour le béton C30/37, la résistance caractéristique en compression est fck = 30 MPa. Tableau 3.1, clause 3.1.2.
+GT clauses   : 3.1.2
+Model answer : La résistance caractéristique en compression \(f_{ck}\) du béton de classe C30/37 est **30 MPa** — donnée dans le Tableau 3.1 du Eurocode 2 (clause 3.1.2) [Context 1].
+Hallucination: CLEAN
+Time         : 21.91s
+----------------------------------------------------------------------
+
+Q18. [FR | materials | medium]
+Question     : Quelle est la résistance moyenne en traction fctm pour le béton C25/30 ?
+Ground truth : Pour le béton C25/30, la résistance moyenne en traction est fctm = 2,6 MPa. Tableau 3.1, clause 3.1.2.
+GT clauses   : 3.1.2
+Model answer : La résistance moyenne en traction du béton C25/30 est **f ct m = 2,6 MPa** (voir tableau 3.1, clause 3.1.2 du Eurocode 2).
+Hallucination: CLEAN
+Time         : 54.55s
+----------------------------------------------------------------------
+
+Q19. [FR | materials | medium]
+Question     : Quel est le module d'élasticité sécant Ecm pour le béton C30/37 ?
+Ground truth : Pour le béton C30/37, le module d'élasticité sécant est Ecm = 33 GPa. Tableau 3.1, clause 3.1.2.
+GT clauses   : 3.1.2
+Model answer : Le module d’élasticité sécant du béton C30/37 est **E cm = 33 GPa** (voir tableau 3.1, clause 3.1.2 d’Eurocode 2).
+Hallucination: CLEAN
+Time         : 61.74s
+----------------------------------------------------------------------
+
+Q20. [FR | materials | medium]
+Question     : Quelle est la formule de la résistance de calcul en compression fcd ?
+Ground truth : La résistance de calcul en compression est fcd = αcc × fck / γc, où αcc tient compte des effets à long terme (valeur recommandée 1,0) et γc = 1,5. Clause 3.1.6.
+GT clauses   : 3.1.6
+Model answer : La résistance de calcul en compression du béton est donnée par :
+
+\[
+f_{cd}= \alpha_{cc}\; \frac{f_{ck}}{\gamma_{c}}
+\qquad\text{(Éq. 3.15)}
+\]
+
+c’est‑à‑dire le produit du coefficient d’effets à long terme en compression \(\alpha_{cc}\) par la résistance caractéristique en compression \(f_{ck}\), le tout divisé par le coefficient partiel du béton \(\gamma_{c}\) — per Eurocode 2 clause 3.1.6 (Formula Library)【Context 1】.
+Hallucination: CLEAN
+Time         : 43.89s
+----------------------------------------------------------------------
+
+Q21. [FR | design_basis | easy]
+Question     : Quelle est la différence entre un Principe et une Règle d'Application dans l'Eurocode 2 ?
+Ground truth : Les Principes sont des exigences obligatoires identifiées par P après le numéro de paragraphe (ex. (1)P). Les Règles d'Application sont des méthodes généralement acceptées conformes aux Principes. Clause 1.4.
+GT clauses   : 1.4
+Model answer : The provided excerpts do not contain a definition or description of how a **Principe** differs from a **Règle d’Application**; they only indicate that the rules of EN 1990 apply (see Clause 1.4) and give the title of the clause that deals with the distinction.  
+
+**Therefore, the provided context does not contain enough information to answer this question. Please consult Clause 1.4 of Eurocode 2 directly for the detailed distinction.**
+Hallucination: CLEAN
+Time         : 49.67s
+----------------------------------------------------------------------
+
+Q22. [FR | analysis | medium]
+Question     : Quelles sont les méthodes d'analyse structurale reconnues par l'Eurocode 2 ?
+Ground truth : L'Eurocode 2 reconnaît : l'analyse élastique linéaire, l'analyse élastique linéaire avec redistribution limitée, l'analyse plastique et l'analyse non linéaire. Clause 5.1.1.
+GT clauses   : 5.1.1
+Model answer : L’Eurocode 2 reconnaît plusieurs catégories de méthodes d’analyse :
+
+1. **Analyse non‑linéaire** (premier ou second ordre) applicable aux états limites ultimes (ELU) et aux états limites de service (ELS) — per 5.7 (1) et 5.7 (5).  
+
+2. **Analyse du second ordre** :  
+   - **Méthode générale** basée sur une analyse non‑linéaire du second ordre — per 5.8.5 (1) (voir 5.8.6).  
+   - **Méthodes simplifiées** :  
+     a) Méthode basée sur la **rigidité nominale** — per 5.8.5 (1) (a) (voir 5.8.7).  
+     b) Méthode basée sur la **courbure nominale** — per 5.8.5 (1) (b) (voir 5.8.8).  
+
+3. **Analyse plastique** : réservée aux vérifications à l’état limite ultime (ELU) — per 5.6.1 (1).
+Hallucination: CLEAN
+Time         : 55.28s
+----------------------------------------------------------------------
+
+Q23. [FR | analysis | medium]
+Question     : Comment calcule-t-on la portée efficace d'une poutre selon l'Eurocode 2 ?
+Ground truth : La portée efficace est leff = ln + a1 + a2, où ln est la portée entre nus d'appuis et a1, a2 sont les distances jusqu'au centre d'appui effectif. Clause 5.3.2.2.
+GT clauses   : 5.3.2.2
+Model answer : Selon l’Eurocode 2, la portée utile (ou « portée efficace ») d’une poutre se calcule à partir de la distance libre entre les surfaces nues des appuis, modifiée par des facteurs dépendant de la profondeur d’appui :
+
+* **Clause 5.3.2.2** indique que la portée utile doit être déterminée « de la manière suivante : … (5.8) où : \(l_{0}\) est la distance libre entre nus des appuis ; les valeurs de correction à chaque extrémité de la travée sont obtenues à partir des valeurs appropriées de la Figure 5.4, où \(h_{a}\) est la profondeur d’appui » (voir le tableau/figure 5.4).  
+
+* Le même paragraphe précise que, quel que soit le mode d’analyse, le moment au nu de l’appui ne doit pas être inférieur à **0,65 × le moment d’encastrement** et que, pour une poutre continue sur un appui qui ne crée pas de gêne à la rotation, le moment de calcul sur l’appui peut être minoré d’une valeur \(/8\) (équation 5.9) — cette réduction étant appliquée après le calcul de la portée utile.
+
+En résumé, la portée efficace d’une poutre s’obtient en :
+
+1. Mesurant la distance libre entre les surfaces nues des appuis ;  
+2. Appliquant les facteurs de correction tirés de la Figure 5.4 (profondeur d’appui) conformément à l’équation (5.8) ;  
+3. Vérifiant que le moment au nu de l’appui respecte la condition ≥ 0,65 × le moment d’encastrement, avec éventuellement la réduction \(/8\) prévue pour les appuis sans gêne à la rotation.
+
+*Sources : Eurocode 2 clause 5.3.2.2 (portée utile des poutres et dalles dans les bâtiments).*
+Hallucination: CLEAN
+Time         : 81.21s
+----------------------------------------------------------------------
+
+Q24. [FR | uls | hard]
+Question     : Quelle est la formule de la résistance au cisaillement VRd,c pour les éléments sans armature d'effort tranchant ?
+Ground truth : VRd,c = [CRd,c × k × (100 × ρl × fck)^(1/3) + k1 × σcp] × bw × d avec une valeur minimale. CRd,c, k1 et vmin sont déterminés nationalement. Clause 6.2.2.
+GT clauses   : 6.2.2
+Model answer : La résistance au cisaillement des sections sans armature transversale est donnée par l’expression :
+
+\[
+VR_{d,c}= \Bigl[\,C_{Rd,c}\;k\;(100\,\rho_l\,f_{ck})^{1/3}+k_{1}\,\sigma_{cp}\Bigr]\;b_w\,d
+\qquad\text{(Éq. 6.2a)}
+\]
+
+et, à défaut, doit satisfaire la valeur minimale :
+
+\[
+VR_{d,c}\;\ge\;(v_{min}+k_{1}\,\sigma_{cp})\,b_w\,d
+\qquad\text{(Éq. 6.2b)}
+\]
+
+* \(C_{Rd,c}=0,18/\gamma_c=0,12\) (valeur recommandée)  
+* \(k = 1+\sqrt{200/d}\le 2,0\) (d en mm)  
+* \(\rho_l = \dfrac{A_{sl}}{b_w\,d}\le 0,02\) (taux d’armatures longitudinales)  
+* \(f_{ck}\) = résistance caractéristique du béton (MPa)  
+* \(\sigma_{cp}=N_{Ed}/A_c\le 0,2\,f_{cd}\) (contrainte de compression)  
+* \(k_{1}=0,15\) (valeur recommandée)  
+* \(b_w\) = largeur de l’âme, \(d\) = hauteur utile  
+* \(v_{min}=0,035\,k^{3/2}\,f_{ck}^{1/2}\) (valeur recommandée)
+
+*Source : Eurocode 2, Clause 6.2.2 (Équations 6.2a et 6.2b).*
+Hallucination: CLEAN
+Time         : 88.61s
+----------------------------------------------------------------------
+
+Q25. [FR | uls | medium]
+Question     : Quelle est la valeur recommandée de CRd,c dans la formule de résistance au cisaillement ?
+Ground truth : La valeur recommandée de CRd,c est 0,18/γc = 0,18/1,5 = 0,12. Clause 6.2.2 NOTE.
+GT clauses   : 6.2.2
+Model answer : La valeur recommandée de \(C_{Rd,c}\) est : **0,12** (c’est‑à‑dire \(0,18/γ_c\)) – voir Clause 6.2.2 d’Eurocode 2.
+Hallucination: CLEAN
+Time         : 81.86s
+----------------------------------------------------------------------
+
+Q26. [FR | uls | medium]
+Question     : Quelle est la section minimale d'armature d'effort tranchant ρw,min ?
+Ground truth : La section minimale d'armature transversale est ρw,min = 0,08 × √fck / fyk. Clause 9.2.2.
+GT clauses   : 9.2.2
+Model answer : The provided context does not contain enough information to answer this question. Please consult Eurocode 2 clause 6.2 (especially the sections on shear reinforcement in 6.2.2 and 6.2.3) directly for the expression of the minimum shear‑reinforcement ratio ρw,min.
+Hallucination: CLEAN
+Time         : 51.69s
+----------------------------------------------------------------------
+
+Q27. [FR | sls | medium]
+Question     : Quelle est la largeur de fissure maximale pour la classe d'exposition XC1 sous charges quasi-permanentes ?
+Ground truth : La largeur de fissure maximale recommandée wmax est de 0,3 mm pour les classes XC1 à XC4 sous la combinaison quasi-permanente. Clause 7.3.1, Tableau 7.1N.
+GT clauses   : 7.3.1
+Model answer : La largeur de fissure maximale recommandée pour la classe d’exposition **XC1** sous la **combinaison quasi‑permanente des charges** est **0,3 mm** (Tableau 7.1N, clause 7.3.1 d’Eurocode 2). — per EC2 clause 7.3.1.
+Hallucination: CLEAN
+Time         : 42.86s
+----------------------------------------------------------------------
+
+Q28. [FR | sls | medium]
+Question     : Quelle est la contrainte de compression maximale admissible pour éviter la fissuration longitudinale ?
+Ground truth : Pour éviter la fissuration longitudinale, la contrainte de compression ne doit pas dépasser 0,6 × fck sous la combinaison caractéristique. Clause 7.2.
+GT clauses   : 7.2
+Model answer : La contrainte de compression à ne pas dépasser afin d’éviter la fissuration longitudinale est fixée à **0,6 f ** (c’est‑à‑dire 0,6 fois la contrainte de référence du béton).  
+
+Cette valeur provient du paragraphe (2) de la clause 7.2 « Limitation des contraintes » du Eurocode 2, où il est indiqué : « il peut être pertinent de limiter les contraintes de compression à une valeur … La valeur recommandée est = 0,6 » [Clause 7.2 (2), Eurocode 2].  
+
+*Remarque :* la valeur exacte à utiliser peut être précisée par l’Annexe nationale du pays concerné.
+Hallucination: CLEAN
+Time         : 49.14s
+----------------------------------------------------------------------
+
+Q29. [FR | detailing | medium]
+Question     : Quel est le diamètre minimal du mandrin de pliage pour des barres de diamètre ≤ 16 mm ?
+Ground truth : Le diamètre minimal du mandrin est 4 × φ pour les barres de diamètre ≤ 16 mm. Clause 8.3.
+GT clauses   : 8.3
+Model answer : Le diamètre intérieur minimal du mandrin de pliage doit être **4 × φ** pour des barres dont le diamètre φ est inférieur ou égal à 16 mm (c’est‑à‑dire quatre fois le diamètre de la barre) — per EC2 clause 8.3 (Tableau 8.2).
+Hallucination: CLEAN
+Time         : 53.91s
+----------------------------------------------------------------------
+
+Q30. [FR | detailing | medium]
+Question     : Quelle est la section minimale d'armature longitudinale pour une poutre ?
+Ground truth : La section minimale d'armature pour une poutre est As,min = 0,26 × fctm/fyk × bt × d ≥ 0,0013 × bt × d. Clause 9.2.1.1.
+GT clauses   : 9.2.1.1
+Model answer : La clause 9.2.1.1 du **Eurocode 2** indique que « Il convient que la section d’armatures longitudinales tendues ne soit pas inférieure à … », mais le texte fourni ne précise pas la valeur numérique exacte (il fait seulement référence à une valeur typique de 0,0013 · b · d ou à 0,04 selon le pays, sans donner la formule complète).  
+
+**Conclusion :** le contexte fourni ne contient pas l’expression complète de la section minimale d’armature longitudinale. Veuillez consulter la clause 9.2.1.1 (et la note 7.3 qui y est renvoyée) du Eurocode 2 pour obtenir la formule et les valeurs précises.
+Hallucination: CLEAN
+Time         : 61.94s
+----------------------------------------------------------------------
+
+Q31. [FR | detailing | medium]
+Question     : Quel est l'espacement maximal des armatures transversales dans une poutre ?
+Ground truth : L'espacement longitudinal maximal des armatures transversales est sl,max = 0,75 × d × (1 + cot α). Clause 9.2.2.
+GT clauses   : 9.2.2
+Model answer : Le contexte fourni ne comporte que les exigences relatives aux armatures transversales des **poteaux** (clause 9.5.3 Eurocode 2) : il indique comment limiter l’espacement le long du poteau et le réduire de 0,6 dans certaines zones, mais il ne donne aucune valeur d’espacement maximal applicable aux **poutres**.  
+
+**Conclusion :** le texte disponible ne contient pas l’information recherchée pour les poutres. Veuillez consulter directement les clauses du Eurocode 2 qui traitent des armatures transversales des poutres (par exemple la partie 9 « Dispositions constructives », sections 9.2 ou 9.3 selon le type de poutre) pour obtenir la valeur d’espacement maximal.  
+
+*Conformément à la règle 3 du développeur.*
+Hallucination: CLEAN
+Time         : 50.81s
+----------------------------------------------------------------------
+
+Q32. [FR | detailing | medium]
+Question     : Quelle est la distance minimale entre barres parallèles individuelles ?
+Ground truth : La distance libre doit être ≥ max(k1 × φ, dg + k2, 20 mm) où dg est la taille maximale des granulats. Recommandé : k1=1, k2=5mm. Clause 8.2.
+GT clauses   : 8.2
+Model answer : La distance libre minimale entre barres parallèles (ou entre lits horizontaux de barres parallèles) doit être **au moins égale à la plus grande des trois valeurs suivantes** :
+
+* \(k_{1}\) × diamètre de la barre,  
+* \(k_{2}\) mm,  
+* 20 mm (où \(k_{2}\) représente la dimension maximale du granulat)  
+
+(EC2 clause 8.2 (2)).  
+
+Les valeurs de \(k_{1}\) et \(k_{2}\) sont fixées par l’Annexe Nationale ; les valeurs recommandées sont \(k_{1}=1\) et \(k_{2}=5\) mm (EC2 clause 8.2 NOTE).  
+
+Ainsi, avec les valeurs recommandées, la distance minimale est **20 mm**, sauf si le diamètre de la barre (× 1) est supérieur à 20 mm, auquel cas la distance doit être au moins égale à ce diamètre.
+Hallucination: CLEAN
+Time         : 67.27s
+----------------------------------------------------------------------
+
+Q33. [FR | detailing | hard]
+Question     : Quelle est la formule de la longueur d'ancrage de base pour une barre droite ?
+Ground truth : La longueur d'ancrage de base est lb,rqd = (φ/4) × (σsd / fbd), où fbd est la résistance d'adhérence de calcul. Clause 8.4.3.
+GT clauses   : 8.4.3
+Model answer : La longueur d’ancrage de base ( lb,rqd ) pour une barre droite est donnée par l’équation 8.3 du **Clause 8.4.3** de l’Eurocode 2 :
+
+\[
+\boxed{\,lb_{rqd}= \frac{\phi}{4}\;\times\;\frac{\sigma_{sd}}{f_{bd}}\,}
+\]
+
+où φ = diamètre de la barre, σsd = contrainte de calcul dans la barre à ancrer, et fbd = résistance ultime d’adhérence (clause 8.4.2) — per **Clause 8.4.3** (Eq. 8.3).
+Hallucination: CLEAN
+Time         : 51.09s
+----------------------------------------------------------------------
+
+Q34. [FR | detailing | easy]
+Question     : Quel est le taux maximum d'armature en zone comprimée d'une poutre ?
+Ground truth : La section maximale d'armature en compression ne doit pas dépasser 0,04 × Ac (4 % de la section brute). Clause 9.2.1.1.
+GT clauses   : 9.2.1.1
+Model answer : Le taux maximal d’armature autorisé dans la zone comprimée d’une poutre est de **0,04** (soit 4 % de la surface de la section) — selon la note de la clause **9.2.1.1** du Eurocode 2, qui indique « La valeur recommandée est = 0,04 » pour la limite supérieure de la section d’armatures (« Il convient que la section des armatures tendues ou comprimées n’excède pas… », note 4).
+Hallucination: CLEAN
+Time         : 55.01s
+----------------------------------------------------------------------
+
+Q35. [FR | cross_clause | hard]
+Question     : Pour une poutre en classe d'exposition XC2, classe structurale S4 — quel est l'enrobage minimal et quelle classe de béton est requise ?
+Ground truth : Pour XC2/XC3, S4 : enrobage minimal cmin,dur = 25 mm (Tableau 4.4N). Classe de béton requise : ≥ C35/45 (Tableau 4.3N). Clause 4.4.1.2.
+GT clauses   : 4.4.1.2
+Model answer : - **Enrobage minimal** : 25 mm.  
+  Ceci est indiqué dans le tableau 4.4N du **clause 4.4.1.2** d’Eurocode 2, où la combinaison « exposition XC2 / classe structurale S4 » donne **cₘᵢₙ, dur = 25 mm** (voir Context 1 et Context 2).
+
+- **Classe de béton requise** : Le passage fourni ne précise pas la classe de béton (ex. C30/37, C35/45, etc.) à associer à la classe structurale S4. Cette information se trouve dans d’autres parties du code (par ex. les tableaux de classe de résistance en fonction de la durée de service), qui ne sont pas incluses dans le contexte présenté.  
+
+  **→ Le contexte fourni ne contient pas assez d’informations pour répondre à cette partie de la question. Veuillez consulter les clauses relatives aux classes de résistance du béton (par ex. clause 4.2 ou les annexes correspondantes d’Eurocode 2) directement.**
+Hallucination: CLEAN
+Time         : 49.56s
+----------------------------------------------------------------------
+
+Q36. [FR | cross_clause | hard]
+Question     : Quel enrobage nominal doit-on spécifier sur les plans pour une dalle en XC3, durée de projet 50 ans ?
+Ground truth : Pour XC2/XC3, S4 (50 ans) : cmin,dur=25mm. Pour une dalle (réduction S3 possible) : cmin,dur=20mm. Avec Δcdev=10mm : cnom=30mm. Clauses 4.4.1.1, 4.4.1.2, 4.4.1.3.
+GT clauses   : 4.4.1.1, 4.4.1.2, 4.4.1.3
+Model answer : The provided context does not contain enough information to determine the required nominal cover for a slab in exposure class XC3 with a 50‑year design life. The minimal cover values for the various exposure classes (including XC3) and the corresponding nominal cover calculation are given in **Eurocode 2 clause 4.4.1.2 (enrobage minimal)** and the related national annex provisions. Please consult those clauses directly for the specific requirement.
+Hallucination: CLEAN
+Time         : 60.64s
+----------------------------------------------------------------------
+
+Q37. [FR | out_of_scope | easy]
+Question     : Quelle est la formule de la charge de vent selon l'Eurocode 1 ?
+Ground truth : Hors champ — les charges de vent sont dans l'Eurocode 1 (EN 1991), pas l'Eurocode 2.
+GT clauses   : N/A
+Model answer : The provided context does not contain enough information to answer this question. Please consult **EN 1991‑1‑4 (Eurocode 1, Part 1‑4 – Actions on structures – Wind actions)** directly for the wind‑load formula.
+Hallucination: CLEAN
+Refusal      : CORRECT
+Time         : 44.74s
+----------------------------------------------------------------------
+
+Q38. [FR | out_of_scope | easy]
+Question     : Quel facteur de comportement q utiliser pour un portique béton en zone sismique 3 ?
+Ground truth : Hors champ — les facteurs de comportement sont dans l'Eurocode 8 (EN 1998).
+GT clauses   : N/A
+Model answer : [CORRECTLY REJECTED by domain classifier]
+Hallucination: CLEAN
+Refusal      : CORRECT
+Time         : 3.41s
+----------------------------------------------------------------------
+
+Q39. [FR | out_of_scope | medium]
+Question     : Quel rapport eau/ciment maximal pour la classe d'exposition XC1 ?
+Ground truth : Non directement dans l'EC2 — les rapports eau/ciment sont dans l'EN 206-1, référencé par la clause 4.1 mais les valeurs sont dans la norme matériau séparée.
+GT clauses   : N/A
+Model answer : The provided context does not contain enough information to answer this question. Please consult the Eurocode 2 sections that address mix design and the permissible water‑cement ratio for the various exposure classes (e.g., the clause on concrete mix proportions) directly.
+Hallucination: CLEAN
+Refusal      : CORRECT
+Time         : 42.5s
+----------------------------------------------------------------------
+
+Q40. [EN | cover | easy]
+Question     : What is the formula for nominal concrete cover?
+Ground truth : cnom = cmin + Δcdev, where cmin is the minimum cover and Δcdev is the allowance for execution deviation (EC2 clause 4.4.1.1).
+GT clauses   : 4.4.1.1
+Model answer : The provided context does not contain enough information to answer this question. Please consult Eurocode 2 Clause 4.4.1.3 (and the related national annex) directly for the formula for nominal concrete cover.
+Hallucination: CLEAN
+Time         : 44.15s
+----------------------------------------------------------------------
+
+Q41. [EN | materials | easy]
+Question     : What partial safety factor should I use for concrete in persistent design situations?
+Ground truth : The partial safety factor for concrete gamma_c is 1.5 for persistent and transient design situations. From Table 2.1N, clause 2.4.2.4.
+GT clauses   : 2.4.2.4
+Model answer : For a **persistent (durable / transitory) design situation** the partial safety factor for concrete is  
+
+**γ c = 1.5**  
+
+per **Eurocode 2, Clause 2.4.2.4** (Table 2.1N, “Durable / Transitoire” column). This value applies to the verification of ultimate‑limit‑state conditions.
+Hallucination: CLEAN
+Time         : 54.39s
+----------------------------------------------------------------------
+
+Q42. [EN | materials | easy]
+Question     : What partial safety factor applies to reinforcing steel?
+Ground truth : The partial safety factor for reinforcing steel gamma_s is 1.15 for persistent and transient design situations. Table 2.1N, clause 2.4.2.4.
+GT clauses   : 2.4.2.4
+Model answer : The partial safety factor for reinforcing (bonded) steel (γ s) is given in Table 2.1 N of Eurocode 2:
+
+* **Durable / Transient design situation:** γ s = **1.15**  
+* **Accidental design situation:**     γ s = **1.0**
+
+These values are listed in **Clause 2.4.2.4** (Table 2.1 N – “Coefficients partiels relatifs aux matériaux”) of Eurocode 2.
+Hallucination: CLEAN
+Time         : 42.8s
+----------------------------------------------------------------------
+
+Q43. [EN | cover | medium]
+Question     : What is the minimum cover for exposure class XC2, structural class S4?
+Ground truth : For XC2/XC3 and structural class S4, the minimum cover cmin,dur is 25 mm, from Table 4.4N of clause 4.4.1.2.
+GT clauses   : 4.4.1.2
+Model answer : The minimum concrete cover required for durability ( c _min,dur ) for exposure class **XC2** with structural class **S4** is **25 mm**.
+
+- This value is given in **Eurocode 2, Clause 4.4.1.2, Table 4.4N** (c_min,dur = 25 mm for S4 / XC2)【Context 1】.
+Hallucination: CLEAN
+Time         : 33.61s
+----------------------------------------------------------------------
+
+Q44. [EN | cover | medium]
+Question     : What minimum concrete strength class is required for exposure class XD3?
+Ground truth : Table 4.3N recommends a minimum strength class of C45/55 for XD3/XS2/XS3. Clause 4.4.1.2.
+GT clauses   : 4.4.1.2
+Model answer : The Eurocode 2 specifies that for exposure class **XD3** the concrete must have at least the strength class **C35/45** (i.e., ≥ C35/45) — per EC 2 clause 4.4.1.2 (see Context 1).
+Hallucination: CLEAN
+Time         : 50.76s
+----------------------------------------------------------------------
+
+Q45. [EN | cover | easy]
+Question     : What are the exposure classes for carbonation-induced corrosion?
+Ground truth : XC1 (dry or permanently wet), XC2 (wet rarely dry), XC3 (moderate humidity), XC4 (cyclic wet and dry). Table 4.1, clause 4.2.
+GT clauses   : 4.2
+Model answer : The exposure classes that correspond to carbonation‑induced corrosion are the **XC series**:
+
+- **XC1** – permanently dry or permanently wet  
+- **XC2** – wet, rarely dry  
+- **XC3** – moderate humidity  
+- **XC4** – alternately wet and dry  
+
+These classes are listed under “2 Corrosion induite par carbonatation” in Table 4.1 of Eurocode 2, Clause 4.2 (“Conditions d’environnement”). 【Context 2, Clause 4.2】.
+Hallucination: CLEAN
+Time         : 45.8s
+----------------------------------------------------------------------
+
+Q46. [EN | cover | easy]
+Question     : How do I calculate nominal cover from minimum cover?
+Ground truth : Nominal cover = minimum cover + execution tolerance allowance Δcdev (recommended 10 mm). Formula: cnom = cmin + Δcdev. Clauses 4.4.1.1 and 4.4.1.3.
+GT clauses   : 4.4.1.1, 4.4.1.3
+Model answer : The Eurocode defines the **nominal cover** as the **minimum (required) cover** increased by the allowance for execution tolerances.
+
+* **Definition** – Clause 4.4.1.1 (2) states that the nominal cover is “the minimum cover (see 4.4.1.2) **plus a margin of calculation for execution tolerances** (see 4.4.1.3)”【Context 4】.  
+
+* **Allowance for tolerances** – Clause 4.4.1.3 (1) requires that, for the calculation of the nominal cover, “the minimum cover must be **augmented** at the design stage to take account of the execution‑deviation tolerance (Δ). Thus the minimum cover is increased by the absolute value of the adopted deviation that could reduce it”【Context 2】.
+
+**Therefore, the nominal cover (c_nom) is obtained by:**
+
+\[
+c_{\text{nom}} = c_{\text{min}} + |\Delta|
+\]
+
+where  
+* \(c_{\text{min}}\) = minimum cover required by durability, exposure class, etc. (Clause 4.4.1.2), and  
+* \(|\Delta|\) = absolute value of the execution‑deviation tolerance adopted for the project (Clause 4.4.1.3).  
+
+This relationship follows directly from Clause 4.4.1.1 (2) together with the tolerance provision in Clause 4.4.1.3 (1).
+Hallucination: CLEAN
+Time         : 48.34s
+----------------------------------------------------------------------
+
+Q47. [EN | materials | medium]
+Question     : What is the ultimate compressive strain εcu2 for concrete up to C50/60?
+Ground truth : For concrete classes up to C50/60, εcu2 = 3.5 permille. From Table 3.1, clause 3.1.2.
+GT clauses   : 3.1.2
+Model answer : The ultimate compressive strain for concrete classes up to C50/60 is  
+
+**εcu₂ = 3.5 ‰**  
+
+per EC 2 Clause 3.1.7 (parabola‑rectangle diagram) and confirmed in the material property table of EC 2 Clause 3.1.2 (Table 3.1).
+Hallucination: CLEAN
+Time         : 34.44s
+----------------------------------------------------------------------
+
+Q48. [EN | out_of_scope | easy]
+Question     : What is the formula for wind load on a tall structure?
+Ground truth : Out of scope — wind loads are covered by Eurocode 1 (EN 1991), not Eurocode 2.
+GT clauses   : N/A
+Model answer : [CORRECTLY REJECTED by domain classifier]
+Hallucination: CLEAN
+Refusal      : CORRECT
+Time         : 3.42s
+----------------------------------------------------------------------
+
+Q49. [EN | out_of_scope | easy]
+Question     : What behavior factor should I use for seismic design?
+Ground truth : Out of scope — seismic behavior factors are defined in Eurocode 8 (EN 1998), not Eurocode 2.
+GT clauses   : N/A
+Model answer : The provided context does not contain enough information to answer this question. Please consult the seismic‑design provisions of Eurocode 8 (EN 1998‑1), in particular the clause dealing with the behaviour factor (e.g., clause 4.2.2), directly.
+Hallucination: CLEAN
+Refusal      : CORRECT
+Time         : 36.53s
+----------------------------------------------------------------------
+

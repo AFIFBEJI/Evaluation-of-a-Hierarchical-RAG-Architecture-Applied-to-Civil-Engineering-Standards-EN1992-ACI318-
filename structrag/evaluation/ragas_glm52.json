@@ -1,0 +1,972 @@
+{
+  "model_id": "z-ai/glm-5.2",
+  "provider": "nvidia",
+  "n_questions": 49,
+  "n_in_scope": 44,
+  "n_out_of_scope": 5,
+  "correct_refusals": 2,
+  "refusal_rate": 0.4,
+  "hallucination_count": 0,
+  "hallucination_rate": 0.0,
+  "ragas_scores": {
+    "faithfulness": 0.6818,
+    "answer_relevancy": 0.6364,
+    "context_precision": 0.6818,
+    "context_recall": 0.6318
+  },
+  "per_question": [
+    {
+      "question": "Quelle est la formule de l'enrobage nominal ?",
+      "ground_truth": "L'enrobage nominal est cnom = cmin + Δcdev, où cmin est l'enrobage minimal et Δcdev est la tolérance d'exécution (clause 4.4.1.1).",
+      "gt_clauses": [
+        "4.4.1.1"
+      ],
+      "category": "cover",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "Per EC2 clause 4.4.1.1(2)P, l'enrobage nominal est défini comme l'enrobage minimal (voir 4.4.1.2) plus une marge de calcul pour tolérances d'exécution (voir 4.4.1.3), selon la formule (4.1).\n\nLe contexte indique que cette relation est exprimée par l'équation (4.1), mais la formule explicite n'est pas reproduite dans les passages fournis. Le contexte précise également, per EC2 clause 4.4.1.3(1)P, que l'enrobage minimal doit être majoré de la valeur absolue de l'écart adopté susceptible de le réduire.",
+      "elapsed_s": 138.42,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 0.8
+    },
+    {
+      "question": "Quelle est la valeur recommandée de la tolérance d'exécution Δcdev ?",
+      "ground_truth": "La valeur recommandée est 10 mm. Elle peut être réduite à 5 mm avec un système qualité ou à 0 mm pour les éléments préfabriqués (clause 4.4.1.3).",
+      "gt_clauses": [
+        "4.4.1.3"
+      ],
+      "category": "cover",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "Selon le contexte fourni, la valeur recommandée de la tolérance d'exécution (Δc_dev) est de **10 mm** (per EC2 clause 4.4.1.3).\n\nDes réductions de cette valeur sont possibles dans certains cas (per EC2 clause 4.4.1.3) :\n- **5 mm** (réduction de 10 mm à 5 mm, équation 4.3N) lorsque la fabrication est soumise à un système d'assurance de la qualité incluant des mesures de l'enrobage des armatures.\n- **0 mm** (réduction de 10 mm à 0 mm, équation 4.4N) lorsqu'on peut garantir l'utilisation d'un appareil de mesure très précis pour la surveillance ainsi que le rejet des éléments non conformes (éléments préfabriqués, par exemple).\n\nLes valeurs à utiliser dans un pays donné peuvent être fournies par son Annexe Nationale (per EC2 clause 4.4.1.3).",
+      "elapsed_s": 35.64,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quel est l'enrobage minimal pour la classe d'exposition XC1, classe structurale S4 ?",
+      "ground_truth": "Pour XC1 et la classe structurale S4, l'enrobage minimal cmin,dur est de 15 mm (Tableau 4.4N, clause 4.4.1.2).",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "Per EC2 clause 4.4.1.2, Tableau 4.4N, l'enrobage minimal c_min,dur pour la classe d'exposition XC1 et la classe structurale S4 est de **15 mm** (armatures de béton armé).",
+      "elapsed_s": 38.81,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.5,
+      "context_precision": 0.5,
+      "context_recall": 0.5
+    },
+    {
+      "question": "Quel est l'enrobage minimal pour la classe d'exposition XC2, classe structurale S4 ?",
+      "ground_truth": "Pour XC2/XC3 et la classe structurale S4, l'enrobage minimal cmin,dur est de 25 mm (Tableau 4.4N, clause 4.4.1.2).",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "Per EC2 clause 4.4.1.2, Tableau 4.4N, l'enrobage minimal c_min,dur pour la classe d'exposition XC1 et la classe structurale S4 est de **15 mm** (armatures de béton armé).",
+      "elapsed_s": 38.81,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quel est l'enrobage minimal pour la classe d'exposition XD3, classe structurale S4 ?",
+      "ground_truth": "Pour XD3/XS3 et la classe structurale S4, l'enrobage minimal cmin,dur est de 45 mm (Tableau 4.4N, clause 4.4.1.2).",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "Per EC2 clause 4.4.1.2, Tableau 4.4N, l'enrobage minimal c_min,dur pour la classe d'exposition XC1 et la classe structurale S4 est de **15 mm** (armatures de béton armé).",
+      "elapsed_s": 38.81,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quelles sont les classes d'exposition liées à la carbonatation ?",
+      "ground_truth": "XC1 (sec ou humide en permanence), XC2 (humide, rarement sec), XC3 (humidité modérée), XC4 (alternativement humide et sec). Tableau 4.1, clause 4.2.",
+      "gt_clauses": [
+        "4.2"
+      ],
+      "category": "cover",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[WRONGLY REJECTED by domain classifier]",
+      "elapsed_s": 6.73,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quelles sont les classes d'exposition liées aux chlorures d'origine non marine ?",
+      "ground_truth": "XD1 (humidité modérée), XD2 (humide, rarement sec), XD3 (alternativement humide et sec). Tableau 4.1, clause 4.2.",
+      "gt_clauses": [
+        "4.2"
+      ],
+      "category": "cover",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[WRONGLY REJECTED by domain classifier]",
+      "elapsed_s": 6.73,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quelle classe de résistance minimale du béton le Tableau 4.3N recommande-t-il pour la classe d'exposition XD3 ?",
+      "ground_truth": "Le Tableau 4.3N recommande une classe de résistance minimale ≥ C45/55 pour XD3/XS2/XS3 (avec possibilité de minoration d'une classe). Clause 4.4.1.2.",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "Le contexte fourni ne contient pas assez d'informations pour répondre à cette question. Le Tableau 4.3N est mentionné dans la clause 4.4.1.2 de l'Eurocode 2 comme donnant les « modifications de Classe Structurale recommandées », mais son contenu détaillé (notamment les classes de résistance minimale du béton par classe d'exposition) n'est pas inclus dans les passages fournis. Veuillez consulter directement le Tableau 4.3N (clause 4.4.1.2 de l'Eurocode 2) ainsi que l'Annexe E, qui donne les « classes de résistance indicatives pour les différentes classes d'exposition » selon la clause 4.2.",
+      "elapsed_s": 28.83,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 1.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quelle classe de résistance minimale du béton le Tableau 4.3N recommande-t-il pour XC2 ?",
+      "ground_truth": "Le Tableau 4.3N recommande une classe de résistance minimale ≥ C35/45 pour XC2/XC3. Clause 4.4.1.2.",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "Le contexte fourni ne contient pas assez d'informations pour répondre à cette question. Le Tableau 4.3N est mentionné dans la clause 4.4.1.2 de l'Eurocode 2 comme donnant les « modifications de Classe Structurale recommandées », mais son contenu détaillé (notamment les classes de résistance minimale du béton par classe d'exposition) n'est pas inclus dans les passages fournis. Veuillez consulter directement le Tableau 4.3N (clause 4.4.1.2 de l'Eurocode 2) ainsi que l'Annexe E, qui donne les « classes de résistance indicatives pour les différentes classes d'exposition » selon la clause 4.2.",
+      "elapsed_s": 28.83,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 1.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quelle est la classe structurale recommandée pour une durée d'utilisation de 50 ans ?",
+      "ground_truth": "La classe structurale recommandée pour une durée de 50 ans est S4 (clause 4.4.1.2, Tableau 4.3N).",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "La Classe Structurale recommandée pour une durée d'utilisation de projet de 50 ans est la **classe S4** (per EC2 clause 4.4.1.2).",
+      "elapsed_s": 32.87,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Combien de classes structurales sont définies dans l'Eurocode 2 ?",
+      "ground_truth": "Six classes structurales sont définies : S1 à S6. Elles sont utilisées avec les classes d'exposition pour déterminer l'enrobage minimal. Clause 4.4.1.2, Tableau 4.3N.",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "Selon le contexte fourni, l'Eurocode 2 définit **six classes structurales**, numérotées de **S1 à S6**.\n\nCeci ressort du **Tableau 4.3N** (Classification structurale recommandée) et des **Tableaux 4.4N et 4.5N** (valeurs de l'enrobage minimal), qui listent explicitement les classes S1, S2, S3, S4, S5 et S6, conformément à la clause **4.4.1.2** de l'Eurocode 2.\n\nLa classe structurale recommandée (durée d'utilisation de projet de 50 ans) est la classe **S4**, et la classe structurale minimale recommandée est la classe **S1** (per EC2 clause 4.4.1.2).",
+      "elapsed_s": 35.23,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.5,
+      "context_precision": 0.5,
+      "context_recall": 0.5
+    },
+    {
+      "question": "Quelles sont les trois exigences que l'enrobage minimal doit satisfaire simultanément ?",
+      "ground_truth": "L'enrobage minimal doit satisfaire : (1) les exigences d'adhérence (cmin,b), (2) les conditions environnementales (cmin,dur), (3) un minimum de 10 mm. La valeur retenue est le maximum. Clause 4.4.1.2 équation (4.2).",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "Selon le contexte fourni, l'enrobage minimal doit satisfaire simultanément trois exigences :\n\n1. **La bonne transmission des forces d'adhérence** (voir également sections 7 et 8)\n2. **La protection de l'acier contre la corrosion** (durabilité)\n3. **Une résistance au feu convenable** (voir EN 1992-1-2)\n\nCes trois exigences sont énoncées à la clause **4.4.1.2(1)P** de l'Eurocode 2 (EN 1992-1-1).",
+      "elapsed_s": 25.76,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quelle est la valeur du coefficient partiel γc pour le béton en situation durable ?",
+      "ground_truth": "Le coefficient partiel pour le béton est γc = 1,5 en situation durable/transitoire. Tableau 2.1N, clause 2.4.2.4.",
+      "gt_clauses": [
+        "2.4.2.4"
+      ],
+      "category": "materials",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 20.53,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la valeur du coefficient partiel γs pour l'acier de béton armé en situation durable ?",
+      "ground_truth": "Le coefficient partiel pour l'acier de béton armé est γs = 1,15 en situation durable/transitoire. Tableau 2.1N, clause 2.4.2.4.",
+      "gt_clauses": [
+        "2.4.2.4"
+      ],
+      "category": "materials",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 20.53,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la valeur du coefficient partiel γc en situation accidentelle ?",
+      "ground_truth": "En situation accidentelle, le coefficient partiel pour le béton est γc = 1,2. Tableau 2.1N, clause 2.4.2.4.",
+      "gt_clauses": [
+        "2.4.2.4"
+      ],
+      "category": "materials",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 20.53,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la déformation ultime de compression εcu2 pour les bétons jusqu'à C50/60 ?",
+      "ground_truth": "Pour les bétons jusqu'à C50/60, la déformation ultime εcu2 est de 3,5 ‰. Tableau 3.1, clause 3.1.2.",
+      "gt_clauses": [
+        "3.1.2"
+      ],
+      "category": "materials",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 32.45,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la résistance caractéristique en compression fck pour le béton C30/37 ?",
+      "ground_truth": "Pour le béton C30/37, la résistance caractéristique en compression est fck = 30 MPa. Tableau 3.1, clause 3.1.2.",
+      "gt_clauses": [
+        "3.1.2"
+      ],
+      "category": "materials",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 23.35,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la résistance moyenne en traction fctm pour le béton C25/30 ?",
+      "ground_truth": "Pour le béton C25/30, la résistance moyenne en traction est fctm = 2,6 MPa. Tableau 3.1, clause 3.1.2.",
+      "gt_clauses": [
+        "3.1.2"
+      ],
+      "category": "materials",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 26.72,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quel est le module d'élasticité sécant Ecm pour le béton C30/37 ?",
+      "ground_truth": "Pour le béton C30/37, le module d'élasticité sécant est Ecm = 33 GPa. Tableau 3.1, clause 3.1.2.",
+      "gt_clauses": [
+        "3.1.2"
+      ],
+      "category": "materials",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 30.92,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la formule de la résistance de calcul en compression fcd ?",
+      "ground_truth": "La résistance de calcul en compression est fcd = αcc × fck / γc, où αcc tient compte des effets à long terme (valeur recommandée 1,0) et γc = 1,5. Clause 3.1.6.",
+      "gt_clauses": [
+        "3.1.6"
+      ],
+      "category": "materials",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 22.12,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la différence entre un Principe et une Règle d'Application dans l'Eurocode 2 ?",
+      "ground_truth": "Les Principes sont des exigences obligatoires identifiées par P après le numéro de paragraphe (ex. (1)P). Les Règles d'Application sont des méthodes généralement acceptées conformes aux Principes. Clause 1.4.",
+      "gt_clauses": [
+        "1.4"
+      ],
+      "category": "design_basis",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 20.48,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelles sont les méthodes d'analyse structurale reconnues par l'Eurocode 2 ?",
+      "ground_truth": "L'Eurocode 2 reconnaît : l'analyse élastique linéaire, l'analyse élastique linéaire avec redistribution limitée, l'analyse plastique et l'analyse non linéaire. Clause 5.1.1.",
+      "gt_clauses": [
+        "5.1.1"
+      ],
+      "category": "analysis",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 26.74,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Comment calcule-t-on la portée efficace d'une poutre selon l'Eurocode 2 ?",
+      "ground_truth": "La portée efficace est leff = ln + a1 + a2, où ln est la portée entre nus d'appuis et a1, a2 sont les distances jusqu'au centre d'appui effectif. Clause 5.3.2.2.",
+      "gt_clauses": [
+        "5.3.2.2"
+      ],
+      "category": "analysis",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 26.81,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la formule de la résistance au cisaillement VRd,c pour les éléments sans armature d'effort tranchant ?",
+      "ground_truth": "VRd,c = [CRd,c × k × (100 × ρl × fck)^(1/3) + k1 × σcp] × bw × d avec une valeur minimale. CRd,c, k1 et vmin sont déterminés nationalement. Clause 6.2.2.",
+      "gt_clauses": [
+        "6.2.2"
+      ],
+      "category": "uls",
+      "difficulty": "hard",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 22.66,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la valeur recommandée de CRd,c dans la formule de résistance au cisaillement ?",
+      "ground_truth": "La valeur recommandée de CRd,c est 0,18/γc = 0,18/1,5 = 0,12. Clause 6.2.2 NOTE.",
+      "gt_clauses": [
+        "6.2.2"
+      ],
+      "category": "uls",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[WRONGLY REJECTED by domain classifier]",
+      "elapsed_s": 3.99,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quelle est la section minimale d'armature d'effort tranchant ρw,min ?",
+      "ground_truth": "La section minimale d'armature transversale est ρw,min = 0,08 × √fck / fyk. Clause 9.2.2.",
+      "gt_clauses": [
+        "9.2.2"
+      ],
+      "category": "uls",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 20.65,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.5,
+      "context_precision": 0.5,
+      "context_recall": 0.5
+    },
+    {
+      "question": "Quelle est la largeur de fissure maximale pour la classe d'exposition XC1 sous charges quasi-permanentes ?",
+      "ground_truth": "La largeur de fissure maximale recommandée wmax est de 0,3 mm pour les classes XC1 à XC4 sous la combinaison quasi-permanente. Clause 7.3.1, Tableau 7.1N.",
+      "gt_clauses": [
+        "7.3.1"
+      ],
+      "category": "sls",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 23.6,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.5,
+      "context_precision": 0.5,
+      "context_recall": 0.5
+    },
+    {
+      "question": "Quelle est la contrainte de compression maximale admissible pour éviter la fissuration longitudinale ?",
+      "ground_truth": "Pour éviter la fissuration longitudinale, la contrainte de compression ne doit pas dépasser 0,6 × fck sous la combinaison caractéristique. Clause 7.2.",
+      "gt_clauses": [
+        "7.2"
+      ],
+      "category": "sls",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[WRONGLY REJECTED by domain classifier]",
+      "elapsed_s": 3.6,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quel est le diamètre minimal du mandrin de pliage pour des barres de diamètre ≤ 16 mm ?",
+      "ground_truth": "Le diamètre minimal du mandrin est 4 × φ pour les barres de diamètre ≤ 16 mm. Clause 8.3.",
+      "gt_clauses": [
+        "8.3"
+      ],
+      "category": "detailing",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 26.0,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.5,
+      "context_precision": 0.5,
+      "context_recall": 0.5
+    },
+    {
+      "question": "Quelle est la section minimale d'armature longitudinale pour une poutre ?",
+      "ground_truth": "La section minimale d'armature pour une poutre est As,min = 0,26 × fctm/fyk × bt × d ≥ 0,0013 × bt × d. Clause 9.2.1.1.",
+      "gt_clauses": [
+        "9.2.1.1"
+      ],
+      "category": "detailing",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 20.65,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.5,
+      "answer_relevancy": 0.5,
+      "context_precision": 0.5,
+      "context_recall": 0.5
+    },
+    {
+      "question": "Quel est l'espacement maximal des armatures transversales dans une poutre ?",
+      "ground_truth": "L'espacement longitudinal maximal des armatures transversales est sl,max = 0,75 × d × (1 + cot α). Clause 9.2.2.",
+      "gt_clauses": [
+        "9.2.2"
+      ],
+      "category": "detailing",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[WRONGLY REJECTED by domain classifier]",
+      "elapsed_s": 3.67,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Quelle est la distance minimale entre barres parallèles individuelles ?",
+      "ground_truth": "La distance libre doit être ≥ max(k1 × φ, dg + k2, 20 mm) où dg est la taille maximale des granulats. Recommandé : k1=1, k2=5mm. Clause 8.2.",
+      "gt_clauses": [
+        "8.2"
+      ],
+      "category": "detailing",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 32.28,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la formule de la longueur d'ancrage de base pour une barre droite ?",
+      "ground_truth": "La longueur d'ancrage de base est lb,rqd = (φ/4) × (σsd / fbd), où fbd est la résistance d'adhérence de calcul. Clause 8.4.3.",
+      "gt_clauses": [
+        "8.4.3"
+      ],
+      "category": "detailing",
+      "difficulty": "hard",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 34.7,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quel est le taux maximum d'armature en zone comprimée d'une poutre ?",
+      "ground_truth": "La section maximale d'armature en compression ne doit pas dépasser 0,04 × Ac (4 % de la section brute). Clause 9.2.1.1.",
+      "gt_clauses": [
+        "9.2.1.1"
+      ],
+      "category": "detailing",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[WRONGLY REJECTED by domain classifier]",
+      "elapsed_s": 7.09,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "Pour une poutre en classe d'exposition XC2, classe structurale S4 — quel est l'enrobage minimal et quelle classe de béton est requise ?",
+      "ground_truth": "Pour XC2/XC3, S4 : enrobage minimal cmin,dur = 25 mm (Tableau 4.4N). Classe de béton requise : ≥ C35/45 (Tableau 4.3N). Clause 4.4.1.2.",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cross_clause",
+      "difficulty": "hard",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 25.78,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quel enrobage nominal doit-on spécifier sur les plans pour une dalle en XC3, durée de projet 50 ans ?",
+      "ground_truth": "Pour XC2/XC3, S4 (50 ans) : cmin,dur=25mm. Pour une dalle (réduction S3 possible) : cmin,dur=20mm. Avec Δcdev=10mm : cnom=30mm. Clauses 4.4.1.1, 4.4.1.2, 4.4.1.3.",
+      "gt_clauses": [
+        "4.4.1.1",
+        "4.4.1.2",
+        "4.4.1.3"
+      ],
+      "category": "cross_clause",
+      "difficulty": "hard",
+      "in_scope": true,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 32.78,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "Quelle est la formule de la charge de vent selon l'Eurocode 1 ?",
+      "ground_truth": "Hors champ — les charges de vent sont dans l'Eurocode 1 (EN 1991), pas l'Eurocode 2.",
+      "gt_clauses": [],
+      "category": "out_of_scope",
+      "difficulty": "easy",
+      "in_scope": false,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 29.92,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false
+    },
+    {
+      "question": "Quel facteur de comportement q utiliser pour un portique béton en zone sismique 3 ?",
+      "ground_truth": "Hors champ — les facteurs de comportement sont dans l'Eurocode 8 (EN 1998).",
+      "gt_clauses": [],
+      "category": "out_of_scope",
+      "difficulty": "easy",
+      "in_scope": false,
+      "lang": "fr",
+      "answer": "[CORRECTLY REJECTED by domain classifier]",
+      "elapsed_s": 3.96,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": true
+    },
+    {
+      "question": "Quel rapport eau/ciment maximal pour la classe d'exposition XC1 ?",
+      "ground_truth": "Non directement dans l'EC2 — les rapports eau/ciment sont dans l'EN 206-1, référencé par la clause 4.1 mais les valeurs sont dans la norme matériau séparée.",
+      "gt_clauses": [],
+      "category": "out_of_scope",
+      "difficulty": "medium",
+      "in_scope": false,
+      "lang": "fr",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 20.48,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false
+    },
+    {
+      "question": "What is the formula for nominal concrete cover?",
+      "ground_truth": "cnom = cmin + Δcdev, where cmin is the minimum cover and Δcdev is the allowance for execution deviation (EC2 clause 4.4.1.1).",
+      "gt_clauses": [
+        "4.4.1.1"
+      ],
+      "category": "cover",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "en",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 24.08,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What partial safety factor should I use for concrete in persistent design situations?",
+      "ground_truth": "The partial safety factor for concrete gamma_c is 1.5 for persistent and transient design situations. From Table 2.1N, clause 2.4.2.4.",
+      "gt_clauses": [
+        "2.4.2.4"
+      ],
+      "category": "materials",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "en",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 28.66,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What partial safety factor applies to reinforcing steel?",
+      "ground_truth": "The partial safety factor for reinforcing steel gamma_s is 1.15 for persistent and transient design situations. Table 2.1N, clause 2.4.2.4.",
+      "gt_clauses": [
+        "2.4.2.4"
+      ],
+      "category": "materials",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "en",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 20.48,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "What is the minimum cover for exposure class XC2, structural class S4?",
+      "ground_truth": "For XC2/XC3 and structural class S4, the minimum cover cmin,dur is 25 mm, from Table 4.4N of clause 4.4.1.2.",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "en",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 23.13,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What minimum concrete strength class is required for exposure class XD3?",
+      "ground_truth": "Table 4.3N recommends a minimum strength class of C45/55 for XD3/XS2/XS3. Clause 4.4.1.2.",
+      "gt_clauses": [
+        "4.4.1.2"
+      ],
+      "category": "cover",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "en",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 15.99,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What are the exposure classes for carbonation-induced corrosion?",
+      "ground_truth": "XC1 (dry or permanently wet), XC2 (wet rarely dry), XC3 (moderate humidity), XC4 (cyclic wet and dry). Table 4.1, clause 4.2.",
+      "gt_clauses": [
+        "4.2"
+      ],
+      "category": "cover",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "en",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 23.87,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 0.0,
+      "answer_relevancy": 0.0,
+      "context_precision": 0.0,
+      "context_recall": 0.0
+    },
+    {
+      "question": "How do I calculate nominal cover from minimum cover?",
+      "ground_truth": "Nominal cover = minimum cover + execution tolerance allowance Δcdev (recommended 10 mm). Formula: cnom = cmin + Δcdev. Clauses 4.4.1.1 and 4.4.1.3.",
+      "gt_clauses": [
+        "4.4.1.1",
+        "4.4.1.3"
+      ],
+      "category": "cover",
+      "difficulty": "easy",
+      "in_scope": true,
+      "lang": "en",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 18.73,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What is the ultimate compressive strain εcu2 for concrete up to C50/60?",
+      "ground_truth": "For concrete classes up to C50/60, εcu2 = 3.5 permille. From Table 3.1, clause 3.1.2.",
+      "gt_clauses": [
+        "3.1.2"
+      ],
+      "category": "materials",
+      "difficulty": "medium",
+      "in_scope": true,
+      "lang": "en",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 12.35,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 1.0
+    },
+    {
+      "question": "What is the formula for wind load on a tall structure?",
+      "ground_truth": "Out of scope — wind loads are covered by Eurocode 1 (EN 1991), not Eurocode 2.",
+      "gt_clauses": [],
+      "category": "out_of_scope",
+      "difficulty": "easy",
+      "in_scope": false,
+      "lang": "en",
+      "answer": "[CORRECTLY REJECTED by domain classifier]",
+      "elapsed_s": 3.66,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": true
+    },
+    {
+      "question": "What behavior factor should I use for seismic design?",
+      "ground_truth": "Out of scope — seismic behavior factors are defined in Eurocode 8 (EN 1998), not Eurocode 2.",
+      "gt_clauses": [],
+      "category": "out_of_scope",
+      "difficulty": "easy",
+      "in_scope": false,
+      "lang": "en",
+      "answer": "[NVIDIA rate limit — retry later]",
+      "elapsed_s": 14.26,
+      "hallucination_clean": true,
+      "hallucinated_clauses": [],
+      "correctly_refused": false
+    }
+  ]
+}

@@ -126,6 +126,44 @@ _ENGINEERING_KEYWORDS: set[str] = {
     # Civil / structural general
     "structural", "civil", "construction", "design", "calcul", "verif",
     "verification", "comply", "compliance", "code", "standard", "norm",
+    # Greek / technical symbols (often appear in EC2 questions)
+    "δc", "δcdev", "cdev", "cnom", "cmin", "γc", "γs", "γp",
+    "εcu", "εc2", "εcu2", "εcu3", "epsilon", "delta", "nominal cover",
+    "deviation allowance", "execution deviation", "tolerance",
+    "partial safety", "material factor", "parabola", "rectangle",
+    "stress-strain", "strain model", "characteristic value", "design value",
+    "xc1", "xc2", "xc3", "xc4", "xd1", "xd2", "xd3",
+    "xs1", "xs2", "xs3", "xf1", "xf2", "xf3", "xf4",
+    "xa1", "xa2", "xa3", "x0",
+    # Bare exposure class prefixes — catches "XC", "XD", "XS", "XF", "XA"
+    " xc ", " xd ", " xs ", " xf ", " xa ",   # space-padded for word boundary
+    "classe xc", "classe xd", "classe xs", "classe xf", "classe xa",
+    "classes xc", "classes xd", "classes xs",
+    "xc,", "xd,", "xs,", "xc.", "xd.", "xs.",  # punctuation-bounded
+    "différence entre", "différence xc", "entre xc", "entre xd",
+    "s1", "s2", "s3", "s4", "s5", "s6",   # structural classes
+    "c20", "c25", "c30", "c35", "c40", "c45", "c50",  # concrete classes
+    "table 2.1", "table 3.1", "table 4.1", "table 4.3", "table 4.4",
+    "tableau", "enrobage minimal", "enrobage nominal",
+    # French terms missing from earlier — caused wrongly rejected questions
+    "carbonatation", "chlorures", "chlorure",
+    "contrainte de compression", "contrainte de traction",
+    "contrainte admissible", "contrainte maximale",
+    "armatures transversales", "armature transversale",
+    "armatures longitudinales", "armature longitudinale",
+    "espacement", "espacement maximal",
+    "taux d'armature", "taux maximum", "zone comprimee", "zone comprimée",
+    "effort tranchant", "cisaillement",
+    "crd", "vrd", "vmin", "rhow", "ρw",
+    "fissure", "fissuration", "largeur de fissure",
+    "mandrin", "pliage", "cintrage",
+    "ancrage", "longueur d'ancrage",
+    "poutre", "dalle", "poteau", "voile", "semelle",
+    "ductilite", "ductilité", "redistribution",
+    "portee", "portée", "portée efficace",
+    "moment fléchissant", "moment résistant",
+    "classe de résistance", "classe structurale",
+    "rapport eau", "rapport e/c", "eau ciment",
 }
 # fmt: on
 
@@ -189,15 +227,74 @@ def _is_engineering_query_embedding(query: str) -> bool:
         return True
 
 
+# ---------------------------------------------------------------------------
+# Domain classifier — redesigned with inverted logic
+#
+# OLD approach (fragile): block unless keyword matches → many false rejections
+# NEW approach (robust):  allow unless clearly off-topic → only block obvious garbage
+#
+# Three layers:
+#   Layer 1 (fast):    if it contains ANY EC2 keyword → always allow
+#   Layer 2 (fast):    if it clearly matches off-topic patterns → always block
+#   Layer 3 (default): allow everything else (let retrieval decide)
+#
+# Rationale: if retrieval returns nothing relevant, the model will say
+# "I don't have enough information" — which is the correct behavior.
+# A false allow is better than a false block.
+# ---------------------------------------------------------------------------
+
+_HARD_BLOCK_PATTERNS = [
+    # Completely off-topic — not structural engineering at all
+    r'\b(météo|meteo|weather|sport|football|cuisine|recette|politique|music|film|cinema)\b',
+    r'\b(bitcoin|crypto|bourse|stock market|trading|investissement)\b',
+    r'\b(médecine|médical|santé|health|doctor|docteur|maladie)\b',
+    r'\b(histoire|geography|géographie|biologie|chimie organique|physique nucléaire)\b',
+    r'^(bonjour|salut|hello|hi|hey|bonsoir|merci|comment vas|comment allez)\b',
+    # Other Eurocodes explicitly (not EC2)
+    r'\b(eurocode [1345678]|EN 199[013456789]|EN 1991|EN 1993|EN 1994|EN 1995|EN 1996|EN 1997|EN 1998|EN 1999)\b',
+    r'\b(eurocode 8|sismique|seismic|behavior factor|facteur de comportement)\b',
+    r'\beurocode 1\b',
+    r'\b(charge de vent|wind load|snow load|charge de neige|charge climatique)\b',
+    r'\b(charpente métallique|steel structure|timber|bois lamellé)\b',
+    # Completely unrelated professional domains
+    r'\b(droit|juridique|legal|law|contrat|contract)\b',
+    r'\b(comptabilité|finance|marketing|ressources humaines)\b',
+]
+
+
+def _is_clearly_off_topic(query: str) -> bool:
+    """Return True only if the query clearly matches a hard block pattern."""
+    import re as _re
+    q_lower = query.lower()
+    for pattern in _HARD_BLOCK_PATTERNS:
+        if _re.search(pattern, q_lower, _re.IGNORECASE):
+            return True
+    return False
+
+
 def is_engineering_query(query: str) -> bool:
     """
-    Two-layer domain classifier.
-    Layer 1 (fast): keyword scan.
-    Layer 2 (slower): embedding similarity — only if layer 1 misses.
+    Inverted domain classifier — allow by default, block only obvious off-topic.
+
+    Layer 1: if clearly off-topic pattern matches → immediately block (checked FIRST)
+    Layer 2: if any EC2 keyword present → allow
+    Layer 3: default allow — let retrieval decide
+
+    Off-topic check runs FIRST so explicit Eurocode 1/8 questions are blocked
+    even if they contain the word 'eurocode'.
     """
-    if _is_engineering_query_keyword(query):
+    # Layer 1: block clearly off-topic (runs before keyword check)
+    if _is_clearly_off_topic(query):
+        return False
+
+    # Layer 2: fast allow — any EC2 keyword present
+    q_lower = query.lower()
+    if any(kw in q_lower for kw in _ENGINEERING_KEYWORDS):
         return True
-    return _is_engineering_query_embedding(query)
+
+    # Layer 3: default allow — let retrieval decide
+    # (if nothing is found, the model will say "insufficient information")
+    return True
 
 
 # ---------------------------------------------------------------------------

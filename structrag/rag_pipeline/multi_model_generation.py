@@ -68,32 +68,45 @@ def _generate_groq(
     if not api_key:
         raise EnvironmentError("GROQ_API_KEY not set")
 
-    client = groq_client = Groq(api_key=api_key)
+    client = Groq(api_key=api_key)
     user_message, source_labels = build_prompt(question, chunks)
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user",   "content": user_message},
     ]
 
-    try:
-        resp = client.chat.completions.create(
-            model=model, messages=messages,
-            max_tokens=max_tokens, temperature=temperature,
-        )
-        answer = resp.choices[0].message.content.strip()
-    except Exception as e:
-        if "429" in str(e) or "rate_limit" in str(e).lower():
-            return GenerationResult(
-                answer="[Groq rate limit — please wait and retry]",
-                sources=source_labels, context_used=[c["text"] for c in chunks],
-                model=model, chunk_type="hierarchical",
+    import time as _time
+    for attempt in range(3):
+        try:
+            resp = client.chat.completions.create(
+                model=model, messages=messages,
+                max_tokens=max_tokens, temperature=temperature,
             )
-        raise
+            answer = (resp.choices[0].message.content or "").strip()
+            return GenerationResult(
+                answer=answer, sources=source_labels,
+                context_used=[c["text"] for c in chunks],
+                prompt=user_message, model=model, chunk_type="hierarchical",
+            )
+        except Exception as e:
+            err = str(e)
+            if ("429" in err or "rate_limit" in err.lower()) and attempt < 2:
+                wait = (attempt + 1) * 30
+                print(f"\n    [Groq rate limit — waiting {wait}s]", end="", flush=True)
+                _time.sleep(wait)
+                continue
+            elif "429" in err or "rate_limit" in err.lower():
+                return GenerationResult(
+                    answer="[Groq rate limit — please wait and retry]",
+                    sources=source_labels, context_used=[c["text"] for c in chunks],
+                    model=model, chunk_type="hierarchical",
+                )
+            raise
 
     return GenerationResult(
-        answer=answer, sources=source_labels,
-        context_used=[c["text"] for c in chunks],
-        prompt=user_message, model=model, chunk_type="hierarchical",
+        answer="[Groq max retries exceeded]",
+        sources=source_labels, context_used=[c["text"] for c in chunks],
+        model=model, chunk_type="hierarchical",
     )
 
 
@@ -197,6 +210,8 @@ def _generate_nvidia(
     client = OpenAI(
         base_url="https://integrate.api.nvidia.com/v1",
         api_key=api_key,
+        timeout=180.0,     # 180s timeout — nemotron can be slow
+        max_retries=1,
     )
 
     user_message, source_labels = build_prompt(question, chunks)
@@ -210,11 +225,24 @@ def _generate_nvidia(
             model=model, messages=messages,
             max_tokens=max_tokens, temperature=temperature,
         )
-        answer = resp.choices[0].message.content.strip()
+        answer = (resp.choices[0].message.content or "").strip()
     except Exception as e:
-        if "429" in str(e) or "rate" in str(e).lower():
+        err = str(e)
+        if "429" in err or "rate" in err.lower():
             return GenerationResult(
                 answer="[NVIDIA rate limit — retry later]",
+                sources=source_labels, context_used=[c["text"] for c in chunks],
+                model=model, chunk_type="hierarchical",
+            )
+        if "timeout" in err.lower() or "timed out" in err.lower() or "Timeout" in type(e).__name__:
+            return GenerationResult(
+                answer="[NVIDIA timeout — model did not respond in 90s]",
+                sources=source_labels, context_used=[c["text"] for c in chunks],
+                model=model, chunk_type="hierarchical",
+            )
+        if "Connection" in err or "connection" in err.lower():
+            return GenerationResult(
+                answer="[NVIDIA connection error — retry later]",
                 sources=source_labels, context_used=[c["text"] for c in chunks],
                 model=model, chunk_type="hierarchical",
             )
@@ -236,12 +264,11 @@ def _detect_provider(model: str) -> str:
     model_lower = model.lower()
     if model_lower.startswith("gemini"):
         return "gemini"
-    if any(model_lower.startswith(p) for p in (
-        "openai/", "llama", "meta/", "qwen", "mistral", "groq/"
-    )):
+    if model_lower.startswith("z-ai/") or model_lower.startswith("nvidia/") or model_lower.startswith("mistralai/"):
+        return "nvidia"
+    if model_lower.startswith("openai/") or model_lower.startswith("groq/"):
         return "groq"
-    if "/" in model and not model_lower.startswith("openai/"):
-        # NVIDIA models are typically org/model-name
+    if "/" in model:
         return "nvidia"
     return "groq"   # default
 
@@ -254,6 +281,7 @@ def _detect_provider(model: str) -> str:
 RANKED_MODELS = [
     # (model_id, provider, context_tokens, notes)
     ("gemini-3.6-flash",               "gemini", 1_000_000, "Best context, free tier, GA"),
+    ("z-ai/glm-5.2",                   "nvidia", 1_000_000, "GLM-5.2, 1M ctx, NVIDIA build"),
     ("gemini-3.5-flash-lite",          "gemini", 1_000_000, "Free tier, lighter model"),
     ("openai/gpt-oss-120b",            "groq",     131_072, "Default, 500 t/s, free tier"),
     ("llama-3.3-70b-versatile",        "groq",     131_072, "Strong open model, free tier"),

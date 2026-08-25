@@ -1,7 +1,0 @@
-Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
-C:\Users\manef\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
-  warnings.warn(
-Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
-Failed to send telemetry event ClientStartEvent: capture() takes 1 positional argument but 3 were given
-C:\Users\manef\AppData\Local\Programs\Python\Python311\Lib\site-packages\transformers\tokenization_utils_base.py:1601: FutureWarning: `clean_up_tokenization_spaces` was not set. It will be set to `True` by default. This behavior will be depracted in transformers v4.45, and will be then set to `False` by default. For more details check this issue: https://github.com/huggingface/transformers/issues/31884
-  warnings.warn(
