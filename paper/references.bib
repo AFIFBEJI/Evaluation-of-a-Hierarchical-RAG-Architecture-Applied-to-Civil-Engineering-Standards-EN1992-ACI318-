@@ -1,0 +1,145 @@
+% ============================================================
+%  references.bib — StructRAG
+%  All entries verified via web search or high-confidence
+%  training knowledge prior to inclusion.
+% ============================================================
+
+% ── Core RAG ────────────────────────────────────────────────
+
+@inproceedings{lewis2020rag,
+  author    = {Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra
+               and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman
+               and K\"{u}ttler, Heinrich and Lewis, Mike and Yih, Wen-tau
+               and Rockt\"{a}schel, Tim and Riedel, Sebastian
+               and Kiela, Douwe},
+  title     = {Retrieval-Augmented Generation for Knowledge-Intensive
+               {NLP} Tasks},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {33},
+  pages     = {9459--9474},
+  year      = {2020},
+  publisher = {Curran Associates, Inc.},
+  note      = {arXiv:2005.11401}
+}
+
+@article{gao2023survey,
+  author    = {Gao, Yunfan and Xiong, Yun and Gao, Xinyu and Jia, Kangxiang
+               and Pan, Jinliu and Bi, Yuxi and Dai, Yi and Sun, Jiawei
+               and Wang, Meng and Wang, Haofen},
+  title     = {Retrieval-Augmented Generation for Large Language Models:
+               {A} Survey},
+  journal   = {arXiv preprint arXiv:2312.10997},
+  year      = {2023}
+}
+
+% ── RAGAS Evaluation ─────────────────────────────────────────
+
+@inproceedings{es2023ragas,
+  author    = {Es, Shahul and James, Jithin and Espinosa-Anke, Luis
+               and Schockaert, Steven},
+  title     = {{RAGAS}: Automated Evaluation of Retrieval Augmented
+               Generation},
+  booktitle = {Proceedings of the 18th Conference of the European Chapter
+               of the Association for Computational Linguistics:
+               System Demonstrations},
+  pages     = {150--158},
+  year      = {2024},
+  publisher = {Association for Computational Linguistics},
+  note      = {arXiv:2309.15217}
+}
+
+% ── Retrieval Methods ─────────────────────────────────────────
+
+@article{robertson2009bm25,
+  author    = {Robertson, Stephen and Zaragoza, Hugo},
+  title     = {The Probabilistic Relevance Framework: {BM25} and Beyond},
+  journal   = {Foundations and Trends in Information Retrieval},
+  volume    = {3},
+  number    = {4},
+  pages     = {333--389},
+  year      = {2009},
+  publisher = {Now Publishers},
+  doi       = {10.1561/1500000019}
+}
+
+@inproceedings{cormack2009rrf,
+  author    = {Cormack, Gordon V. and Clarke, Charles L. A.
+               and B\"{u}ttcher, Stefan},
+  title     = {Reciprocal Rank Fusion Outperforms {Condorcet} and
+               Individual Rank Learning Methods},
+  booktitle = {Proceedings of the 32nd International {ACM} {SIGIR}
+               Conference on Research and Development in
+               Information Retrieval},
+  series    = {SIGIR~'09},
+  pages     = {758--759},
+  year      = {2009},
+  publisher = {ACM},
+  doi       = {10.1145/1571941.1572114}
+}
+
+@article{nogueira2019passage,
+  author    = {Nogueira, Rodrigo and Yang, Wei and Cho, Kyunghyun
+               and Lin, Jimmy},
+  title     = {Multi-Stage Document Ranking with {BERT}},
+  journal   = {arXiv preprint arXiv:1910.14424},
+  year      = {2019}
+}
+
+% ── Sentence Embeddings ───────────────────────────────────────
+
+@inproceedings{reimers2019sbert,
+  author    = {Reimers, Nils and Gurevych, Iryna},
+  title     = {Sentence-{BERT}: Sentence Embeddings Using {Siamese}
+               {BERT}-Networks},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods
+               in Natural Language Processing},
+  pages     = {3982--3992},
+  year      = {2019},
+  publisher = {Association for Computational Linguistics},
+  note      = {arXiv:1908.10084}
+}
+
+% ── Vector Store ─────────────────────────────────────────────
+
+@misc{chroma2023,
+  author       = {{Chroma}},
+  title        = {Chroma: The {AI}-Native Open-Source Embedding Database},
+  year         = {2023},
+  howpublished = {\url{https://github.com/chroma-core/chroma}},
+  note         = {Apache~2.0 licence. Founded 2022 by Jeff Huber
+                  and Anton Troynikov.}
+}
+
+% ── PDF Parsing ───────────────────────────────────────────────
+
+@misc{pymupdf,
+  author       = {{Artifex Software, Inc.}},
+  title        = {{PyMuPDF}: Python Bindings for {MuPDF}},
+  year         = {2023},
+  howpublished = {\url{https://pymupdf.readthedocs.io}},
+  note         = {Version 1.28.0 used in this work.}
+}
+
+% ── Chunking / Document Structure ────────────────────────────
+
+@article{wang2024financial,
+  author  = {Wang, Jiacheng and others},
+  title   = {Financial Report Chunking for Effective Retrieval
+             Augmented Generation},
+  journal = {arXiv preprint arXiv:2402.05131},
+  year    = {2024}
+}
+
+% ============================================================
+%  UNVERIFIED — do NOT add to bib until manually checked
+% ============================================================
+%
+%  pdfplumber (Singer-Clark, 2020, GitHub/PyPI): no formal paper.
+%  Cite as a software footnote: \url{https://github.com/jsvine/pdfplumber}
+%
+%  Snowball stemmer (Porter, 2001): citable as
+%    Porter, M.F. (2001) Snowball: A language for stemming algorithms.
+%    http://snowball.tartarus.org/texts/introduction.html
+%  Include only if the venue accepts informal technical reports.
+%
+% ============================================================

@@ -35,8 +35,8 @@ def init_pipeline():
 
 PARENT_PATH = PROJECT_ROOT / "structrag" / "data" / "chunks" / "ec2_parent_chunks.json"
 SOURCE_ID   = "ec2_2004_nf"
-MODEL_ID    = "meta/llama-3.3-70b-instruct"
-PROVIDER    = "nvidia"
+MODEL_ID    = "openai/gpt-oss-120b"
+PROVIDER    = "groq"
 
 
 def retrieve(question: str) -> list:
@@ -282,7 +282,7 @@ HTML = """<!DOCTYPE html>
 <header>
   <div class="logo">⚡</div>
   <h1>StructRAG</h1>
-  <span>Eurocode 2 · llama-3.3-70b</span>
+  <span>Eurocode 2 · gpt-oss-120b</span>
 </header>
 
 <div id="chat">
@@ -507,7 +507,7 @@ def ask():
 if __name__ == "__main__":
     print("\n" + "="*55)
     print("  StructRAG — Eurocode 2 Assistant")
-    print("  Model  : meta/llama-3.3-70b-instruct (NVIDIA)")
+    print("  Model  : openai/gpt-oss-120b (Groq)")
     print("  Open   : http://127.0.0.1:5000")
     print("="*55 + "\n")
     app.run(debug=False, host="127.0.0.1", port=5000)

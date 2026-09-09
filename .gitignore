@@ -35,3 +35,15 @@ run_ext_stdout.txt
 run_ext_stderr.txt
 inspect_stdout.txt
 inspect_stderr.txt
+
+# LaTeX build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.pdf
+paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk
